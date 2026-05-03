@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── PierSans font faces ── */
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PierSans';
+  src: url('/fonts/PierSans-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* ── Color primitives ── */
+    --color-primary:        #EB3D26;
+    --color-primary-hover:  #c73320;
+    --color-secondary:      #94D1CA;
+    --color-secondary-hover:#72bbb3;
+    --color-bg:             #FFFFFF;
+    --color-bg-subtle:      #F7F7F7;
+    --color-bg-dark:        #2B2B2B;
+    --color-bg-darkest:     #1A1A1A;
+    --color-fg:             #2B2B2B;
+    --color-fg-muted:       #4D4D4D;
+    --color-fg-subtle:      #6B6B6B;
+    --color-border:         #DEDEDE;
+    --color-border-dark:    #2B2B2B;
+    --color-success:        #2E9E6B;
+
+    /* ── Radius ── */
+    --radius-sm:   3px;
+    --radius-md:   6px;
+    --radius-lg:   10px;
+    --radius-xl:   16px;
+    --radius-pill: 999px;
+
+    /* ── Shadows ── */
+    --shadow-xs: 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    --shadow-xl: 0 16px 48px rgba(0,0,0,0.14);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'PierSans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
