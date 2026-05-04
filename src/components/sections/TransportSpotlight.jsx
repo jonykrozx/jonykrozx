@@ -69,7 +69,7 @@ export default function TransportSpotlight() {
               {tr.title}
             </motion.h2>
 
-            <motion.p variants={fadeUp} className="text-[#6B6B6B]" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
+            <motion.p variants={fadeUp} className="text-white/75" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
               {tr.subtitle}
             </motion.p>
 
@@ -79,7 +79,7 @@ export default function TransportSpotlight() {
                   <div className="w-4 h-4 bg-[#EB3D26]/12 flex items-center justify-center shrink-0 mt-0.5" style={{ borderRadius: 'var(--radius-sm)' }}>
                     <Check className="w-2.5 h-2.5 text-[#EB3D26]" strokeWidth={3} />
                   </div>
-                  <span className="text-[#AEAEAE]" style={{ fontSize: 'var(--text-sm)' }}>{feature}</span>
+                  <span className="text-white/85" style={{ fontSize: 'var(--text-sm)' }}>{feature}</span>
                 </div>
               ))}
             </motion.div>
