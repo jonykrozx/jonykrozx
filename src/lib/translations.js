@@ -2,7 +2,7 @@ export const translations = {
   es: {
     header: {
       writeus: 'Escríbenos',
-      phone: '318 897 0512',
+      phone: '316 526 7012',
       scheduleDemo: 'Agenda tu demostración',
       corporateEmail: 'Correo Corporativo',
       nav: {
@@ -185,7 +185,7 @@ export const translations = {
   en: {
     header: {
       writeus: 'Contact us',
-      phone: '318 897 0512',
+      phone: '316 526 7012',
       scheduleDemo: 'Schedule a demo',
       corporateEmail: 'Corporate Email',
       nav: {
