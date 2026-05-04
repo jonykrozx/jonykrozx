@@ -27,10 +27,19 @@ const FacebookIcon = () => (
   </svg>
 )
 
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+  </svg>
+)
+
 const socials = [
-  { icon: <LinkedinIcon />, label: 'LinkedIn' },
-  { icon: <YoutubeIcon />, label: 'YouTube' },
-  { icon: <FacebookIcon />, label: 'Facebook' },
+  { icon: <LinkedinIcon />, label: 'LinkedIn', href: 'https://www.linkedin.com/company/sistemas-comerciales-syscom/' },
+  { icon: <YoutubeIcon />, label: 'YouTube', href: 'https://www.youtube.com/channel/UC1Z6WblbXPD0KO_tUPbDBcQ' },
+  { icon: <FacebookIcon />, label: 'Facebook', href: 'https://www.facebook.com/SyscomSistemasComerciales' },
+  { icon: <InstagramIcon />, label: 'Instagram', href: 'https://www.instagram.com/syscom_software/' },
 ]
 
 export default function Footer() {
@@ -75,10 +84,13 @@ export default function Footer() {
 
             {/* Socials */}
             <div className="flex gap-2">
-              {socials.map(({ icon, label }) => (
-                <button
+              {socials.map(({ icon, label, href }) => (
+                <a
                   key={label}
+                  href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#6B6B6B] hover:text-white transition-colors duration-150"
                   style={{
                     width: '32px',
@@ -91,7 +103,7 @@ export default function Footer() {
                   }}
                 >
                   {icon}
-                </button>
+                </a>
               ))}
             </div>
           </div>
