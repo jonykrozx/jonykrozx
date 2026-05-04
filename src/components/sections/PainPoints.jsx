@@ -9,7 +9,7 @@ export default function PainPoints() {
   const p = t.painPoints
   return (
     <section className="bg-white dark:bg-[#0A0A0A] py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
           <motion.div
             className="space-y-6 order-2 lg:order-1"

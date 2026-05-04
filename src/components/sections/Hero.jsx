@@ -17,7 +17,7 @@ export default function Hero() {
       />
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, #EB3D26 0%, rgba(235,61,38,0) 100%)' }} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 flex flex-col lg:grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center min-h-[90vh]">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-24 flex flex-col lg:grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center min-h-[90vh]">
         <motion.div
           className="space-y-7"
           variants={stagger(0.12, 0.1)}
@@ -35,12 +35,12 @@ export default function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="text-white leading-[1.05] tracking-tight"
+            className="text-white tracking-tight"
             style={{
               fontSize: 'clamp(2rem, 5vw, var(--text-5xl))',
               fontWeight: 900,
               letterSpacing: 'var(--ls-tight)',
-              lineHeight: 'var(--lh-tight)',
+              lineHeight: '1.1',
             }}
           >
             {h.title}

@@ -7,7 +7,7 @@ export default function GetStarted() {
 
   return (
     <section className="bg-white dark:bg-[#1A1A1A] py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
         <p className="text-[#EB3D26] font-bold uppercase tracking-[0.18em] mb-3" style={{ fontSize: 'var(--text-xs)' }}>
           {g.eyebrow}
         </p>

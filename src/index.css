@@ -12,6 +12,19 @@ html[data-magicui-theme-vt="active"]::view-transition-group(root) {
   animation-duration: var(--magicui-theme-toggle-vt-duration);
 }
 
+/* ── Grid system (Figma spec) ──
+   Mobile:  4 col · 16px margin · 16px gutter
+   Tablet:  8 col · 32px margin · 20px gutter
+   Desktop: 12 col · 32px margin · 32px gutter  */
+:root {
+  --grid-margin-mobile: 16px;
+  --grid-margin-tablet: 32px;
+  --grid-margin-desktop: 32px;
+  --grid-gutter-mobile: 16px;
+  --grid-gutter-tablet: 20px;
+  --grid-gutter-desktop: 32px;
+}
+
 /* ── ShineBorder rotation ── */
 @keyframes shine-border-move {
   0%   { background-position: 0% 0%; }

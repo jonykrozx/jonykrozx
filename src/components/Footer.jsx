@@ -47,7 +47,7 @@ export default function Footer() {
   const f = t.footer
   return (
     <footer style={{ background: '#1A1A1A', padding: '56px 0 0' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
 
         {/* Top row: brand + columns */}
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-12 mb-10">

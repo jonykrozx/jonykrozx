@@ -6,7 +6,7 @@ export default function ModulesOverview() {
   const m = t.modules
   return (
     <section className="bg-white dark:bg-[#1A1A1A] py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[40fr_60fr] gap-12 lg:gap-20 items-center">
 
           {/* Left: decorative composition */}
@@ -51,7 +51,7 @@ export default function ModulesOverview() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {m.items.map((mod) => (
+              {m.items.map((mod, i) => (
                 <div
                   key={mod.name}
                   className="flex items-center gap-3 bg-[#F7F7F7] dark:bg-white/3 border border-[#EFEFEF] dark:border-white/5 hover:border-[#EB3D26]/25 transition-all group cursor-default"
@@ -61,8 +61,26 @@ export default function ModulesOverview() {
                     <div className="w-1.5 h-1.5 rounded-full bg-[#EB3D26]" />
                   </div>
                   <div>
-                    <p className="text-[#2B2B2B] dark:text-white font-semibold leading-none mb-0.5" style={{ fontSize: 'var(--text-sm)' }}>{mod.name}</p>
-                    <p className="text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>{mod.desc}</p>
+                    <BlurText
+                      text={mod.name}
+                      animateBy="words"
+                      direction="top"
+                      delay={40}
+                      stepDuration={0.3}
+                      threshold={0.3}
+                      className="text-[#2B2B2B] dark:text-white font-semibold leading-none mb-0.5"
+                      style={{ fontSize: 'var(--text-sm)' }}
+                    />
+                    <BlurText
+                      text={mod.desc}
+                      animateBy="words"
+                      direction="bottom"
+                      delay={30}
+                      stepDuration={0.25}
+                      threshold={0.3}
+                      className="text-[#AEAEAE]"
+                      style={{ fontSize: 'var(--text-xs)' }}
+                    />
                   </div>
                 </div>
               ))}

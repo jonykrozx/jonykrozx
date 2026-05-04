@@ -96,7 +96,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full">
       {/* Top bar */}
       <div className="bg-[#97D0CC] text-[#2B2B2B]" style={{ fontSize: 'var(--text-sm)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 h-9 flex items-center justify-between gap-2">
           {/* WhatsApp + phone */}
           <div className="flex items-center gap-1.5 shrink-0">
             <span className="text-[#2B2B2B]/60 font-medium">{h.writeus}</span>
@@ -154,7 +154,7 @@ export default function Header() {
         className="bg-white dark:bg-[#2B2B2B] border-b border-[#DEDEDE] dark:border-white/8"
         style={{ boxShadow: 'var(--shadow-xs)' }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center shrink-0">
             <img

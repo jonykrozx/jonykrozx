@@ -24,7 +24,7 @@ export default function SolutionsGrid() {
   const s = t.solutions
   return (
     <section className="bg-[#F7F7F7] dark:bg-[#1A1A1A] py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-14">
           <TextAnimate
             animation="blurInUp"

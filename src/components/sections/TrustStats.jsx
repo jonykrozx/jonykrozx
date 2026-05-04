@@ -14,7 +14,7 @@ export default function TrustStats() {
   const ts = t.trustStats
   return (
     <section className="bg-[#1A1A1A] py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.h2
           variants={fadeUp}
           initial="hidden"

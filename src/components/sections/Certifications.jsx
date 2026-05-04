@@ -7,7 +7,7 @@ export default function Certifications() {
   const c = t.certifications
   return (
     <section className="bg-white dark:bg-[#1A1A1A] py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto px-4 md:px-8">
         <TextAnimate
           animation="fadeIn"
           by="line"

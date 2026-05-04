@@ -6,7 +6,7 @@ export default function KeyBenefits() {
   const { t } = useLang()
   return (
     <section className="bg-white dark:bg-[#1A1A1A]" style={{ paddingTop: '35px', paddingBottom: '35px' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
           className="grid grid-cols-2 lg:grid-cols-4 gap-8"
           variants={stagger(0.1)}

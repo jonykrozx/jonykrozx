@@ -6,7 +6,7 @@ export default function ShowcaseImages() {
 
   return (
     <section className="bg-[#1A1A1A] py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <p
           className="text-center text-[#4D4D4D] tracking-[0.18em] uppercase mb-10 font-medium"
           style={{ fontSize: 'var(--text-xs)' }}
