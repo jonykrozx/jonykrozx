@@ -37,6 +37,13 @@ export const translations = {
           bg: '/images/hero-invoice.png',
           gradient: '#4E9E97',
         },
+        {
+          badge: 'Tutoriales SYSCOM',
+          title: 'APRENDE A DOMINAR SYSCOM CON NUESTROS TUTORIALES EN YOUTUBE',
+          subtitle: 'Accede a videos paso a paso sobre facturación electrónica, nómina, contabilidad, transporte y más. Capacita a tu equipo sin costo adicional.',
+          cta: 'Ver tutoriales',
+          ctaHref: 'https://www.youtube.com/channel/UC1Z6WblbXPD0KO_tUPbDBcQ',
+        },
       ],
     },
     keyBenefits: [
@@ -231,6 +238,13 @@ export const translations = {
           ctaHref: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0opR77BM4HZuGTkYDqWCFBpzH8RY2GdNAcY29Y-gc9qRDw-uhYwU9OUjZdUD0FChiXP06wFKas',
           bg: '/images/hero-invoice.png',
           gradient: '#4E9E97',
+        },
+        {
+          badge: 'SYSCOM Tutorials',
+          title: 'LEARN TO MASTER SYSCOM WITH OUR YOUTUBE TUTORIALS',
+          subtitle: 'Access step-by-step videos on electronic invoicing, payroll, accounting, transport and more. Train your team at no extra cost.',
+          cta: 'Watch tutorials',
+          ctaHref: 'https://www.youtube.com/channel/UC1Z6WblbXPD0KO_tUPbDBcQ',
         },
       ],
     },
