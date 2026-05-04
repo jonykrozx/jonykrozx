@@ -25,6 +25,22 @@ html[data-magicui-theme-vt="active"]::view-transition-group(root) {
   --grid-gutter-desktop: 32px;
 }
 
+/* ── Marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% - var(--gap, 1rem))); }
+}
+@keyframes marquee-vertical {
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(-100% - var(--gap, 1rem))); }
+}
+.animate-marquee {
+  animation: marquee var(--duration, 20s) linear infinite;
+}
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 20s) linear infinite;
+}
+
 /* ── ShineBorder rotation ── */
 @keyframes shine-border-move {
   0%   { background-position: 0% 0%; }
