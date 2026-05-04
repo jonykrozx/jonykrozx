@@ -106,7 +106,7 @@ export default function Header() {
 
           {/* Center links */}
           <div className="hidden md:flex items-center gap-4 text-[#2B2B2B]/60">
-            <a href="#" className="hover:text-[#2B2B2B] transition-colors duration-150">{h.scheduleDemo}</a>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0opR77BM4HZuGTkYDqWCFBpzH8RY2GdNAcY29Y-gc9qRDw-uhYwU9OUjZdUD0FChiXP06wFKas" target="_blank" rel="noopener noreferrer" className="hover:text-[#2B2B2B] transition-colors duration-150">{h.scheduleDemo}</a>
           </div>
 
           {/* Right: corporate email + separator + theme toggle + lang toggle */}
