@@ -98,11 +98,16 @@ export default function Header() {
       <div className="bg-[#97D0CC] text-[#2B2B2B]" style={{ fontSize: 'var(--text-sm)' }}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-9 flex items-center justify-between gap-2">
           {/* WhatsApp + phone */}
-          <div className="flex items-center gap-1.5 shrink-0">
+          <a
+            href="https://api.whatsapp.com/send?phone=573165267012&text=Hola%2C%20quiero%20hacer%20una%20pregunta%20acerca%20de%3A%20Escribo%20desde%20Ventas"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 shrink-0 hover:opacity-80 transition-opacity duration-150"
+          >
             <span className="text-[#2B2B2B]/60 font-medium">{h.writeus}</span>
             <span className="text-[#25D366]"><WhatsAppIcon /></span>
             <span className="text-[#2B2B2B] font-medium tracking-wide">{h.phone}</span>
-          </div>
+          </a>
 
           {/* Center links */}
           <div className="hidden md:flex items-center gap-4 text-[#2B2B2B]/60">
