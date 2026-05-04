@@ -1,12 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
 const slideVariants = {
-  enter: (dir) => ({ opacity: 0, x: dir > 0 ? 56 : -56 }),
-  center: { opacity: 1, x: 0, transition: { duration: 0.55, ease } },
-  exit: (dir) => ({ opacity: 0, x: dir > 0 ? -56 : 56, transition: { duration: 0.4, ease } }),
+  enter: (dir) => ({ opacity: 0, x: dir > 0 ? 48 : -48 }),
+  center: { opacity: 1, x: 0, transition: { duration: 0.5, ease } },
+  exit: (dir) => ({ opacity: 0, x: dir > 0 ? -48 : 48, transition: { duration: 0.35, ease } }),
 }
 
 export default function Hero() {
@@ -14,56 +14,76 @@ export default function Hero() {
   const slides = t.hero.slides
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(1)
+  const timerRef = useRef(null)
 
-  useEffect(() => {
-    const timer = setInterval(() => {
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current)
+    timerRef.current = setInterval(() => {
       setDirection(1)
       setCurrent(c => (c + 1) % slides.length)
     }, 6000)
-    return () => clearInterval(timer)
+  }
+
+  useEffect(() => {
+    startTimer()
+    return () => clearInterval(timerRef.current)
   }, [slides.length])
 
   const goTo = (idx) => {
     setDirection(idx > current ? 1 : -1)
     setCurrent(idx)
+    startTimer()
   }
 
   const slide = slides[current]
+  const bgImage = slide.bg || '/images/hero-bg.jpg'
 
   return (
     <section className="relative overflow-hidden" style={{ minHeight: '90vh' }}>
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: 'url(/images/hero-bg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      {/* Background crossfade */}
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={bgImage}
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease }}
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+      </AnimatePresence>
+
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, #EB3D26 0%, rgba(235,61,38,0) 100%)' }} />
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-24 flex flex-col lg:grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center min-h-[90vh]">
-        <div className="space-y-7 w-full">
+        <div className="w-full space-y-7">
+          {/* Badge placeholder — always reserves height so layout stays stable */}
+          <div style={{ minHeight: '28px' }}>
+            {slide.badge && (
+              <span
+                className="inline-flex items-center gap-2 text-white border border-white/25 bg-white/8 font-medium"
+                style={{ fontSize: 'var(--text-xs)', padding: '6px 14px', borderRadius: 'var(--radius-pill)', letterSpacing: 'var(--ls-caps)', textTransform: 'uppercase' }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
+                {slide.badge}
+              </span>
+            )}
+          </div>
+
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={current}
-              className="space-y-7"
+              className="space-y-6"
               custom={direction}
               variants={slideVariants}
               initial="enter"
               animate="center"
               exit="exit"
             >
-              {slide.badge && (
-                <span
-                  className="inline-flex items-center gap-2 text-white border border-white/25 bg-white/8 font-medium"
-                  style={{ fontSize: 'var(--text-xs)', padding: '6px 14px', borderRadius: 'var(--radius-pill)', letterSpacing: 'var(--ls-caps)', textTransform: 'uppercase' }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" />
-                  {slide.badge}
-                </span>
-              )}
-
               <h1
                 className="text-white tracking-tight"
                 style={{
@@ -101,10 +121,9 @@ export default function Hero() {
                 key={i}
                 onClick={() => goTo(i)}
                 aria-label={`Slide ${i + 1}`}
-                className={`transition-all duration-300 rounded-full cursor-pointer border-0 bg-transparent p-0 ${
+                className={`transition-all duration-300 rounded-full cursor-pointer ${
                   i === current ? 'bg-white w-5 h-1.5' : 'bg-white/30 w-1.5 h-1.5'
                 }`}
-                style={{ display: 'block' }}
               />
             ))}
           </div>
