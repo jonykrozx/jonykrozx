@@ -66,7 +66,7 @@ export default function Footer() {
             {/* Phone */}
             <div className="flex items-center gap-2 mb-5">
               <span className="text-[#25D366]"><WhatsAppIcon /></span>
-              <span style={{ fontSize: 'var(--text-xs)', color: '#6B6B6B' }}>318 897 0512</span>
+              <span style={{ fontSize: 'var(--text-xs)', color: '#6B6B6B' }}>316 526 7012</span>
             </div>
 
             {/* Socials */}
