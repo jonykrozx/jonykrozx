@@ -30,7 +30,7 @@ export const translations = {
           cta: 'Hablar con un asesor',
         },
         {
-          title: 'Factura electrónicamente sin errores ni reprocesos',
+          title: 'FACTURA ELECTRÓNICAMENTE SIN ERRORES NI REPROCESOS',
           subtitle: 'Emite facturas electrónicas de forma rápida, cumple con la DIAN y mantén tu información organizada sin procesos manuales.',
           cta: 'Solicitar demo',
           ctaHref: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0opR77BM4HZuGTkYDqWCFBpzH8RY2GdNAcY29Y-gc9qRDw-uhYwU9OUjZdUD0FChiXP06wFKas',
@@ -232,7 +232,7 @@ export const translations = {
           cta: 'Talk to an advisor',
         },
         {
-          title: 'Invoice electronically without errors or rework',
+          title: 'INVOICE ELECTRONICALLY WITHOUT ERRORS OR REWORK',
           subtitle: 'Issue electronic invoices quickly, comply with DIAN and keep your information organized without manual processes.',
           cta: 'Request demo',
           ctaHref: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0opR77BM4HZuGTkYDqWCFBpzH8RY2GdNAcY29Y-gc9qRDw-uhYwU9OUjZdUD0FChiXP06wFKas',
