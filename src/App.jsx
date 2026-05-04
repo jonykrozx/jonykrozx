@@ -15,7 +15,7 @@ import GetStarted from './components/sections/GetStarted'
 import Footer from './components/Footer'
 
 function App() {
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
     const root = document.documentElement
