@@ -22,10 +22,20 @@ export const translations = {
       ],
     },
     hero: {
-      badge: 'Software Empresarial',
-      title: 'CONTROL TOTAL DE TU EMPRESA CON UN SISTEMA DISEÑADO PARA TU OPERACIÓN',
-      subtitle: 'Maneja tu flota, administra tu contabilidad, cumple con la normativa vigente en Colombia y optimiza todos tus procesos administrativos y financieros.',
-      cta: 'Hablar con un asesor',
+      slides: [
+        {
+          badge: 'Software Empresarial',
+          title: 'CONTROL TOTAL DE TU EMPRESA CON UN SISTEMA DISEÑADO PARA TU OPERACIÓN',
+          subtitle: 'Maneja tu flota, administra tu contabilidad, cumple con la normativa vigente en Colombia y optimiza todos tus procesos administrativos y financieros.',
+          cta: 'Hablar con un asesor',
+        },
+        {
+          title: 'Factura electrónicamente sin errores ni reprocesos',
+          subtitle: 'Emite facturas electrónicas de forma rápida, cumple con la DIAN y mantén tu información organizada sin procesos manuales.',
+          cta: 'Solicitar demo',
+          ctaHref: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0opR77BM4HZuGTkYDqWCFBpzH8RY2GdNAcY29Y-gc9qRDw-uhYwU9OUjZdUD0FChiXP06wFKas',
+        },
+      ],
     },
     keyBenefits: [
       'Cumple con la DIAN y RNDC sin complicaciones',
@@ -205,10 +215,20 @@ export const translations = {
       ],
     },
     hero: {
-      badge: 'Business Software',
-      title: 'TOTAL CONTROL OF YOUR COMPANY WITH A SYSTEM DESIGNED FOR YOUR OPERATION',
-      subtitle: 'Manage your fleet, handle your accounting, comply with current regulations in Colombia and optimize all your administrative and financial processes.',
-      cta: 'Talk to an advisor',
+      slides: [
+        {
+          badge: 'Business Software',
+          title: 'TOTAL CONTROL OF YOUR COMPANY WITH A SYSTEM DESIGNED FOR YOUR OPERATION',
+          subtitle: 'Manage your fleet, handle your accounting, comply with current regulations in Colombia and optimize all your administrative and financial processes.',
+          cta: 'Talk to an advisor',
+        },
+        {
+          title: 'Invoice electronically without errors or rework',
+          subtitle: 'Issue electronic invoices quickly, comply with DIAN and keep your information organized without manual processes.',
+          cta: 'Request demo',
+          ctaHref: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0opR77BM4HZuGTkYDqWCFBpzH8RY2GdNAcY29Y-gc9qRDw-uhYwU9OUjZdUD0FChiXP06wFKas',
+        },
+      ],
     },
     keyBenefits: [
       'Comply with DIAN and RNDC without complications',
