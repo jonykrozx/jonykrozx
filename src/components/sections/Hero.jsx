@@ -40,7 +40,7 @@ export default function Hero() {
   const gradientColor = slide.gradient || '#EB3D26'
 
   return (
-    <section className="relative overflow-hidden" style={{ minHeight: '90vh' }}>
+    <section className="relative overflow-hidden" style={{ height: '90vh', minHeight: '560px' }}>
       {/* Background crossfade */}
       <AnimatePresence mode="sync">
         <motion.div
@@ -67,7 +67,7 @@ export default function Hero() {
         style={{ background: `linear-gradient(to right, ${gradientColor} 0%, ${gradientColor}00 100%)` }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-24 flex flex-col lg:grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center min-h-[90vh]">
+      <div className="relative h-full max-w-7xl mx-auto px-4 md:px-8 py-24 flex flex-col lg:grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
         <div className="w-full space-y-7">
           {/* Badge placeholder — always reserves height so layout stays stable */}
           <div style={{ minHeight: '28px' }}>
