@@ -71,9 +71,9 @@ void main() {
   );
   float f = fbm(wuv + r);
 
-  vec3 col = mix(vec3(0.04, 0.03, 0.03), vec3(0.35, 0.12, 0.06), clamp(f * f * 4.0, 0.0, 1.0));
-  col = mix(col, vec3(0.08, 0.05, 0.04), clamp(length(q), 0.0, 1.0));
-  col = mix(col, vec3(0.20, 0.07, 0.04), f);
+  vec3 col = mix(vec3(0.08, 0.06, 0.06), vec3(0.80, 0.32, 0.10), clamp(f * f * 4.0, 0.0, 1.0));
+  col = mix(col, vec3(0.14, 0.09, 0.07), clamp(length(q), 0.0, 1.0));
+  col = mix(col, vec3(0.55, 0.20, 0.08), f);
 
   if (u_noise > 0.0) {
     float n = hash(uv * u_res + fract(t * 37.0)) - 0.5;
