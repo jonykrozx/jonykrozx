@@ -37,6 +37,7 @@ export default function Hero() {
 
   const slide = slides[current]
   const bgImage = slide.bg || '/images/hero-bg.jpg'
+  const gradientColor = slide.gradient || '#EB3D26'
 
   return (
     <section className="relative overflow-hidden" style={{ minHeight: '90vh' }}>
@@ -57,7 +58,14 @@ export default function Hero() {
         />
       </AnimatePresence>
 
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, #EB3D26 0%, rgba(235,61,38,0) 100%)' }} />
+      <motion.div
+        key={gradientColor}
+        className="absolute inset-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease }}
+        style={{ background: `linear-gradient(to right, ${gradientColor} 0%, ${gradientColor}00 100%)` }}
+      />
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-24 flex flex-col lg:grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center min-h-[90vh]">
         <div className="w-full space-y-7">
