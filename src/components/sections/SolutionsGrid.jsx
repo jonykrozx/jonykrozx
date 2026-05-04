@@ -1,4 +1,5 @@
 import { useLang } from '../../lib/LanguageContext'
+import { TextAnimate } from '../ui/TextAnimate'
 
 const iconBgs = [
   { bg: 'linear-gradient(135deg, #EB3D26, #c73320)', shadow: 'rgba(235,61,38,0.3)' },
@@ -25,12 +26,16 @@ export default function SolutionsGrid() {
     <section className="bg-[#F7F7F7] dark:bg-[#1A1A1A] py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-14">
-          <h2
+          <TextAnimate
+            animation="blurInUp"
+            by="character"
+            as="h2"
+            staggerDelay={0.03}
             className="text-[#2B2B2B] dark:text-white font-bold"
             style={{ fontSize: 'var(--text-3xl)', letterSpacing: 'var(--ls-tight)', lineHeight: 'var(--lh-snug)' }}
           >
             {s.title}
-          </h2>
+          </TextAnimate>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

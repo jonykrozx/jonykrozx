@@ -1,6 +1,7 @@
-import { Sun, Moon, Menu, ChevronDown } from 'lucide-react'
+import { Menu, ChevronDown } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 import { useLang } from '../lib/LanguageContext'
+import { AnimatedThemeToggler } from './ui/AnimatedThemeToggler'
 
 const WhatsAppIcon = () => (
   <svg viewBox="0 0 24 24" className="w-3 h-3" fill="currentColor">
@@ -8,7 +9,7 @@ const WhatsAppIcon = () => (
   </svg>
 )
 
-function SolucionesDropdown({ isDark, items, label }) {
+function SolucionesDropdown({ items, label }) {
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
 
@@ -86,7 +87,7 @@ function SolucionesDropdown({ isDark, items, label }) {
   )
 }
 
-export default function Header({ isDark, toggleTheme }) {
+export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { lang, toggle, t } = useLang()
   const h = t.header
@@ -112,17 +113,13 @@ export default function Header({ isDark, toggleTheme }) {
           <div className="hidden md:flex items-center shrink-0" style={{ gap: '10px' }}>
             <a href="#" className="text-[#2B2B2B]/60 hover:text-[#2B2B2B] transition-colors duration-150">{h.corporateEmail}</a>
             <span className="text-[#2B2B2B]/20">|</span>
-            <button
-              onClick={toggleTheme}
+            <AnimatedThemeToggler
+              variant="circle"
+              duration={400}
               aria-label="Toggle theme"
               className="p-1.5 bg-black/8 hover:bg-black/15 transition-colors duration-150 cursor-pointer"
               style={{ borderRadius: 'var(--radius-md)' }}
-            >
-              {isDark
-                ? <Sun className="w-3.5 h-3.5 text-[#2B2B2B]" />
-                : <Moon className="w-3.5 h-3.5 text-[#2B2B2B]/60" />
-              }
-            </button>
+            />
             <button
               onClick={toggle}
               className="px-2 py-1 bg-black/8 hover:bg-black/15 text-[#2B2B2B] font-bold transition-colors duration-150 cursor-pointer"
@@ -134,17 +131,13 @@ export default function Header({ isDark, toggleTheme }) {
 
           {/* Mobile: theme + lang toggles */}
           <div className="md:hidden flex items-center gap-1.5 shrink-0">
-            <button
-              onClick={toggleTheme}
+            <AnimatedThemeToggler
+              variant="circle"
+              duration={400}
               aria-label="Toggle theme"
               className="p-1.5 bg-black/8 hover:bg-black/15 transition-colors duration-150 cursor-pointer"
               style={{ borderRadius: 'var(--radius-md)' }}
-            >
-              {isDark
-                ? <Sun className="w-3.5 h-3.5 text-[#2B2B2B]" />
-                : <Moon className="w-3.5 h-3.5 text-[#2B2B2B]/60" />
-              }
-            </button>
+            />
             <button
               onClick={toggle}
               className="px-2 py-1 bg-black/8 hover:bg-black/15 text-[#2B2B2B] font-bold transition-colors duration-150 cursor-pointer"
@@ -180,7 +173,7 @@ export default function Header({ isDark, toggleTheme }) {
             >
               {h.nav.about}
             </a>
-            <SolucionesDropdown isDark={isDark} items={h.solutions} label={h.nav.solutions} />
+            <SolucionesDropdown items={h.solutions} label={h.nav.solutions} />
             {[h.nav.community, h.nav.contact].map((item) => (
               <a
                 key={item}

@@ -54,21 +54,8 @@ export default function Footer() {
           {/* Brand column */}
           <div style={{ flexShrink: 0, width: '220px' }} className="w-full lg:w-[220px]">
             {/* Logo */}
-            <div className="flex items-center gap-2.5 mb-4">
-              <div
-                className="w-8 h-8 bg-[#EB3D26] flex items-center justify-center"
-                style={{ borderRadius: 'var(--radius-md)' }}
-              >
-                <span className="text-white font-black text-base leading-none">S</span>
-              </div>
-              <div className="leading-none">
-                <div className="text-white font-black tracking-tight" style={{ fontSize: 'var(--text-lg)', letterSpacing: 'var(--ls-tight)' }}>
-                  SYSCOM
-                </div>
-                <div className="text-[#4D4D4D] tracking-[0.15em] uppercase font-medium mt-0.5" style={{ fontSize: '8px' }}>
-                  Sistemas Comerciales
-                </div>
-              </div>
+            <div className="mb-4">
+              <img src="/images/logo.png" alt="SYSCOM Sistemas Comerciales" style={{ height: '40px', width: 'auto' }} />
             </div>
 
             {/* Description */}

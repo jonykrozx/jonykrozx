@@ -1,4 +1,5 @@
 import { useLang } from '../../lib/LanguageContext'
+import BlurText from '../ui/BlurText'
 
 export default function ModulesOverview() {
   const { t } = useLang()
@@ -27,12 +28,26 @@ export default function ModulesOverview() {
           {/* Right: content */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}>
-                {m.title}
-              </h2>
-              <p className="text-[#6B6B6B] mt-3" style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--lh-relaxed)' }}>
-                {m.subtitle}
-              </p>
+              <BlurText
+                text={m.title}
+                as="h2"
+                animateBy="words"
+                direction="top"
+                delay={80}
+                stepDuration={0.4}
+                className="text-[#2B2B2B] dark:text-white font-bold"
+                style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
+              />
+              <BlurText
+                text={m.subtitle}
+                as="p"
+                animateBy="words"
+                direction="bottom"
+                delay={30}
+                stepDuration={0.3}
+                className="text-[#6B6B6B] mt-3"
+                style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--lh-relaxed)' }}
+              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">

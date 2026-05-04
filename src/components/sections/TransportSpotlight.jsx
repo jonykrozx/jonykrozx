@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import { fadeUp, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
+import { DarkVeil } from '../ui/DarkVeil'
 
 const TRANSPORT_IMAGE = '/images/transport.jpg'
 
@@ -9,8 +10,9 @@ export default function TransportSpotlight() {
   const { t } = useLang()
   const tr = t.transport
   return (
-    <section className="bg-[#2B2B2B] py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="relative bg-[#2B2B2B] py-20 overflow-hidden">
+      <DarkVeil hueShift={0} noiseIntensity={0} scanlineIntensity={0} speed={0.5} scanlineFrequency={0} warpAmount={0} resolutionScale={1} />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr] gap-12 lg:gap-16 items-start">
 
           {/* Left: image */}
