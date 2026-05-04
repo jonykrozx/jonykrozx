@@ -111,7 +111,7 @@ export default function Header() {
 
           {/* Right: corporate email + separator + theme toggle + lang toggle */}
           <div className="hidden md:flex items-center shrink-0" style={{ gap: '10px' }}>
-            <a href="#" className="text-[#2B2B2B]/60 hover:text-[#2B2B2B] transition-colors duration-150">{h.corporateEmail}</a>
+            <a href="https://webmail.syscom.com.co/" target="_blank" rel="noopener noreferrer" className="text-[#2B2B2B]/60 hover:text-[#2B2B2B] transition-colors duration-150">{h.corporateEmail}</a>
             <span className="text-[#2B2B2B]/20">|</span>
             <AnimatedThemeToggler
               variant="circle"
