@@ -167,7 +167,7 @@ export const translations = {
       title: 'EMPIEZA EN POCOS PASOS',
       subtitle: 'Gestiona tu empresa con un sistema desarrollado con experiencia y conocimiento del mercado colombiano, cumpliendo con la normativa y optimizando tu operación.',
       steps: ['Solicita una demo', 'Analizamos tu operación', 'Implementamos el sistema', 'Empieza a tener control total'],
-      cta: 'Empieza a tener el control real de tu empresa',
+      cta: 'Empieza ahora',
     },
     footer: {
       description: 'Software empresarial para transporte, contabilidad y gestión operativa. Colombia.',
@@ -362,7 +362,7 @@ export const translations = {
       title: 'GET STARTED IN A FEW STEPS',
       subtitle: 'Manage your company with a system developed with experience and knowledge of the Colombian market, complying with regulations and optimizing your operation.',
       steps: ['Request a demo', 'We analyze your operation', 'We implement the system', 'Start having total control'],
-      cta: 'Start having real control of your company',
+      cta: 'Get started now',
     },
     footer: {
       description: 'Business software for transport, accounting and operational management. Colombia.',
