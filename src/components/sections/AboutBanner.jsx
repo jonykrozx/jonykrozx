@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { slideLeft, slideRight } from '../../lib/motion'
+import { useLang } from '../../lib/LanguageContext'
 
 const ABOUT_IMAGE = '/images/about.jpg'
 
 export default function AboutBanner() {
+  const { t } = useLang()
   return (
     <section className="bg-white dark:bg-[#0A0A0A] py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -27,7 +29,6 @@ export default function AboutBanner() {
                 e.currentTarget.nextElementSibling.style.display = 'flex'
               }}
             />
-            {/* Fallback: red block matching the design */}
             <div
               className="bg-[#EB3D26] w-full h-full absolute inset-0"
               style={{ display: 'none', borderRadius: 'var(--radius-xl)' }}
@@ -45,7 +46,7 @@ export default function AboutBanner() {
               className="text-[#2B2B2B] dark:text-[#AEAEAE]"
               style={{ fontSize: 'var(--text-lg)', lineHeight: 'var(--lh-relaxed)' }}
             >
-              En SYSCOM entendemos cómo funciona tu negocio. Nuestro conocimiento del sector y experiencia nos permite ofrecer soluciones reales para empresas en Colombia.
+              {t.about.text}
             </p>
           </motion.div>
 

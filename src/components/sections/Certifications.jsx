@@ -1,4 +1,8 @@
+import { useLang } from '../../lib/LanguageContext'
+
 export default function Certifications() {
+  const { t } = useLang()
+  const c = t.certifications
   return (
     <section className="bg-white dark:bg-[#1A1A1A] py-16">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
@@ -6,13 +10,13 @@ export default function Certifications() {
           className="text-center text-[#2B2B2B] dark:text-white font-bold mb-3"
           style={{ fontSize: 'var(--text-3xl)', letterSpacing: 'var(--ls-tight)', lineHeight: 'var(--lh-snug)' }}
         >
-          CUMPLE CON LA DIAN SIN PROCESOS COMPLEJOS
+          {c.title}
         </h2>
         <p
           className="text-center text-[#6B6B6B] mb-10 max-w-xl mx-auto"
           style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}
         >
-          SYSCOM te permite gestionar la facturación electrónica y la nómina electrónica de forma simple, integrada y sin reprocesos.
+          {c.subtitle}
         </p>
         <div className="flex flex-col sm:flex-row justify-center" style={{ gap: '130px' }}>
           {/* Card 1 */}
@@ -25,7 +29,7 @@ export default function Certifications() {
           >
             <div className="flex flex-col items-center text-center">
               <img src="/images/autofactura-logo.png" alt="Sistema de Auto Factura" style={{ width: '212px', height: 'auto' }} />
-              <p className="text-[#4D4D4D] mt-0.5" style={{ fontSize: 'var(--text-xs)' }}>Sistema diseñado para que tus clientes puedan emitir facturas electrónicas de manera rápida y controlada.</p>
+              <p className="text-[#4D4D4D] mt-0.5" style={{ fontSize: 'var(--text-xs)' }}>{c.card1}</p>
             </div>
           </a>
 
@@ -36,7 +40,7 @@ export default function Certifications() {
           >
             <div className="flex flex-col items-center text-center">
               <img src="/images/nomina-logo.png" alt="Nómina Electrónica" style={{ width: '186px', height: 'auto' }} />
-              <p className="text-[#4D4D4D] mt-0.5" style={{ fontSize: 'var(--text-xs)' }}>Gestiona la información de tus empleados y cumple con la normativa vigente sin errores.</p>
+              <p className="text-[#4D4D4D] mt-0.5" style={{ fontSize: 'var(--text-xs)' }}>{c.card2}</p>
             </div>
           </div>
         </div>

@@ -1,14 +1,9 @@
 import { motion } from 'framer-motion'
 import { fadeUp, stagger } from '../../lib/motion'
-
-const benefits = [
-  'Cumple con la DIAN y RNDC sin complicaciones',
-  'Licencia vitalicia con servicios de soporte y actualización',
-  'Control total de tu operación en tiempo real',
-  'Adaptado a empresas de transporte de carga y otros sectores',
-]
+import { useLang } from '../../lib/LanguageContext'
 
 export default function KeyBenefits() {
+  const { t } = useLang()
   return (
     <section className="bg-white dark:bg-[#1A1A1A]" style={{ paddingTop: '35px', paddingBottom: '35px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -19,7 +14,7 @@ export default function KeyBenefits() {
           whileInView="show"
           viewport={{ once: true, amount: 0.4 }}
         >
-          {benefits.map((text, i) => (
+          {t.keyBenefits.map((text, i) => (
             <motion.p
               key={i}
               variants={fadeUp}

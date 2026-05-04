@@ -1,23 +1,16 @@
 import { motion } from 'framer-motion'
 import { slideLeft, slideRight, fadeUp, stagger } from '../../lib/motion'
-
-const painPoints = [
-  'Errores en facturación y procesos contables',
-  'Falta de control en operaciones (especialmente en empresas de transporte de carga)',
-  'Riesgos por incumplimiento DIAN y RNDC',
-  'Sistemas limitados que no se adaptan a tu negocio',
-]
+import { useLang } from '../../lib/LanguageContext'
 
 const PAINPOINTS_IMAGE = '/images/painpoints.jpg'
 
 export default function PainPoints() {
+  const { t } = useLang()
+  const p = t.painPoints
   return (
     <section className="bg-white dark:bg-[#0A0A0A] py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-
         <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
-
-          {/* Left: content */}
           <motion.div
             className="space-y-6 order-2 lg:order-1"
             variants={stagger(0.1, 0.05)}
@@ -30,7 +23,7 @@ export default function PainPoints() {
               className="text-[#2B2B2B] dark:text-white font-black"
               style={{ fontSize: 'var(--text-3xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
             >
-              SABEMOS LO QUE ESTÁ FRENANDO TU CONTROL OPERATIVO
+              {p.title}
             </motion.h2>
 
             <motion.p
@@ -38,11 +31,11 @@ export default function PainPoints() {
               className="text-[#6B6B6B]"
               style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}
             >
-              Administrar una empresa en Colombia no es fácil. Entre la DIAN, la operación diaria y los errores manuales, pierdes tiempo, dinero y control.
+              {p.subtitle}
             </motion.p>
 
             <motion.ul variants={fadeUp} className="space-y-3">
-              {painPoints.map((point, i) => (
+              {p.items.map((point, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <div
                     className="w-5 h-5 bg-[#EB3D26]/10 flex items-center justify-center shrink-0 mt-0.5"
@@ -60,7 +53,6 @@ export default function PainPoints() {
             </motion.ul>
           </motion.div>
 
-          {/* Right: image */}
           <motion.div
             variants={slideRight}
             initial="hidden"
@@ -87,10 +79,8 @@ export default function PainPoints() {
               </svg>
             </div>
           </motion.div>
-
         </div>
 
-        {/* Bottom: centered callout */}
         <motion.p
           variants={fadeUp}
           initial="hidden"
@@ -99,9 +89,8 @@ export default function PainPoints() {
           className="text-center text-[#2B2B2B] dark:text-white font-semibold mt-14 max-w-3xl mx-auto"
           style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}
         >
-          SYSCOM integra tu operación, elimina errores y te da control total desde un solo sistema
+          {p.callout}
         </motion.p>
-
       </div>
     </section>
   )

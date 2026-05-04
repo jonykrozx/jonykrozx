@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { LanguageProvider } from './lib/LanguageContext'
 import Header from './components/Header'
 import Hero from './components/sections/Hero'
 import KeyBenefits from './components/sections/KeyBenefits'
@@ -26,6 +27,7 @@ function App() {
   }, [isDark])
 
   return (
+    <LanguageProvider>
     <div className="min-h-screen bg-white dark:bg-[#0A0A0A] overflow-x-hidden">
       <Header isDark={isDark} toggleTheme={() => setIsDark(d => !d)} />
       <main>
@@ -43,6 +45,7 @@ function App() {
       </main>
       <Footer />
     </div>
+    </LanguageProvider>
   )
 }
 
