@@ -11,7 +11,12 @@ export default function ModulesOverview() {
 
           {/* Left: decorative composition */}
           <div className="relative h-80 hidden lg:block">
-            <div className="absolute top-0 left-0 w-56 h-56" style={{ background: 'linear-gradient(135deg, #94D1CA, #4e9e97)', borderRadius: 'var(--radius-xl)' }} />
+            <img
+              src="/images/138148.jpg"
+              alt="Gestión contable con SYSCOM"
+              className="absolute top-0 left-0 w-56 h-56 object-cover"
+              style={{ borderRadius: 'var(--radius-xl)' }}
+            />
             <div className="absolute top-3 left-3 w-56 h-56 bg-[#94D1CA]/10 border border-[#94D1CA]/20" style={{ borderRadius: 'var(--radius-xl)' }} />
             <div className="absolute bottom-0 right-8 w-44 h-44" style={{ background: 'linear-gradient(135deg, #EB3D26, #c73320)', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-xl)' }} />
             <div className="absolute bottom-3 right-5 w-44 h-44 bg-[#EB3D26]/10 border border-[#EB3D26]/20" style={{ borderRadius: 'var(--radius-xl)' }} />
