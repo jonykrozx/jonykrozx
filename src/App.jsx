@@ -21,9 +21,9 @@ function App() {
 
   return (
     <LanguageProvider>
-    <div className="min-h-screen bg-white dark:bg-[#0A0A0A] overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-[#0A0A0A]">
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <KeyBenefits />
         <PainPoints />
