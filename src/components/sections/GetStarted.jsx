@@ -1,4 +1,5 @@
 import { useLang } from '../../lib/LanguageContext'
+import { TextAnimate } from '../ui/TextAnimate'
 
 export default function GetStarted() {
   const { t } = useLang()
@@ -8,15 +9,38 @@ export default function GetStarted() {
   return (
     <section className="bg-white dark:bg-[#1A1A1A] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
-        <p className="text-[#EB3D26] font-bold uppercase tracking-[0.18em] mb-3" style={{ fontSize: 'var(--text-xs)' }}>
+        <TextAnimate
+          animation="slideUp"
+          by="word"
+          as="p"
+          className="text-[#EB3D26] font-bold uppercase tracking-[0.18em] mb-3"
+          style={{ fontSize: 'var(--text-xs)' }}
+        >
           {g.eyebrow}
-        </p>
-        <h2 className="text-[#EB3D26] font-black mb-4" style={{ fontSize: 'var(--text-3xl)', letterSpacing: 'var(--ls-tight)', lineHeight: 'var(--lh-snug)' }}>
+        </TextAnimate>
+
+        <TextAnimate
+          animation="slideUp"
+          by="word"
+          as="h2"
+          staggerDelay={0.06}
+          className="text-[#EB3D26] font-black mb-4"
+          style={{ fontSize: 'var(--text-3xl)', letterSpacing: 'var(--ls-tight)', lineHeight: 'var(--lh-snug)' }}
+        >
           {g.title}
-        </h2>
-        <p className="text-[#6B6B6B] max-w-md mx-auto mb-16" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
+        </TextAnimate>
+
+        <TextAnimate
+          animation="slideUp"
+          by="word"
+          as="p"
+          staggerDelay={0.04}
+          delay={0.1}
+          className="text-[#6B6B6B] max-w-md mx-auto mb-16"
+          style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}
+        >
           {g.subtitle}
-        </p>
+        </TextAnimate>
 
         <div className="relative max-w-4xl mx-auto">
           <div
