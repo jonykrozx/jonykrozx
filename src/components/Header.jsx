@@ -1,5 +1,6 @@
 import { Menu, ChevronDown } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLang } from '../lib/LanguageContext'
 import { AnimatedThemeToggler } from './ui/AnimatedThemeToggler'
 
@@ -172,33 +173,40 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center shrink-0">
+          <Link to="/" className="flex items-center shrink-0">
             <img
               src="/images/logo.png"
               alt="SYSCOM Sistemas Comerciales"
               className="h-10 w-auto"
             />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="px-3 py-2 text-[#4D4D4D] dark:text-white/60 hover:text-[#EB3D26] dark:hover:text-white hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-all duration-150 font-medium"
               style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
             >
               {h.nav.about}
-            </a>
+            </Link>
             <SolucionesDropdown items={h.solutions} label={h.nav.solutions} />
+            <Link
+              to="/inicio-2"
+              className="px-3 py-2 text-[#4D4D4D] dark:text-white/60 hover:text-[#EB3D26] dark:hover:text-white hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-all duration-150 font-medium"
+              style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
+            >
+              Inicio 2
+            </Link>
             {[h.nav.community, h.nav.contact].map((item) => (
-              <a
+              <Link
                 key={item}
-                href="#"
+                to="/"
                 className="px-3 py-2 text-[#4D4D4D] dark:text-white/60 hover:text-[#EB3D26] dark:hover:text-white hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-all duration-150 font-medium"
                 style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </nav>
 
