@@ -100,6 +100,7 @@ function SolucionesDropdown({ items, label }) {
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [topbarOpen, setTopbarOpen] = useState(false)
   const { lang, toggle, t } = useLang()
   const h = t.header
   const scrolled = useScrolled()
@@ -146,8 +147,22 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Mobile: theme + lang toggles */}
+          {/* Mobile: expand arrow + theme + lang */}
           <div className="md:hidden flex items-center gap-1.5 shrink-0">
+            <button
+              onClick={() => setTopbarOpen(o => !o)}
+              className="p-1.5 bg-black/8 hover:bg-black/15 text-[#2B2B2B] transition-all duration-300 cursor-pointer"
+              style={{ borderRadius: 'var(--radius-md)' }}
+              aria-label="Más opciones"
+            >
+              <svg
+                className="w-3.5 h-3.5 transition-transform duration-300"
+                style={{ transform: topbarOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
             <AnimatedThemeToggler
               variant="circle"
               duration={400}
@@ -162,6 +177,33 @@ export default function Header() {
             >
               {lang === 'es' ? 'ESP' : 'ENG'}
             </button>
+          </div>
+        </div>
+
+        {/* Mobile expanded row */}
+        <div
+          className="md:hidden overflow-hidden transition-all duration-300"
+          style={{ maxHeight: topbarOpen ? '80px' : '0px', opacity: topbarOpen ? 1 : 0 }}
+        >
+          <div className="flex items-center gap-3 px-4 pb-2.5 pt-1">
+            <a
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0opR77BM4HZuGTkYDqWCFBpzH8RY2GdNAcY29Y-gc9qRDw-uhYwU9OUjZdUD0FChiXP06wFKas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center bg-black/10 hover:bg-black/20 text-[#2B2B2B] font-medium transition-colors duration-150 py-1.5 px-2"
+              style={{ fontSize: 'var(--text-xs)', borderRadius: 'var(--radius-md)' }}
+            >
+              {h.scheduleDemo}
+            </a>
+            <a
+              href="https://webmail.syscom.com.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center bg-black/10 hover:bg-black/20 text-[#2B2B2B] font-medium transition-colors duration-150 py-1.5 px-2"
+              style={{ fontSize: 'var(--text-xs)', borderRadius: 'var(--radius-md)' }}
+            >
+              {h.corporateEmail}
+            </a>
           </div>
         </div>
       </div>
@@ -252,6 +294,14 @@ export default function Header() {
                 {item}
               </a>
             ))}
+            <Link
+              to="/inicio-2"
+              onClick={() => setMobileOpen(false)}
+              className="text-[#4D4D4D] dark:text-white/70 py-2 px-3 hover:bg-[#F7F7F7] dark:hover:bg-white/5 font-medium transition-colors"
+              style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
+            >
+              Inicio 2
+            </Link>
             <a
               href="#"
               className="mt-2 inline-flex justify-center bg-[#94D1CA] text-[#2B2B2B] font-bold"

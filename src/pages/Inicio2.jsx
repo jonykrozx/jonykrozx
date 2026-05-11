@@ -1,10 +1,10 @@
 import Hero from '../components/sections/Hero'
-import KeyBenefits from '../components/sections/KeyBenefits'
+import KeyBenefitsV2 from '../components/sections/KeyBenefitsV2'
 import PainPoints from '../components/sections/PainPoints'
 import Certifications from '../components/sections/Certifications'
 import TransportSpotlight from '../components/sections/TransportSpotlight'
 import AboutBanner from '../components/sections/AboutBanner'
-import SolutionsGrid from '../components/sections/SolutionsGrid'
+import SolutionsShowcase from '../components/sections/SolutionsShowcase'
 import ModulesOverview from '../components/sections/ModulesOverview'
 import TrustStats from '../components/sections/TrustStats'
 import Testimonials from '../components/sections/Testimonials'
@@ -14,12 +14,12 @@ export default function Inicio2() {
   return (
     <main className="overflow-x-hidden">
       <Hero />
-      <KeyBenefits />
-      <PainPoints />
+      <KeyBenefitsV2 />
+      <PainPoints bgClass="bg-[#F2F2F2] dark:bg-[#141414]" />
       <Certifications />
       <TransportSpotlight />
       <AboutBanner />
-      <SolutionsGrid />
+      <SolutionsShowcase />
       <ModulesOverview />
       <TrustStats />
       <Testimonials />

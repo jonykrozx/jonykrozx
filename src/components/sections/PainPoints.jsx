@@ -4,11 +4,11 @@ import { useLang } from '../../lib/LanguageContext'
 
 const PAINPOINTS_IMAGE = '/images/painpoints.jpg'
 
-export default function PainPoints() {
+export default function PainPoints({ bgClass = 'bg-white dark:bg-[#0A0A0A]' }) {
   const { t } = useLang()
   const p = t.painPoints
   return (
-    <section className="bg-white dark:bg-[#0A0A0A] py-20">
+    <section className={`${bgClass} py-20`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
           <motion.div

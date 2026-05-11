@@ -28,7 +28,7 @@ export default function SolutionsGrid() {
         <div className="text-center mb-14">
           <TextAnimate
             animation="blurInUp"
-            by="character"
+            by="word"
             as="h2"
             staggerDelay={0.03}
             className="text-[#2B2B2B] dark:text-white font-bold"
