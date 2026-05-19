@@ -81,16 +81,25 @@ export default function PainPoints({ bgClass = 'bg-white dark:bg-[#0A0A0A]' }) {
           </motion.div>
         </div>
 
-        <motion.p
+        <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.8 }}
-          className="text-center text-[#2B2B2B] dark:text-white font-semibold mt-14 max-w-3xl mx-auto"
-          style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}
+          viewport={{ once: true, amount: 0.6 }}
+          className="mt-14 relative overflow-hidden"
+          style={{ borderRadius: 'var(--radius-xl)' }}
         >
-          {p.callout}
-        </motion.p>
+          <div className="absolute inset-0 bg-[#EB3D26]" style={{ opacity: 0.06 }} />
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EB3D26]" style={{ borderRadius: '4px 0 0 4px' }} />
+          <div className="relative px-8 py-6 text-center">
+            <p
+              className="text-[#2B2B2B] dark:text-white font-black"
+              style={{ fontSize: 'var(--text-xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
+            >
+              {p.callout}
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
