@@ -22,7 +22,7 @@ export default function TransportSpotlight() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease }}
           >
-            <div className="relative w-full aspect-video overflow-hidden" style={{ borderRadius: 'var(--radius-xl)' }}>
+            <div className="relative w-full overflow-hidden" style={{ borderRadius: 'var(--radius-xl)', aspectRatio: '4/3' }}>
               <img
                 src={TRANSPORT_IMAGE}
                 alt="Software para empresas de transporte de carga"

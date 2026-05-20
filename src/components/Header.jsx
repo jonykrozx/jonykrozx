@@ -1,6 +1,6 @@
 import { Menu, ChevronDown } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useLang } from '../lib/LanguageContext'
 import { AnimatedThemeToggler } from './ui/AnimatedThemeToggler'
 
@@ -61,9 +61,9 @@ function SolucionesDropdown({ items, label }) {
         >
           <div style={{ padding: '8px' }}>
             {items.map((item) => (
-              <a
+              <Link
                 key={item.title}
-                href="#"
+                to={item.href || '/soluciones'}
                 onClick={() => setOpen(false)}
                 className="flex items-center gap-3 hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-colors duration-100 group"
                 style={{ padding: '10px 12px', borderRadius: 'var(--radius-lg)' }}
@@ -89,7 +89,7 @@ function SolucionesDropdown({ items, label }) {
                     {item.desc}
                   </p>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -271,14 +271,15 @@ export default function Header() {
               {h.nav.solutions}
             </p>
             {h.solutions.map((item) => (
-              <a
+              <Link
                 key={item.title}
-                href="#"
+                to={item.href || '/soluciones'}
+                onClick={() => setMobileOpen(false)}
                 className="text-[#4D4D4D] dark:text-white/70 py-2 px-3 hover:bg-[#F7F7F7] dark:hover:bg-white/5 font-medium transition-colors"
                 style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
               >
                 {item.title}
-              </a>
+              </Link>
             ))}
             <div className="border-t border-[#EFEFEF] dark:border-white/8 my-2" />
             <Link

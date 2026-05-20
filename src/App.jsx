@@ -17,6 +17,7 @@ import Footer from './components/Footer'
 import NosotrosPage from './components/sections/NosotrosPage'
 import ContactoPage from './components/sections/ContactoPage'
 import TratamientoDatosPage from './components/sections/TratamientoDatosPage'
+import SolucionesPage from './components/sections/SolucionesPage'
 
 function HomePage() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path="/nosotros" element={<NosotrosPage />} />
           <Route path="/contacto" element={<ContactoPage />} />
           <Route path="/tratamiento-datos" element={<TratamientoDatosPage />} />
+          <Route path="/soluciones" element={<SolucionesPage />} />
         </Routes>
         <Footer />
       </div>

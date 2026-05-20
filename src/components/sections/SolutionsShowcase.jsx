@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronRight, Truck, Factory, Building2, ParkingSquare, Fuel, Hotel, Check } from 'lucide-react'
+import { ChevronRight, Truck, Factory, Building2, Fuel, Hotel, Check } from 'lucide-react'
 import { useLang } from '../../lib/LanguageContext'
 import { ease } from '../../lib/motion'
 
@@ -8,12 +8,11 @@ const iconBgs = [
   { bg: 'linear-gradient(135deg, #EB3D26, #c73320)', shadow: 'rgba(235,61,38,0.35)', color: '#EB3D26' },
   { bg: 'linear-gradient(135deg, #4A6FC4, #3558B0)', shadow: 'rgba(74,111,196,0.35)', color: '#4A6FC4' },
   { bg: 'linear-gradient(135deg, #7C6FC4, #6358B0)', shadow: 'rgba(124,111,196,0.35)', color: '#7C6FC4' },
-  { bg: 'linear-gradient(135deg, #2E9E6B, #1e7a52)', shadow: 'rgba(46,158,107,0.35)', color: '#2E9E6B' },
   { bg: 'linear-gradient(135deg, #D97706, #b86005)', shadow: 'rgba(217,119,6,0.35)', color: '#D97706' },
   { bg: 'linear-gradient(135deg, #94D1CA, #72bbb3)', shadow: 'rgba(148,209,202,0.35)', color: '#4E9E97' },
 ]
 
-const IconComponents = [Truck, Factory, Building2, ParkingSquare, Fuel, Hotel]
+const IconComponents = [Truck, Factory, Building2, Fuel, Hotel]
 
 export default function SolutionsShowcase() {
   const { t } = useLang()
