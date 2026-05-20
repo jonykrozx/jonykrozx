@@ -233,16 +233,20 @@ export default function Header() {
               {h.nav.about}
             </Link>
             <SolucionesDropdown items={h.solutions} label={h.nav.solutions} />
-            {[h.nav.community, h.nav.contact].map((item) => (
-              <Link
-                key={item}
-                to="/"
-                className="px-3 py-2 text-[#4D4D4D] dark:text-white/60 hover:text-[#EB3D26] dark:hover:text-white hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-all duration-150 font-medium"
-                style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
-              >
-                {item}
-              </Link>
-            ))}
+            <Link
+              to="/"
+              className="px-3 py-2 text-[#4D4D4D] dark:text-white/60 hover:text-[#EB3D26] dark:hover:text-white hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-all duration-150 font-medium"
+              style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
+            >
+              {h.nav.community}
+            </Link>
+            <Link
+              to="/contacto"
+              className="px-3 py-2 text-[#4D4D4D] dark:text-white/60 hover:text-[#EB3D26] dark:hover:text-white hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-all duration-150 font-medium"
+              style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
+            >
+              {h.nav.contact}
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -285,16 +289,21 @@ export default function Header() {
             >
               {h.nav.about}
             </Link>
-            {[h.nav.community, h.nav.contact].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-[#4D4D4D] dark:text-white/70 py-2 px-3 hover:bg-[#F7F7F7] dark:hover:bg-white/5 font-medium transition-colors"
-                style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
-              >
-                {item}
-              </a>
-            ))}
+            <a
+              href="#"
+              className="text-[#4D4D4D] dark:text-white/70 py-2 px-3 hover:bg-[#F7F7F7] dark:hover:bg-white/5 font-medium transition-colors"
+              style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
+            >
+              {h.nav.community}
+            </a>
+            <Link
+              to="/contacto"
+              onClick={() => setMobileOpen(false)}
+              className="text-[#4D4D4D] dark:text-white/70 py-2 px-3 hover:bg-[#F7F7F7] dark:hover:bg-white/5 font-medium transition-colors"
+              style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
+            >
+              {h.nav.contact}
+            </Link>
             <a
               href="#"
               className="mt-2 inline-flex justify-center bg-[#94D1CA] text-[#2B2B2B] font-bold"
