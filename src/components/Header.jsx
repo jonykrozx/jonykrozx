@@ -226,7 +226,7 @@ export default function Header() {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
             <Link
-              to="/"
+              to="/nosotros"
               className="px-3 py-2 text-[#4D4D4D] dark:text-white/60 hover:text-[#EB3D26] dark:hover:text-white hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-all duration-150 font-medium"
               style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
             >
@@ -277,7 +277,15 @@ export default function Header() {
               </a>
             ))}
             <div className="border-t border-[#EFEFEF] dark:border-white/8 my-2" />
-            {[h.nav.about, h.nav.community, h.nav.contact].map((item) => (
+            <Link
+              to="/nosotros"
+              onClick={() => setMobileOpen(false)}
+              className="text-[#4D4D4D] dark:text-white/70 py-2 px-3 hover:bg-[#F7F7F7] dark:hover:bg-white/5 font-medium transition-colors"
+              style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
+            >
+              {h.nav.about}
+            </Link>
+            {[h.nav.community, h.nav.contact].map((item) => (
               <a
                 key={item}
                 href="#"

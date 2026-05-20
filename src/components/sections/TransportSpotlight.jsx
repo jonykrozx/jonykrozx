@@ -59,15 +59,36 @@ export default function TransportSpotlight() {
             variants={stagger(0.1, 0.1)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.05 }}
           >
-            <motion.p variants={fadeUp} className="text-[#EB3D26] font-bold uppercase tracking-[0.18em]" style={{ fontSize: 'var(--text-xs)' }}>
+            <motion.p variants={fadeUp} className="text-[#94D1CA] font-bold uppercase tracking-[0.18em]" style={{ fontSize: 'var(--text-xs)' }}>
               {tr.eyebrow}
             </motion.p>
 
             <motion.h2 variants={fadeUp} className="text-white font-bold" style={{ fontSize: 'var(--text-3xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}>
               {tr.title}
             </motion.h2>
+
+            {/* Decreto 1017 badge */}
+            <motion.div
+              variants={fadeUp}
+              className="flex items-center gap-3 border border-[#94D1CA]/30 bg-[#94D1CA]/8"
+              style={{ borderRadius: 'var(--radius-lg)', padding: '10px 14px' }}
+            >
+              <div className="w-8 h-8 bg-[#94D1CA]/15 flex items-center justify-center shrink-0" style={{ borderRadius: 'var(--radius-md)' }}>
+                <svg className="w-4 h-4 text-[#94D1CA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-[#94D1CA] font-bold" style={{ fontSize: 'var(--text-sm)', letterSpacing: '0.05em' }}>
+                  CUMPLIMIENTO NORMATIVO
+                </p>
+                <p className="text-white/70" style={{ fontSize: 'var(--text-sm)', lineHeight: '1.4' }}>
+                  Decreto 1017 de 2025 — Ministerio de Transporte
+                </p>
+              </div>
+            </motion.div>
 
             <motion.p variants={fadeUp} className="text-white/75" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
               {tr.subtitle}
@@ -105,7 +126,7 @@ export default function TransportSpotlight() {
         >
           {tr.stats.map((stat, i) => (
             <div key={i} className={`flex-1 text-center py-2 ${i < tr.stats.length - 1 ? 'sm:border-r sm:border-white/8' : ''}`}>
-              <p className="text-[#2E9E6B] font-semibold" style={{ fontSize: 'var(--text-sm)' }}>✓ {stat}</p>
+              <p className="text-[#94D1CA] font-semibold" style={{ fontSize: 'var(--text-sm)' }}>✓ {stat}</p>
             </div>
           ))}
         </motion.div>

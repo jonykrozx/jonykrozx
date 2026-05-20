@@ -93,7 +93,7 @@ export default function PainPoints({ bgClass = 'bg-white dark:bg-[#0A0A0A]' }) {
           <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EB3D26]" style={{ borderRadius: '4px 0 0 4px' }} />
           <div className="relative px-8 py-6 text-center">
             <p
-              className="text-[#2B2B2B] dark:text-white font-black"
+              className="text-[#2B2B2B] dark:text-white font-semibold"
               style={{ fontSize: 'var(--text-xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
             >
               {p.callout}

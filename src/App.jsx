@@ -14,6 +14,7 @@ import TrustStats from './components/sections/TrustStats'
 import Testimonials from './components/sections/Testimonials'
 import GetStarted from './components/sections/GetStarted'
 import Footer from './components/Footer'
+import NosotrosPage from './components/sections/NosotrosPage'
 
 function HomePage() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/nosotros" element={<NosotrosPage />} />
         </Routes>
         <Footer />
       </div>
