@@ -59,7 +59,7 @@ function App() {
           <Route path="/transporteEspecial"     element={<ProductPage productKey="transporteEspecial" />} />
           <Route path="/busUrbano"              element={<ProductPage productKey="busUrbano" />} />
           <Route path="/mantvehicular"          element={<ProductPage productKey="mantvehicular" />} />
-          <Route path="/parqueadero"            element={<ProductPage productKey="parqueadero" />} />
+          <Route path="/Sysparking"             element={<ProductPage productKey="Sysparking" />} />
           <Route path="/estaciones"             element={<ProductPage productKey="estaciones" />} />
           <Route path="/plantas"                element={<ProductPage productKey="plantas" />} />
           <Route path="/sysTotalComercial"      element={<ProductPage productKey="sysTotalComercial" />} />
