@@ -591,6 +591,47 @@ export const productTranslations = {
       closingTitle: 'VENDER SIN CONTROLAR EL INVENTARIO ES PERDER DINERO',
       closingDesc:  'Integra tu facturación electrónica con el control de inventario y cartera en un solo sistema. Empieza a operar con información real y precisa.',
     },
+
+    /* ── 14. HOTELERÍA ───────────────────────────── */
+    hoteleria: {
+      image: '/images/138148.jpg',
+      bannerTitle:    'Controla la gestión de tu hotel sin errores ni desorden',
+      bannerSubtitle: 'Desde las reservas hasta la facturación, administra la operación de tu hotel con un sistema que integra control, organización e información en tiempo real.',
+      bannerPoints: [
+        'Control total de reservas y ocupación',
+        'Gestión de check-in y check-out sin complicaciones',
+        'Información de huéspedes organizada',
+        'Integración con facturación y contabilidad',
+      ],
+      featuresTitle: 'TODO TU HOTEL, EN UN SOLO SISTEMA',
+      features: [
+        { name: 'Gestión de reservas sin complicaciones',  desc: 'Administra fácilmente las reservas y evita errores en la asignación de habitaciones.' },
+        { name: 'Control de ocupación en tiempo real',     desc: 'Consulta la disponibilidad de habitaciones y organiza tu hotel de forma eficiente.' },
+        { name: 'Historial completo de huéspedes',         desc: 'Accede a la información de tus clientes para brindar una atención más personalizada.' },
+        { name: 'Registro de entrada y salida',            desc: 'Gestiona check-in y check-out de forma ágil, reduciendo tiempos y errores.' },
+        { name: 'Control de ingresos',                     desc: 'Supervisa los ingresos generados por hospedaje y servicios adicionales.' },
+        { name: 'Información para decisiones',             desc: 'Accede a reportes de ocupación, ingresos y desempeño del hotel en cualquier momento.' },
+      ],
+      whyTitle:    'No es un sistema genérico. Es control real para tu hotel.',
+      whySubtitle: 'SYSCOM Hotelería está diseñado para organizar y controlar la operación diaria de tu hotel, integrando procesos clave en un solo sistema.',
+      whyPoints: [
+        'Control centralizado de reservas y ocupación',
+        'Información clara y organizada',
+        'Integración con procesos administrativos',
+        'Adaptado a la gestión real de hoteles',
+      ],
+      whyClosing:    'Mientras otros sistemas complican tu operación, SYSCOM la simplifica.',
+      benefitsTitle: 'LO QUE CAMBIA CUANDO TIENES CONTROL REAL',
+      benefits: [
+        { title: 'Menos errores, más organización', desc: 'Evita problemas en reservas, asignaciones y registros de huéspedes.' },
+        { title: 'Mejor toma de decisiones',        desc: 'Accede a información clara sobre ocupación, ingresos y rendimiento.' },
+        { title: 'Gestión conectada',               desc: 'Integra reservas, huéspedes y facturación en un solo sistema.' },
+        { title: 'Mejor experiencia del cliente',   desc: 'Brinda atención más ágil y personalizada con información completa.' },
+        { title: 'Mayor control del negocio',       desc: 'Ten visibilidad total de lo que ocurre en tu hotel en tiempo real.' },
+      ],
+      closingTitle: 'SI NO TIENES CONTROL, PIERDES OPORTUNIDADES',
+      closingDesc:  'Organiza tu hotel, mejora la experiencia de tus huéspedes y toma decisiones con información real.',
+    },
   },
 
   /* ══════════════════════════════════════════════════
@@ -1175,6 +1216,47 @@ export const productTranslations = {
       ],
       closingTitle: 'SELLING WITHOUT INVENTORY CONTROL MEANS LOSING MONEY',
       closingDesc:  'Integrate your electronic billing with inventory and receivables control in one system. Start operating with real, accurate information.',
+    },
+
+    /* ── 14. HOSPITALITY ─────────────────────────── */
+    hoteleria: {
+      image: '/images/138148.jpg',
+      bannerTitle:    'Control your hotel\'s operation without errors or disorganization',
+      bannerSubtitle: 'From reservations to billing, SYSCOM Hospitality integrates the key processes of your hotel in one organized and easy-to-use system.',
+      bannerPoints: [
+        'Total reservation and occupancy control',
+        'Hassle-free check-in and check-out management',
+        'Organized guest information',
+        'Integration with billing and accounting',
+      ],
+      featuresTitle: 'YOUR ENTIRE HOTEL, IN ONE SYSTEM',
+      features: [
+        { name: 'Hassle-free reservation management', desc: 'Easily manage reservations and avoid errors in room assignments.' },
+        { name: 'Real-time occupancy control',        desc: 'Check room availability and organize your hotel efficiently.' },
+        { name: 'Complete guest history',             desc: 'Access your guests\' information to provide more personalized service.' },
+        { name: 'Check-in and check-out recording',   desc: 'Manage check-in and check-out quickly, reducing time and errors.' },
+        { name: 'Revenue control',                    desc: 'Monitor income generated by accommodation and additional services.' },
+        { name: 'Information for decisions',          desc: 'Access occupancy, revenue and hotel performance reports at any time.' },
+      ],
+      whyTitle:    'Not a generic system. Real control for your hotel.',
+      whySubtitle: 'SYSCOM Hospitality is designed to organize and control the day-to-day operation of your hotel, integrating key processes in one single system.',
+      whyPoints: [
+        'Centralized reservation and occupancy control',
+        'Clear and organized information',
+        'Integration with administrative processes',
+        'Adapted to real hotel management',
+      ],
+      whyClosing:    'While other systems complicate your operation, SYSCOM simplifies it.',
+      benefitsTitle: 'WHAT CHANGES WHEN YOU HAVE REAL CONTROL',
+      benefits: [
+        { title: 'Fewer errors, more organization', desc: 'Avoid problems in reservations, assignments and guest records.' },
+        { title: 'Better decision-making',          desc: 'Access clear information on occupancy, revenue and performance.' },
+        { title: 'Connected management',            desc: 'Integrate reservations, guests and billing in one single system.' },
+        { title: 'Better customer experience',      desc: 'Provide faster and more personalized service with complete information.' },
+        { title: 'Greater business control',        desc: 'Have full visibility of everything happening in your hotel in real time.' },
+      ],
+      closingTitle: 'IF YOU DON\'T HAVE CONTROL, YOU LOSE OPPORTUNITIES',
+      closingDesc:  'Organize your hotel, improve your guests\' experience and make decisions with real information.',
     },
   },
 }

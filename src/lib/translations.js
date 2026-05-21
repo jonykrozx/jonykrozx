@@ -284,7 +284,7 @@ export const translations = {
           desc: 'Administra tu hotel de forma organizada y sin complicaciones. SYSCOM te permite controlar reservas, disponibilidad de habitaciones, huéspedes e ingresos desde un solo sistema, mejorando la eficiencia operativa y la experiencia del cliente.',
           control: { label: '¿Qué puedes controlar?', items: ['Reservas y disponibilidad de habitaciones en tiempo real', 'Registro de entrada y salida de huéspedes (check-in / check-out)', 'Asignación y ocupación de habitaciones', 'Historial completo de huéspedes', 'Ingresos y facturación por servicios'] },
           software: { label: 'Softwares incluidos', items: [
-            { label: 'Hotelería' },
+            { label: 'Hotelería', href: '/hoteleria' },
             { label: 'Facturación electrónica',href: '/facturacionelect' },
             { label: 'Contabilidad',           href: '/contabilidad' },
           ] },
@@ -808,7 +808,7 @@ export const translations = {
           desc: 'Manage your hotel in an organized and uncomplicated way. SYSCOM allows you to control reservations, room availability, guests and income from a single system.',
           control: { label: 'What can you control?', items: ['Reservations and room availability in real time', 'Guest check-in and check-out', 'Room assignment and occupancy', 'Complete guest history', 'Income and billing for services'] },
           software: { label: 'Included software', items: [
-            { label: 'Hospitality' },
+            { label: 'Hospitality', href: '/hoteleria' },
             { label: 'Electronic invoicing',   href: '/facturacionelect' },
             { label: 'Accounting',             href: '/contabilidad' },
           ] },

@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Check } from 'lucide-react'
 import { fadeUp, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 import { DarkVeil } from '../ui/DarkVeil'
+
+const MotionLink = motion(Link)
 
 const TRANSPORT_IMAGE = '/images/transport.jpg'
 
@@ -105,14 +108,14 @@ export default function TransportSpotlight() {
               ))}
             </motion.div>
 
-            <motion.a
+            <MotionLink
               variants={fadeUp}
-              href="#"
+              to="/transCarga"
               className="flex items-center justify-center w-full bg-[#94D1CA] text-[#2B2B2B] font-bold hover:bg-[#72bbb3] active:scale-95 transition-all"
               style={{ fontSize: 'var(--text-sm)', padding: '12px 24px', borderRadius: 'var(--radius-md)' }}
             >
               {tr.cta}
-            </motion.a>
+            </MotionLink>
           </motion.div>
         </div>
 
