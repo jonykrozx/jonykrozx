@@ -234,7 +234,7 @@ export default function Header() {
             </Link>
             <SolucionesDropdown items={h.solutions} label={h.nav.solutions} />
             <Link
-              to="/"
+              to="/COMUNIDAD"
               className="px-3 py-2 text-[#4D4D4D] dark:text-white/60 hover:text-[#EB3D26] dark:hover:text-white hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-all duration-150 font-medium"
               style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
             >
@@ -290,13 +290,14 @@ export default function Header() {
             >
               {h.nav.about}
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/COMUNIDAD"
+              onClick={() => setMobileOpen(false)}
               className="text-[#4D4D4D] dark:text-white/70 py-2 px-3 hover:bg-[#F7F7F7] dark:hover:bg-white/5 font-medium transition-colors"
               style={{ fontSize: 'var(--text-sm)', borderRadius: 'var(--radius-md)' }}
             >
               {h.nav.community}
-            </a>
+            </Link>
             <Link
               to="/contacto"
               onClick={() => setMobileOpen(false)}
