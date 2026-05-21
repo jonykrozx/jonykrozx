@@ -100,7 +100,7 @@ export default function Footer() {
             {f.cols.map((col) => (
               <div key={col.heading}>
                 <h6
-                  className="text-[#4D4D4D] font-bold uppercase tracking-[0.12em] mb-3"
+                  className="text-[#C1C1C1] font-bold uppercase tracking-[0.12em] mb-3"
                   style={{ fontSize: 'var(--text-xs)' }}
                 >
                   {col.heading}

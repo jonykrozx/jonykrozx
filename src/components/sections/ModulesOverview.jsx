@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { useLang } from '../../lib/LanguageContext'
 import BlurText from '../ui/BlurText'
 import { fadeUp, scaleIn, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
@@ -101,13 +102,13 @@ export default function ModulesOverview() {
               ))}
             </div>
 
-            <a
-              href="#"
+            <Link
+              to="/soluciones"
               className="flex items-center justify-center gap-2 w-full bg-[#2B2B2B] dark:bg-white text-white dark:text-[#2B2B2B] font-bold hover:opacity-90 active:scale-95 transition-all"
               style={{ fontSize: 'var(--text-sm)', padding: '12px 24px', borderRadius: 'var(--radius-md)' }}
             >
               {m.cta}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
