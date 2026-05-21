@@ -18,6 +18,7 @@ import NosotrosPage from './components/sections/NosotrosPage'
 import ContactoPage from './components/sections/ContactoPage'
 import TratamientoDatosPage from './components/sections/TratamientoDatosPage'
 import SolucionesPage from './components/sections/SolucionesPage'
+import ProductPage from './components/sections/ProductPage'
 
 function HomePage() {
   return (
@@ -52,6 +53,21 @@ function App() {
           <Route path="/contacto" element={<ContactoPage />} />
           <Route path="/tratamiento-datos" element={<TratamientoDatosPage />} />
           <Route path="/soluciones" element={<SolucionesPage />} />
+
+          {/* ── Páginas de producto individuales ── */}
+          <Route path="/transCarga"             element={<ProductPage productKey="transCarga" />} />
+          <Route path="/transporteEspecial"     element={<ProductPage productKey="transporteEspecial" />} />
+          <Route path="/busUrbano"              element={<ProductPage productKey="busUrbano" />} />
+          <Route path="/mantvehicular"          element={<ProductPage productKey="mantvehicular" />} />
+          <Route path="/parqueadero"            element={<ProductPage productKey="parqueadero" />} />
+          <Route path="/estaciones"             element={<ProductPage productKey="estaciones" />} />
+          <Route path="/plantas"                element={<ProductPage productKey="plantas" />} />
+          <Route path="/sysTotalComercial"      element={<ProductPage productKey="sysTotalComercial" />} />
+          <Route path="/nominarh"               element={<ProductPage productKey="nominarh" />} />
+          <Route path="/contabilidad"           element={<ProductPage productKey="contabilidad" />} />
+          <Route path="/facturacionelect"       element={<ProductPage productKey="facturacionelect" />} />
+          <Route path="/activosFijos"           element={<ProductPage productKey="activosFijos" />} />
+          <Route path="/facturacioneinventario" element={<ProductPage productKey="facturacioneinventario" />} />
         </Routes>
         <Footer />
       </div>

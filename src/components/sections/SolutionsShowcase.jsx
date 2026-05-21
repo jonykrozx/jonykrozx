@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRight, Truck, Factory, Building2, Fuel, Hotel, Check } from 'lucide-react'
 import { useLang } from '../../lib/LanguageContext'
@@ -160,14 +161,14 @@ export default function SolutionsShowcase() {
                     ))}
                   </ul>
 
-                  <a
-                    href="#"
+                  <Link
+                    to={solution.href || '/soluciones'}
                     className="inline-flex items-center gap-2 font-bold transition-all hover:gap-3"
                     style={{ fontSize: 'var(--text-sm)', color: '#EB3D26' }}
                   >
                     {s.cta}
                     <ChevronRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Right: big icon */}

@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Check, ChevronRight, Package } from 'lucide-react'
 import { fadeUp, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
@@ -32,20 +34,32 @@ function InfoCol({ label, items, variant = 'bullet' }) {
       <h4 className="text-[#2B2B2B] dark:text-white font-black uppercase tracking-wide"
         style={{ fontSize: 'var(--text-xs)' }}>{label}</h4>
       <ul className="space-y-1.5">
-        {items.map((item, i) => (
-          <li key={i} className="flex items-start gap-2">
-            {variant === 'check' ? (
-              <div className="w-4 h-4 bg-[#EB3D26]/10 flex items-center justify-center shrink-0 mt-0.5" style={{ borderRadius: 'var(--radius-sm)' }}>
-                <Check className="w-2.5 h-2.5 text-[#EB3D26]" strokeWidth={3} />
-              </div>
-            ) : variant === 'tag' ? (
-              <div className="w-1.5 h-1.5 rounded-full bg-[#94D1CA] shrink-0 mt-1.5" />
-            ) : (
-              <div className="w-1.5 h-1.5 rounded-full bg-[#EB3D26] shrink-0 mt-1.5" />
-            )}
-            <span className="text-[#4D4D4D] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)', lineHeight: '1.55' }}>{item}</span>
-          </li>
-        ))}
+        {items.map((item, i) => {
+          const label = typeof item === 'string' ? item : item.label
+          const href  = typeof item === 'string' ? null  : item.href ?? null
+          return (
+            <li key={i} className="flex items-start gap-2">
+              {variant === 'check' ? (
+                <div className="w-4 h-4 bg-[#EB3D26]/10 flex items-center justify-center shrink-0 mt-0.5" style={{ borderRadius: 'var(--radius-sm)' }}>
+                  <Check className="w-2.5 h-2.5 text-[#EB3D26]" strokeWidth={3} />
+                </div>
+              ) : variant === 'tag' ? (
+                <div className="w-1.5 h-1.5 rounded-full bg-[#94D1CA] shrink-0 mt-1.5" />
+              ) : (
+                <div className="w-1.5 h-1.5 rounded-full bg-[#EB3D26] shrink-0 mt-1.5" />
+              )}
+              {href ? (
+                <Link to={href}
+                  className="text-[#4D4D4D] dark:text-[#AEAEAE] hover:text-[#EB3D26] dark:hover:text-[#EB3D26] hover:underline underline-offset-2 transition-colors"
+                  style={{ fontSize: 'var(--text-xs)', lineHeight: '1.55' }}>
+                  {label}
+                </Link>
+              ) : (
+                <span className="text-[#4D4D4D] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)', lineHeight: '1.55' }}>{label}</span>
+              )}
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
@@ -98,7 +112,7 @@ function SolutionCard({ item, index, cta }) {
               href={cta.demoHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#EB3D26] hover:bg-[#d63520] active:scale-95 text-white font-bold transition-all duration-200"
+              className="inline-flex w-fit items-center gap-2 bg-[#EB3D26] hover:bg-[#d63520] active:scale-95 text-white font-bold transition-all duration-200"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}
             >
               {cta.demo}
@@ -169,16 +183,6 @@ function Banner({ s }) {
             </motion.p>
           </div>
 
-          {/* Quick-nav pills */}
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
-            {['transporte', 'empresas', 'estaciones', 'plantas', 'hoteleria'].map((id, i) => (
-              <a key={id} href={`#${id}`}
-                className="px-3 py-1.5 bg-white/8 hover:bg-white/15 border border-white/15 text-white/70 hover:text-white transition-all duration-200 font-medium"
-                style={{ fontSize: 'var(--text-xs)', borderRadius: 'var(--radius-pill)' }}>
-                {String(i + 1).padStart(2, '0')}
-              </a>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* Tagline */}
@@ -243,6 +247,17 @@ function ClosingCTA({ s }) {
 export default function SolucionesPage() {
   const { t } = useLang()
   const s = t.soluciones
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120)
+      }
+    }
+  }, [hash])
+
   return (
     <main className="overflow-x-hidden">
       <Banner s={s} />
