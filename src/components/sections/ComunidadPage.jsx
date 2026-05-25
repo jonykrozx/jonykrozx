@@ -7,6 +7,33 @@ import { useLang } from '../../lib/LanguageContext'
 
 const CARD_IMGS = ['/images/transport.jpg', '/images/138148.jpg', '/images/painpoints.jpg', '/images/transport.jpg']
 
+const YOUTUBE_VIDEOS = [
+  {
+    id: 'EIVasoC5DZg',
+    title: 'Syscom40: Actualización FOPAT',
+    url: 'https://www.youtube.com/watch?v=EIVasoC5DZg',
+    thumb: 'https://img.youtube.com/vi/EIVasoC5DZg/hqdefault.jpg',
+  },
+  {
+    id: 'XUy3Z-7-K40',
+    title: '¿Qué es FOPAT?',
+    url: 'https://www.youtube.com/watch?v=XUy3Z-7-K40',
+    thumb: 'https://img.youtube.com/vi/XUy3Z-7-K40/hqdefault.jpg',
+  },
+  {
+    id: '5tVwSOujy6I',
+    title: '¿Qué es Orden de Cargue?',
+    url: 'https://www.youtube.com/watch?v=5tVwSOujy6I',
+    thumb: 'https://img.youtube.com/vi/5tVwSOujy6I/hqdefault.jpg',
+  },
+  {
+    id: 'wyRLzWUtUI0',
+    title: 'La creación de novedades de Nómina en Syscom Nómina',
+    url: 'https://www.youtube.com/watch?v=wyRLzWUtUI0&t=2s',
+    thumb: 'https://img.youtube.com/vi/wyRLzWUtUI0/hqdefault.jpg',
+  },
+]
+
 /* ── File type helpers ─────────────────────────────── */
 function FileTypeBadge({ type }) {
   const map = {
@@ -188,8 +215,35 @@ function Tutoriales({ c }) {
           </motion.div>
           <motion.div variants={fadeUp}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {c.items.map((item, i) => (
-              <ContentCard key={i} title={item.title} tag={item.tag} img={CARD_IMGS[(i + 1) % CARD_IMGS.length]} isVideo={item.tag === 'Video'} />
+            {YOUTUBE_VIDEOS.map((video) => (
+              <a key={video.id} href={video.url} target="_blank" rel="noopener noreferrer"
+                className="group bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 overflow-hidden hover:border-[#EB3D26]/30 transition-all duration-200 block"
+                style={{ borderRadius: 'var(--radius-xl)' }}>
+                <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                  <img src={video.thumb} alt={video.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex' }} />
+                  <div className="absolute inset-0 bg-[#F2F2F2] dark:bg-white/5 items-center justify-center" style={{ display: 'none' }}>
+                    <BookOpen className="w-8 h-8 text-[#DEDEDE]" />
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-10 h-10 bg-black/50 backdrop-blur-sm flex items-center justify-center"
+                      style={{ borderRadius: 'var(--radius-full)' }}>
+                      <Play className="w-4 h-4 text-white fill-white ml-0.5" />
+                    </div>
+                  </div>
+                  <span className="absolute top-3 left-3 text-white font-bold bg-[#EB3D26]"
+                    style={{ fontSize: 'var(--text-xs)', padding: '3px 10px', borderRadius: 'var(--radius-pill)' }}>
+                    Video
+                  </span>
+                </div>
+                <div style={{ padding: '14px 16px' }}>
+                  <p className="text-[#2B2B2B] dark:text-white font-semibold group-hover:text-[#EB3D26] transition-colors"
+                    style={{ fontSize: 'var(--text-sm)', lineHeight: '1.45' }}>
+                    {video.title}
+                  </p>
+                </div>
+              </a>
             ))}
           </motion.div>
           <motion.div variants={fadeUp} className="flex items-center gap-4">

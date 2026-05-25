@@ -4,11 +4,11 @@ import { fadeUp, fadeIn, slideLeft, slideRight, stagger, ease } from '../../lib/
 import { useLang } from '../../lib/LanguageContext'
 
 const IMG_QUIENES   = '/images/sc-icon.png'
-const IMG_MISION    = '/images/transport.jpg'
-const IMG_VISION    = '/images/138148.jpg'
-const IMG_TRAYECT   = '/images/hero-invoice.png'
-const IMG_EXPERIENCIA = '/images/transport.jpg'
-const IMG_SECTORES  = '/images/painpoints.jpg'
+const IMG_MISION    = '/images/nosotros-mision.jpg'
+const IMG_VISION    = '/images/nosotros-vision.jpg'
+const IMG_TRAYECT   = '/images/nosotros-trayectoria.jpg'
+const IMG_EXPERIENCIA = '/images/nosotros-experiencia.jpg'
+const IMG_SECTORES  = '/images/nosotros-sectores.jpg'
 
 const DIFERENCIAL_ICONS = [Users, Cpu, Layers, Zap, Globe, Shield]
 

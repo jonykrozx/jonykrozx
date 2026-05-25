@@ -565,7 +565,7 @@ export const translations = {
           { title: 'Acompañamiento en implementación', desc: 'Te acompañamos en cada etapa para que tu equipo adopte el sistema con éxito.' },
         ],
         cta: 'Solicitar capacitación',
-        ctaHref: '/contacto',
+        ctaHref: '/contacto#formularios',
       },
       documentos: {
         eyebrow: 'Recursos',
@@ -1204,7 +1204,7 @@ export const translations = {
           { title: 'Implementation support',      desc: 'We accompany you at every stage so your team adopts the system successfully.' },
         ],
         cta: 'Request training',
-        ctaHref: '/contacto',
+        ctaHref: '/contacto#formularios',
       },
       documentos: {
         eyebrow: 'Resources',
