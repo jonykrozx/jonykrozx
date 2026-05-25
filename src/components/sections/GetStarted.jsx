@@ -71,7 +71,9 @@ export default function GetStarted() {
 
         <div className="mt-16 space-y-3">
           <a
-            href="#"
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0opR77BM4HZuGTkYDqWCFBpzH8RY2GdNAcY29Y-gc9qRDw-uhYwU9OUjZdUD0FChiXP06wFKas"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#94D1CA] text-[#2B2B2B] font-bold hover:bg-[#72bbb3] active:scale-95 transition-all"
             style={{ fontSize: 'var(--text-base)', padding: '16px 40px', borderRadius: 'var(--radius-md)', boxShadow: '0 4px 16px rgba(148,209,202,0.35)' }}
           >

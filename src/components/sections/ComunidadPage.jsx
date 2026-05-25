@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { ChevronRight, Download, Search, Play, FileText, FileSpreadsheet, BookOpen, Users, Layers } from 'lucide-react'
 import { fadeUp, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
@@ -339,11 +340,12 @@ function Documentos({ c }) {
           </motion.div>
 
           <motion.div variants={fadeUp}>
-            <button
+            <Link
+              to="/documentacion"
               className="inline-flex items-center gap-2 bg-[#2B2B2B] dark:bg-white text-white dark:text-[#2B2B2B] font-bold hover:opacity-90 active:scale-95 transition-all"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}>
               {c.cta} <ChevronRight className="w-4 h-4" />
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
