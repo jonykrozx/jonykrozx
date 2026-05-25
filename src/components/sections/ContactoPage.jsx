@@ -73,7 +73,7 @@ function Banner({ c }) {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease }}
           >
-            <div className="relative w-full overflow-hidden" style={{ borderRadius: 'var(--radius-xl)', aspectRatio: '4/3' }}>
+            <div className="relative overflow-hidden" style={{ borderRadius: 'var(--radius-xl)', width: '484px', height: '350px', maxWidth: '100%' }}>
               <img src={IMG_BANNER} alt="Contacto SYSCOM" className="w-full h-full object-cover" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex' }} />
               <div className="absolute inset-0 bg-[#1A1A1A] border-2 border-dashed border-white/10 items-center justify-center" style={{ display: 'none' }}>
                 <Phone className="w-12 h-12 text-white/20" />

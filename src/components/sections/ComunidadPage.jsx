@@ -28,38 +28,63 @@ function FileTypeBadge({ type }) {
 ══════════════════════════════════════════════════ */
 function Hero({ c }) {
   return (
-    <section className="bg-[#2B2B2B] py-24 overflow-hidden relative">
-      <div className="absolute inset-0 opacity-[0.03]"
-        style={{ backgroundImage: 'radial-gradient(circle at 70% 50%, #94D1CA 0%, transparent 60%)' }} />
+    <section className="bg-[#2B2B2B] py-20 overflow-hidden relative">
+      <div className="absolute inset-0 opacity-[0.04]"
+        style={{ backgroundImage: 'radial-gradient(circle at 65% 50%, #94D1CA 0%, transparent 55%)' }} />
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
-        <motion.div
-          variants={stagger(0.1, 0.05)}
-          initial="hidden"
-          animate="show"
-          className="max-w-3xl"
-        >
-          <motion.p variants={fadeUp}
-            className="text-[#94D1CA] font-bold uppercase tracking-[0.18em] mb-4"
-            style={{ fontSize: 'var(--text-xs)' }}>
-            {c.eyebrow}
-          </motion.p>
-          <motion.h1 variants={fadeUp}
-            className="text-white font-black mb-6"
-            style={{ fontSize: 'var(--text-4xl)', lineHeight: '1.1', letterSpacing: 'var(--ls-tight)' }}>
-            {c.title}
-          </motion.h1>
-          <motion.p variants={fadeUp}
-            className="text-white/70 mb-8"
-            style={{ fontSize: 'var(--text-lg)', lineHeight: 'var(--lh-relaxed)', maxWidth: '560px' }}>
-            {c.subtitle}
-          </motion.p>
-          <motion.span variants={fadeUp}
-            className="inline-flex items-center gap-2 text-white/40 border border-white/10 bg-white/4"
-            style={{ fontSize: 'var(--text-xs)', padding: '6px 14px', borderRadius: 'var(--radius-pill)' }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#94D1CA]" />
-            {c.microcopy}
-          </motion.span>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          {/* Left: text */}
+          <motion.div
+            variants={stagger(0.1, 0.05)}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.p variants={fadeUp}
+              className="text-[#94D1CA] font-bold uppercase tracking-[0.18em] mb-4"
+              style={{ fontSize: 'var(--text-xs)' }}>
+              {c.eyebrow}
+            </motion.p>
+            <motion.h1 variants={fadeUp}
+              className="text-white font-black mb-6"
+              style={{ fontSize: 'var(--text-4xl)', lineHeight: '1.1', letterSpacing: 'var(--ls-tight)' }}>
+              {c.title}
+            </motion.h1>
+            <motion.p variants={fadeUp}
+              className="text-white/70 mb-8"
+              style={{ fontSize: 'var(--text-lg)', lineHeight: 'var(--lh-relaxed)' }}>
+              {c.subtitle}
+            </motion.p>
+            <motion.span variants={fadeUp}
+              className="inline-flex items-center gap-2 text-white/40 border border-white/10 bg-white/4"
+              style={{ fontSize: 'var(--text-xs)', padding: '6px 14px', borderRadius: 'var(--radius-pill)' }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#94D1CA]" />
+              {c.microcopy}
+            </motion.span>
+          </motion.div>
+
+          {/* Right: image */}
+          <motion.div
+            initial={{ opacity: 0, x: 48 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            className="hidden lg:block"
+          >
+            <div className="relative overflow-hidden" style={{ borderRadius: 'var(--radius-xl)', width: '484px', height: '350px', maxWidth: '100%' }}>
+              <img
+                src="/images/138148.jpg"
+                alt="Comunidad SYSCOM"
+                className="w-full h-full object-cover"
+                onError={(e) => { e.currentTarget.style.display = 'none' }}
+              />
+              {/* Overlay tint */}
+              <div className="absolute inset-0 bg-[#2B2B2B]/30" style={{ borderRadius: 'var(--radius-xl)' }} />
+              {/* Corner accent */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#94D1CA] to-[#EB3D26]" />
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   )
@@ -225,11 +250,11 @@ function Capacitacion({ c }) {
             ))}
           </motion.div>
           <motion.div variants={fadeUp}>
-            <a href={c.ctaHref} target="_blank" rel="noopener noreferrer"
+            <Link to={c.ctaHref}
               className="inline-flex items-center gap-2 bg-[#94D1CA] hover:bg-[#72bbb3] active:scale-95 text-[#2B2B2B] font-bold transition-all"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}>
               {c.cta} <ChevronRight className="w-4 h-4" />
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

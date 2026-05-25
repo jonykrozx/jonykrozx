@@ -525,7 +525,7 @@ export const translations = {
     comunidad: {
       hero: {
         eyebrow: 'Comunidad SYSCOM',
-        title: 'Conocimiento que se convierte en control',
+        title: 'CONOCIMIENTO QUE SE CONVIERTE EN CONTROL',
         subtitle: 'Accede a contenido práctico, guías y recursos diseñados para ayudarte a organizar tu gestión y tomar mejores decisiones.',
         microcopy: 'Contenido basado en la experiencia real de empresas en Colombia',
       },
@@ -565,7 +565,7 @@ export const translations = {
           { title: 'Acompañamiento en implementación', desc: 'Te acompañamos en cada etapa para que tu equipo adopte el sistema con éxito.' },
         ],
         cta: 'Solicitar capacitación',
-        ctaHref: 'https://api.whatsapp.com/send?phone=573165267012&text=Hola%2C%20quiero%20solicitar%20una%20capacitaci%C3%B3n',
+        ctaHref: '/contacto',
       },
       documentos: {
         eyebrow: 'Recursos',
@@ -1204,7 +1204,7 @@ export const translations = {
           { title: 'Implementation support',      desc: 'We accompany you at every stage so your team adopts the system successfully.' },
         ],
         cta: 'Request training',
-        ctaHref: 'https://api.whatsapp.com/send?phone=573165267012&text=Hola%2C%20quiero%20solicitar%20una%20capacitaci%C3%B3n',
+        ctaHref: '/contacto',
       },
       documentos: {
         eyebrow: 'Resources',

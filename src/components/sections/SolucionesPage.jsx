@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Check, ChevronRight, Package } from 'lucide-react'
 import { fadeUp, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
+import { DarkVeil } from '../ui/DarkVeil'
 import Certifications from './Certifications'
 
 const IMGS = [
@@ -156,8 +157,7 @@ function Banner({ s }) {
   const b = s.banner
   return (
     <section className="bg-[#2B2B2B] py-20 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, #EB3D26 0%, transparent 55%)' }} />
+      <DarkVeil hueShift={0} noiseIntensity={0} scanlineIntensity={0} speed={0.5} scanlineFrequency={0} warpAmount={0} resolutionScale={1} />
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 space-y-8">
         <motion.div
           variants={stagger(0.12, 0.05)}
@@ -192,7 +192,7 @@ function Banner({ s }) {
           animate="show"
           className="border-t border-white/10 pt-6"
         >
-          <p className="text-white/50 text-center" style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--lh-relaxed)', maxWidth: '760px', margin: '0 auto' }}>
+          <p className="text-white text-center" style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--lh-relaxed)', maxWidth: '760px', margin: '0 auto' }}>
             {b.tagline}
           </p>
         </motion.div>

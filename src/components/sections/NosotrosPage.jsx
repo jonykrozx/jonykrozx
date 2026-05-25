@@ -3,7 +3,7 @@ import { Check, Target, Eye, Clock, Zap, Globe, Shield, Users, Cpu, Layers } fro
 import { fadeUp, fadeIn, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
-const IMG_QUIENES   = '/images/painpoints.jpg'
+const IMG_QUIENES   = '/images/sc-icon.png'
 const IMG_MISION    = '/images/transport.jpg'
 const IMG_VISION    = '/images/138148.jpg'
 const IMG_TRAYECT   = '/images/hero-invoice.png'
@@ -13,7 +13,7 @@ const IMG_SECTORES  = '/images/painpoints.jpg'
 const DIFERENCIAL_ICONS = [Users, Cpu, Layers, Zap, Globe, Shield]
 
 /* ─── Image placeholder ─────────────────────────── */
-function ImgBlock({ src, alt, ratio = '4/3' }) {
+function ImgBlock({ src, alt, ratio = '4/3', fit = 'cover' }) {
   return (
     <div
       className="relative w-full overflow-hidden"
@@ -22,7 +22,7 @@ function ImgBlock({ src, alt, ratio = '4/3' }) {
       <img
         src={src}
         alt={alt}
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${fit === 'contain' ? 'object-contain p-8' : 'object-cover'}`}
         onError={(e) => {
           e.currentTarget.style.display = 'none'
           e.currentTarget.nextElementSibling.style.display = 'flex'
@@ -130,7 +130,7 @@ function QuienesSomos({ n }) {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease }}
           >
-            <ImgBlock src={IMG_QUIENES} alt="Quiénes somos" />
+            <ImgBlock src={IMG_QUIENES} alt="Quiénes somos" fit="contain" />
           </motion.div>
 
           <motion.div
