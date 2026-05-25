@@ -21,6 +21,7 @@ import SolucionesPage from './components/sections/SolucionesPage'
 import ProductPage from './components/sections/ProductPage'
 import ComunidadPage from './components/sections/ComunidadPage'
 import DocumentacionPage from './components/sections/DocumentacionPage'
+import BlogPage from './components/sections/BlogPage'
 
 function HomePage() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route path="/soluciones" element={<SolucionesPage />} />
           <Route path="/comunidad"      element={<ComunidadPage />} />
           <Route path="/documentacion"  element={<DocumentacionPage />} />
+          <Route path="/blog"           element={<BlogPage />} />
 
           {/* ── Páginas de producto individuales ── */}
           <Route path="/transCarga"             element={<ProductPage productKey="transCarga" />} />

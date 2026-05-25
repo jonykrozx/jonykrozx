@@ -128,10 +128,11 @@ function Blog({ c }) {
             ))}
           </motion.div>
           <motion.div variants={fadeUp}>
-            <button className="inline-flex items-center gap-2 bg-[#2B2B2B] dark:bg-white text-white dark:text-[#2B2B2B] font-bold hover:opacity-90 active:scale-95 transition-all"
+            <Link to="/blog"
+              className="inline-flex items-center gap-2 bg-[#2B2B2B] dark:bg-white text-white dark:text-[#2B2B2B] font-bold hover:opacity-90 active:scale-95 transition-all"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}>
               {c.cta} <ChevronRight className="w-4 h-4" />
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
