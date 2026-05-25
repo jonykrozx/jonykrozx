@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle } from 'lucide-react'
 import { fadeUp, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
@@ -266,7 +266,7 @@ function Formularios({ c }) {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
+    <section id="formularios" className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
       <div className="max-w-4xl mx-auto px-4 md:px-8 space-y-10">
         <motion.div
           className="text-center space-y-4"
@@ -470,6 +470,17 @@ function Oficinas({ c }) {
 export default function ContactoPage() {
   const { t } = useLang()
   const c = t.contacto
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
+      }
+    }
+  }, [hash])
+
   return (
     <main className="overflow-x-hidden">
       <Banner c={c} />

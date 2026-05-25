@@ -5,14 +5,15 @@ import { Check, ChevronRight, Package } from 'lucide-react'
 import { fadeUp, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 import { DarkVeil } from '../ui/DarkVeil'
+import { ShineBorder } from '../ui/ShineBorder'
 import Certifications from './Certifications'
 
 const IMGS = [
-  '/images/transport.jpg',
-  '/images/138148.jpg',
-  '/images/painpoints.jpg',
-  '/images/transport.jpg',
-  '/images/138148.jpg',
+  '/images/soluciones-transporte.jpg',
+  '/images/soluciones-empresas.jpg',
+  '/images/soluciones-estaciones.jpg',
+  '/images/soluciones-plantas.jpg',
+  '/images/soluciones-hoteleria.jpg',
 ]
 
 /* ─── Image block ───────────────────────────────── */
@@ -138,9 +139,10 @@ function SolutionCard({ item, index, cta }) {
             <motion.div
               key={i}
               variants={fadeUp}
-              className="bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 p-5"
+              className="relative bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 p-5 overflow-hidden"
               style={{ borderRadius: 'var(--radius-xl)' }}
             >
+              {i === 1 && <ShineBorder shineColor={['#EB3D26', '#94D1CA', '#ffffff']} borderWidth={1.5} duration={6} />}
               <InfoCol label={col.label} items={col.items} variant={variant} />
             </motion.div>
           ))}
