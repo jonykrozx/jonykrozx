@@ -32,6 +32,16 @@ function HeroBanner({ p, shared }) {
             initial="hidden"
             animate="show"
           >
+            {p.label && (
+              <motion.span
+                variants={fadeUp}
+                className="inline-flex items-center gap-2 text-[#EB3D26] border border-[#EB3D26]/25 bg-[#EB3D26]/6 dark:bg-[#EB3D26]/10 font-semibold uppercase tracking-[0.15em]"
+                style={{ fontSize: 'var(--text-xs)', padding: '5px 12px', borderRadius: 'var(--radius-pill)' }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#EB3D26]" />
+                {p.label}
+              </motion.span>
+            )}
             <motion.h1
               variants={fadeUp}
               className="text-[#2B2B2B] dark:text-white font-black"
@@ -192,10 +202,10 @@ function WhySection({ p }) {
               {p.whyPoints.map((pt, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <div
-                    className="w-4 h-4 bg-[#EB3D26]/15 flex items-center justify-center shrink-0 mt-0.5"
+                    className="w-4 h-4 bg-[#94D1CA]/15 flex items-center justify-center shrink-0 mt-0.5"
                     style={{ borderRadius: 'var(--radius-sm)' }}
                   >
-                    <Check className="w-2.5 h-2.5 text-[#EB3D26]" strokeWidth={3} />
+                    <Check className="w-2.5 h-2.5 text-[#94D1CA]" strokeWidth={3} />
                   </div>
                   <span className="text-white/85" style={{ fontSize: 'var(--text-sm)' }}>{pt}</span>
                 </li>

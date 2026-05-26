@@ -13,7 +13,7 @@ export const translations = {
         requestDemo: 'Solicitar demo',
       },
       solutions: [
-        { title: 'Transporte de Carga', desc: 'Gestión de flota, guías y RNDC', href: '/soluciones#transporte' },
+        { title: 'Transportes', desc: 'Gestión de flota, guías y RNDC', href: '/soluciones#transporte' },
         { title: 'Empresas', desc: 'Contabilidad, nómina e inventario', href: '/soluciones#empresas' },
         { title: 'Estaciones de Servicio', desc: 'Despacho, inventario y cumplimiento', href: '/soluciones#estaciones' },
         { title: 'Plantas Industriales', desc: 'Control de producción y costos', href: '/soluciones#plantas' },
@@ -705,7 +705,7 @@ export const translations = {
         requestDemo: 'Request demo',
       },
       solutions: [
-        { title: 'Freight Transport', desc: 'Fleet management, guides and RNDC', href: '/soluciones#transporte' },
+        { title: 'Transport', desc: 'Fleet management, guides and RNDC', href: '/soluciones#transporte' },
         { title: 'Companies', desc: 'Accounting, payroll and inventory', href: '/soluciones#empresas' },
         { title: 'Service Stations', desc: 'Dispatch, inventory and compliance', href: '/soluciones#estaciones' },
         { title: 'Industrial Plants', desc: 'Production and cost control', href: '/soluciones#plantas' },

@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { DarkVeil } from '../ui/DarkVeil'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle } from 'lucide-react'
 import { fadeUp, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
-const IMG_BANNER = '/images/transport.jpg'
+const IMG_BANNER = '/images/contacto-banner.jpg'
 
 const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=573165267012&text=Hola%2C%20quiero%20hacer%20una%20pregunta%20acerca%20de%3A%20Escribo%20desde%20Ventas'
 const PHONE_URL = 'tel:+573165267012'
@@ -34,8 +35,7 @@ function Banner({ c }) {
   const b = c.banner
   return (
     <section className="bg-[#2B2B2B] py-20 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: 'radial-gradient(circle at 70% 50%, #94D1CA 0%, transparent 60%)' }} />
+      <DarkVeil hueShift={0} noiseIntensity={0} scanlineIntensity={0} speed={0.5} scanlineFrequency={0} warpAmount={0} resolutionScale={1} style={{ filter: 'grayscale(100%) brightness(1.4) contrast(1.3) opacity(0.55)' }} />
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
@@ -73,7 +73,7 @@ function Banner({ c }) {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease }}
           >
-            <div className="relative overflow-hidden" style={{ borderRadius: 'var(--radius-xl)', width: '484px', height: '350px', maxWidth: '100%' }}>
+            <div className="relative overflow-hidden w-full" style={{ borderRadius: 'var(--radius-xl)', height: '350px' }}>
               <img src={IMG_BANNER} alt="Contacto SYSCOM" className="w-full h-full object-cover" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex' }} />
               <div className="absolute inset-0 bg-[#1A1A1A] border-2 border-dashed border-white/10 items-center justify-center" style={{ display: 'none' }}>
                 <Phone className="w-12 h-12 text-white/20" />

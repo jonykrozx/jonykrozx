@@ -48,7 +48,7 @@ function InfoCol({ label, items, variant = 'bullet' }) {
               ) : variant === 'tag' ? (
                 <div className="w-1.5 h-1.5 rounded-full bg-[#94D1CA] shrink-0 mt-1.5" />
               ) : (
-                <div className="w-1.5 h-1.5 rounded-full bg-[#EB3D26] shrink-0 mt-1.5" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#AEAEAE] shrink-0 mt-1.5" />
               )}
               {href ? (
                 <Link to={href}

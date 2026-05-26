@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Check, Target, Eye, Clock, Zap, Globe, Shield, Users, Cpu, Layers } from 'lucide-react'
+import { DarkVeil } from '../ui/DarkVeil'
 import { fadeUp, fadeIn, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
@@ -59,8 +60,7 @@ function Eyebrow({ text, color = '#EB3D26' }) {
 function Banner({ n }) {
   return (
     <section className="bg-[#2B2B2B] py-20 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03]"
-        style={{ backgroundImage: 'radial-gradient(circle at 60% 50%, #EB3D26 0%, transparent 60%)' }} />
+      <DarkVeil hueShift={0} noiseIntensity={0} scanlineIntensity={0} speed={0.5} scanlineFrequency={0} warpAmount={0} resolutionScale={1} style={{ filter: 'hue-rotate(148deg) saturate(0.7)' }} />
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { DarkVeil } from '../ui/DarkVeil'
 import { ChevronRight, Download, Search, Play, FileText, FileSpreadsheet, BookOpen, Users, Layers } from 'lucide-react'
 import { fadeUp, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
@@ -56,8 +57,7 @@ function FileTypeBadge({ type }) {
 function Hero({ c }) {
   return (
     <section className="bg-[#2B2B2B] py-20 overflow-hidden relative">
-      <div className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: 'radial-gradient(circle at 65% 50%, #94D1CA 0%, transparent 55%)' }} />
+      <DarkVeil hueShift={0} noiseIntensity={0} scanlineIntensity={0} speed={0.5} scanlineFrequency={0} warpAmount={0} resolutionScale={1} style={{ filter: 'hue-rotate(148deg) saturate(0.7)' }} />
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -99,7 +99,7 @@ function Hero({ c }) {
           >
             <div className="relative overflow-hidden" style={{ borderRadius: 'var(--radius-xl)', width: '484px', height: '350px', maxWidth: '100%' }}>
               <img
-                src="/images/138148.jpg"
+                src="/images/comunidad-hero.jpg"
                 alt="Comunidad SYSCOM"
                 className="w-full h-full object-cover"
                 onError={(e) => { e.currentTarget.style.display = 'none' }}
