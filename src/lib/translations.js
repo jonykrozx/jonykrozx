@@ -183,19 +183,39 @@ export const translations = {
       cols: [
         {
           heading: 'Soluciones',
-          links: ['Transporte de Carga', 'Empresas', 'Parqueaderos', 'Estaciones de Servicio', 'Plantas Industriales', 'Hotelería'],
+          links: [
+            { label: 'Transportes',          href: '/soluciones#transporte' },
+            { label: 'Empresas',             href: '/soluciones#empresas' },
+            { label: 'Estaciones de Servicio', href: '/soluciones#estaciones' },
+            { label: 'Plantas Industriales', href: '/soluciones#plantas' },
+            { label: 'Hotelería',            href: '/soluciones#hoteleria' },
+          ],
         },
         {
           heading: 'Empresa',
-          links: ['Nosotros', 'Comunidad', 'Blog', 'Contacto'],
+          links: [
+            { label: 'Nosotros',  href: '/nosotros' },
+            { label: 'Comunidad', href: '/comunidad' },
+            { label: 'Blog',      href: '/blog' },
+            { label: 'Contacto',  href: '/contacto' },
+          ],
         },
         {
           heading: 'Soporte',
-          links: ['Mesa de ayuda', 'Tutoriales', 'Actualizaciones', 'Estado del sistema'],
+          links: [
+            { label: 'Capacitación',        href: '/comunidad#Capacitación' },
+            { label: 'Tutoriales',          href: '/comunidad#tutoriales' },
+            { label: 'Actualizaciones',     href: '#' },
+            { label: 'Estado del sistema',  href: '#' },
+          ],
         },
         {
           heading: 'Legal',
-          links: ['Términos de uso', 'Política de privacidad', 'Tratamiento de datos'],
+          links: [
+            { label: 'Términos de uso',         href: '/terminos' },
+            { label: 'Política de privacidad',  href: '/politica-privacidad' },
+            { label: 'Tratamiento de datos',    href: '/tratamiento-datos' },
+          ],
         },
       ],
       rights: 'Todos los derechos reservados.',
@@ -875,19 +895,39 @@ export const translations = {
       cols: [
         {
           heading: 'Solutions',
-          links: ['Freight Transport', 'Companies', 'Parking Lots', 'Service Stations', 'Industrial Plants', 'Hospitality'],
+          links: [
+            { label: 'Transport',          href: '/soluciones#transporte' },
+            { label: 'Companies',          href: '/soluciones#empresas' },
+            { label: 'Service Stations',   href: '/soluciones#estaciones' },
+            { label: 'Industrial Plants',  href: '/soluciones#plantas' },
+            { label: 'Hospitality',        href: '/soluciones#hoteleria' },
+          ],
         },
         {
           heading: 'Company',
-          links: ['About us', 'Community', 'Blog', 'Contact'],
+          links: [
+            { label: 'About us',   href: '/nosotros' },
+            { label: 'Community',  href: '/comunidad' },
+            { label: 'Blog',       href: '/blog' },
+            { label: 'Contact',    href: '/contacto' },
+          ],
         },
         {
           heading: 'Support',
-          links: ['Help desk', 'Tutorials', 'Updates', 'System status'],
+          links: [
+            { label: 'Training',      href: '/comunidad#Capacitación' },
+            { label: 'Tutorials',     href: '/comunidad#tutoriales' },
+            { label: 'Updates',       href: '#' },
+            { label: 'System status', href: '#' },
+          ],
         },
         {
           heading: 'Legal',
-          links: ['Terms of use', 'Privacy policy', 'Data processing'],
+          links: [
+            { label: 'Terms of use',      href: '/terminos' },
+            { label: 'Privacy policy',    href: '/politica-privacidad' },
+            { label: 'Data processing',   href: '/tratamiento-datos' },
+          ],
         },
       ],
       rights: 'All rights reserved.',

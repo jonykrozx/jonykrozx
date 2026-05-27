@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../lib/LanguageContext'
 
 const WhatsAppIcon = () => (
@@ -106,15 +107,24 @@ export default function Footer() {
                   {col.heading}
                 </h6>
                 <ul className="space-y-2">
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-[#6B6B6B] hover:text-white transition-colors duration-150"
-                        style={{ fontSize: 'var(--text-xs)' }}
-                      >
-                        {link}
-                      </a>
+                  {col.links.map(({ label, href }) => (
+                    <li key={label}>
+                      {href && href !== '#' ? (
+                        <Link
+                          to={href}
+                          className="text-[#6B6B6B] hover:text-white transition-colors duration-150"
+                          style={{ fontSize: 'var(--text-xs)' }}
+                        >
+                          {label}
+                        </Link>
+                      ) : (
+                        <span
+                          className="text-[#6B6B6B]"
+                          style={{ fontSize: 'var(--text-xs)' }}
+                        >
+                          {label}
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>
