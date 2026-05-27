@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { DarkVeil } from '../ui/DarkVeil'
 import { ChevronRight, Download, Search, Play, FileText, FileSpreadsheet, BookOpen, Users, Layers } from 'lucide-react'
 import { fadeUp, stagger, ease } from '../../lib/motion'
@@ -197,7 +197,7 @@ function Blog({ c }) {
 ══════════════════════════════════════════════════ */
 function Tutoriales({ c }) {
   return (
-    <section className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
+    <section id="tutoriales" className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div variants={stagger(0.08, 0.05)} initial="hidden" whileInView="show"
           viewport={{ once: true, amount: 0.1 }} className="space-y-10">
@@ -271,7 +271,7 @@ const CAP_ICONS = [
 
 function Capacitacion({ c }) {
   return (
-    <section className="bg-white dark:bg-[#1A1A1A] py-20">
+    <section id="Capacitación" className="bg-white dark:bg-[#1A1A1A] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div variants={stagger(0.08, 0.05)} initial="hidden" whileInView="show"
           viewport={{ once: true, amount: 0.1 }} className="space-y-10">
@@ -330,7 +330,7 @@ function Documentos({ c }) {
   })
 
   return (
-    <section className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
+    <section id="recursos" className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div variants={stagger(0.08, 0.05)} initial="hidden" whileInView="show"
           viewport={{ once: true, amount: 0.05 }} className="space-y-8">
@@ -513,6 +513,15 @@ function CtaFinal({ c }) {
 export default function ComunidadPage() {
   const { t } = useLang()
   const c = t.comunidad
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
+    }
+  }, [hash])
+
   return (
     <main className="overflow-x-hidden">
       <Hero         c={c.hero} />

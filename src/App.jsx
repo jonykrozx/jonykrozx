@@ -14,6 +14,7 @@ import TrustStats from './components/sections/TrustStats'
 import Testimonials from './components/sections/Testimonials'
 import GetStarted from './components/sections/GetStarted'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import NosotrosPage from './components/sections/NosotrosPage'
 import ContactoPage from './components/sections/ContactoPage'
 import TratamientoDatosPage from './components/sections/TratamientoDatosPage'
@@ -51,6 +52,7 @@ function App() {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-white dark:bg-[#0A0A0A]">
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />

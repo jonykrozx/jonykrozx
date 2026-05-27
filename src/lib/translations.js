@@ -203,10 +203,9 @@ export const translations = {
         {
           heading: 'Soporte',
           links: [
-            { label: 'Capacitación',        href: '/comunidad#Capacitación' },
             { label: 'Tutoriales',          href: '/comunidad#tutoriales' },
-            { label: 'Actualizaciones',     href: '#' },
-            { label: 'Estado del sistema',  href: '#' },
+            { label: 'Capacitación',        href: '/comunidad#Capacitación' },
+            { label: 'Recursos',            href: '/comunidad#recursos' },
           ],
         },
         {
@@ -915,10 +914,9 @@ export const translations = {
         {
           heading: 'Support',
           links: [
-            { label: 'Training',      href: '/comunidad#Capacitación' },
             { label: 'Tutorials',     href: '/comunidad#tutoriales' },
-            { label: 'Updates',       href: '#' },
-            { label: 'System status', href: '#' },
+            { label: 'Training',      href: '/comunidad#Capacitación' },
+            { label: 'Resources',     href: '/comunidad#recursos' },
           ],
         },
         {
