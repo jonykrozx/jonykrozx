@@ -8,8 +8,8 @@ import { productTranslations } from '../../lib/products'
 function ImgFallback() {
   return (
     <div
-      className="w-full h-full absolute inset-0 flex items-center justify-center bg-[#F2F2F2] dark:bg-white/5 border-2 border-dashed border-[#DEDEDE] dark:border-white/10"
-      style={{ borderRadius: 'var(--radius-xl)' }}
+      className="w-full h-full absolute inset-0 items-center justify-center bg-[#F2F2F2] dark:bg-white/5 border-2 border-dashed border-[#DEDEDE] dark:border-white/10"
+      style={{ borderRadius: 'var(--radius-xl)', display: 'none' }}
     >
       <Package className="w-14 h-14 text-[#DEDEDE]" />
     </div>
@@ -229,7 +229,7 @@ function WhySection({ p }) {
               style={{ borderRadius: 'var(--radius-xl)', aspectRatio: '4/3' }}
             >
               <img
-                src={p.image}
+                src={p.image2 || p.image}
                 alt={p.whyTitle}
                 className="w-full h-full object-cover"
                 onError={(e) => {
