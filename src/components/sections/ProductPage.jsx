@@ -5,6 +5,29 @@ import { fadeUp, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 import { productTranslations } from '../../lib/products'
 
+/* ─── Variantes de animación por sección ─── */
+
+// HeroMedia — columnas desde los lados
+const fromLeft  = { hidden: { opacity: 0, x: -52 }, show: { opacity: 1, x: 0, transition: { duration: 0.7, ease } } }
+const fromRight = { hidden: { opacity: 0, x:  52 }, show: { opacity: 1, x: 0, transition: { duration: 0.7, ease } } }
+const fromLeftStagger  = { hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } } }
+const fromRightStagger = { hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } } }
+const fromLeftItem  = { hidden: { opacity: 0, x: -28 }, show: { opacity: 1, x: 0, transition: { duration: 0.55, ease } } }
+const fromRightItem = { hidden: { opacity: 0, x:  28 }, show: { opacity: 1, x: 0, transition: { duration: 0.55, ease } } }
+
+// FeaturesGrid — escala + pop
+const scalePop     = { hidden: { opacity: 0, scale: 0.86, y: 14 }, show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.42, ease } } }
+const scaleStagger = { hidden: {}, show: { transition: { staggerChildren: 0.07, delayChildren: 0.05 } } }
+
+// BenefitsSection — blur + desvanecimiento
+const blurIn     = { hidden: { opacity: 0, filter: 'blur(8px)', y: 20 }, show: { opacity: 1, filter: 'blur(0px)', y: 0, transition: { duration: 0.5, ease } } }
+const blurStagger = { hidden: {}, show: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } } }
+const blurTitle  = { hidden: { opacity: 0, filter: 'blur(10px)', letterSpacing: '0.2em' }, show: { opacity: 1, filter: 'blur(0px)', letterSpacing: 'var(--ls-tight)', transition: { duration: 0.7, ease } } }
+
+// ClosingCTA — zoom suave + fade
+const zoomFade     = { hidden: { opacity: 0, scale: 0.93 }, show: { opacity: 1, scale: 1, transition: { duration: 0.65, ease } } }
+const zoomStagger  = { hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.08 } } }
+
 /* Mapeo producto → sección de /soluciones */
 const SOLUTIONS_HREF = {
   transCarga:             '/soluciones#transporte',
@@ -182,16 +205,16 @@ function HeroMedia({ p, shared }) {
       <div className="relative max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          {/* ── Left: título + texto + whyPoints + whyClosing ── */}
+          {/* ── Left: desliza desde izquierda ── */}
           <motion.div
             className="space-y-6"
-            variants={stagger(0.09, 0.05)}
+            variants={fromLeftStagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
           >
             <motion.h2
-              variants={fadeUp}
+              variants={fromLeftItem}
               className="text-[#1A1A1A] dark:text-white font-black"
               style={{ fontSize: 'clamp(1.35rem, 2.5vw, 1.9rem)', lineHeight: 1.2, letterSpacing: '-0.015em' }}
             >
@@ -199,17 +222,16 @@ function HeroMedia({ p, shared }) {
             </motion.h2>
 
             <motion.p
-              variants={fadeUp}
+              variants={fromLeftItem}
               className="text-[#5C5C5C] dark:text-[#AEAEAE]"
               style={{ fontSize: 'var(--text-base)', lineHeight: '1.8' }}
             >
               {p.whySubtitle}
             </motion.p>
 
-            {/* whyClosing — frase de cierre destacada */}
             {p.whyClosing && (
               <motion.p
-                variants={fadeUp}
+                variants={fromLeftItem}
                 className="text-[#EB3D26] font-semibold border-l-2 border-[#EB3D26]/40 pl-4"
                 style={{ fontSize: 'var(--text-sm)', lineHeight: '1.7', fontStyle: 'italic' }}
               >
@@ -218,16 +240,16 @@ function HeroMedia({ p, shared }) {
             )}
           </motion.div>
 
-          {/* ── Right: whyPoints + CTAs ── */}
+          {/* ── Right: desliza desde derecha ── */}
           <motion.div
             className="space-y-7"
-            variants={stagger(0.1, 0.06)}
+            variants={fromRightStagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
           >
             {p.whyPoints?.length > 0 && (
-              <motion.ul variants={fadeUp} className="space-y-4">
+              <motion.ul variants={fromRightItem} className="space-y-4">
                 {p.whyPoints.map((point, i) => (
                   <li key={i} className="flex items-start gap-3.5">
                     <div
@@ -245,12 +267,12 @@ function HeroMedia({ p, shared }) {
             )}
 
             <motion.div
-              variants={fadeUp}
+              variants={fromRightItem}
               className="h-px"
               style={{ background: 'linear-gradient(to right, rgba(235,61,38,0.2), transparent)' }}
             />
 
-            <motion.div variants={fadeUp}>
+            <motion.div variants={fromRightItem}>
               <a
                 href={shared.demoHref}
                 target="_blank"
@@ -291,20 +313,22 @@ function FeaturesGrid({ p }) {
     <section className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-12">
 
+        {/* Título: desliza desde izquierda con clip */}
         <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -32 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.55, ease }}
+          transition={{ duration: 0.6, ease }}
           className="text-[#2B2B2B] dark:text-white font-black text-center"
           style={{ fontSize: 'var(--text-2xl)', letterSpacing: 'var(--ls-tight)', lineHeight: 'var(--lh-snug)' }}
         >
           {p.featuresTitle}
         </motion.h2>
 
+        {/* Cards: scale pop escalonado */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          variants={stagger(0.07, 0.05)}
+          variants={scaleStagger}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.05 }}
@@ -312,7 +336,7 @@ function FeaturesGrid({ p }) {
           {p.features.map((feat, i) => (
             <motion.div
               key={i}
-              variants={fadeUp}
+              variants={scalePop}
               className="bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 p-5 space-y-2"
               style={{ borderRadius: 'var(--radius-xl)' }}
             >
@@ -422,20 +446,22 @@ function BenefitsSection({ p }) {
     <section className="bg-white dark:bg-[#0A0A0A] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-12">
 
+        {/* Título: blur + expand letter-spacing → tight */}
         <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={blurTitle}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.55, ease }}
           className="text-[#2B2B2B] dark:text-white font-black text-center"
-          style={{ fontSize: 'var(--text-2xl)', letterSpacing: 'var(--ls-tight)', lineHeight: 'var(--lh-snug)' }}
+          style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)' }}
         >
           {p.benefitsTitle}
         </motion.h2>
 
+        {/* Cards: blur-in escalonado */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          variants={stagger(0.08, 0.05)}
+          variants={blurStagger}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.05 }}
@@ -443,7 +469,7 @@ function BenefitsSection({ p }) {
           {p.benefits.map((b, i) => (
             <motion.div
               key={i}
-              variants={fadeUp}
+              variants={blurIn}
               className="bg-[#F2F2F2] dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 p-5 space-y-2"
               style={{ borderRadius: 'var(--radius-xl)' }}
             >
@@ -473,15 +499,16 @@ function ClosingCTA({ p, shared }) {
         style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #EB3D26 0%, transparent 60%)' }}
       />
       <div className="relative z-10 max-w-2xl mx-auto px-4 md:px-8 text-center">
+        {/* Zoom fade: todo el bloque entra como una unidad */}
         <motion.div
-          variants={stagger(0.1, 0.05)}
+          variants={zoomStagger}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
           className="space-y-6"
         >
           <motion.h2
-            variants={fadeUp}
+            variants={zoomFade}
             className="text-[#2B2B2B] dark:text-white font-black"
             style={{ fontSize: 'var(--text-3xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
           >
@@ -489,14 +516,14 @@ function ClosingCTA({ p, shared }) {
           </motion.h2>
 
           <motion.p
-            variants={fadeUp}
+            variants={zoomFade}
             className="text-[#6B6B6B] dark:text-[#AEAEAE]"
             style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}
           >
             {p.closingDesc}
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 justify-center">
+          <motion.div variants={zoomFade} className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href={shared.waHref}
               target="_blank"
