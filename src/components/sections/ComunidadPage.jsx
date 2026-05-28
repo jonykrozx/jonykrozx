@@ -166,13 +166,13 @@ function BlogPostCard({ post, readTimeLabel, readMore }) {
           style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--lh-relaxed)' }}>
           {post.excerpt}
         </p>
-        <div className="flex items-center justify-between pt-3 border-t border-[#F2F2F2] dark:border-white/6">
-          <div className="flex items-center gap-3 text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>
+        <div className="flex flex-wrap items-center justify-between gap-y-1 pt-3 border-t border-[#F2F2F2] dark:border-white/6">
+          <div className="flex items-center gap-2 text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>
             <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime} {readTimeLabel}</span>
             <span>·</span>
             <span>{post.date}</span>
           </div>
-          <span className="inline-flex items-center gap-1 text-[#EB3D26] font-semibold group-hover:gap-2 transition-all"
+          <span className="inline-flex items-center gap-1 text-[#EB3D26] font-semibold shrink-0"
             style={{ fontSize: 'var(--text-xs)' }}>
             {readMore} <ChevronRight className="w-3 h-3" />
           </span>
@@ -209,7 +209,7 @@ function Blog({ c, blogData }) {
           </motion.div>
           <motion.div variants={fadeUp}>
             <Link to="/blog"
-              className="inline-flex items-center gap-2 bg-[#EB3D26] hover:bg-[#d63520] active:scale-95 text-white font-bold transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#EB3D26] hover:bg-[#d63520] active:scale-95 text-white font-bold transition-all duration-200"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}>
               {c.cta} <ChevronRight className="w-4 h-4" />
             </Link>
@@ -274,13 +274,13 @@ function Tutoriales({ c }) {
               </a>
             ))}
           </motion.div>
-          <motion.div variants={fadeUp} className="flex items-center gap-4">
+          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-center gap-3">
             <a href={c.ctaHref} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#94D1CA] hover:bg-[#72bbb3] active:scale-95 text-[#2B2B2B] font-bold transition-all"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#94D1CA] hover:bg-[#72bbb3] active:scale-95 text-[#2B2B2B] font-bold transition-all"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}>
               {c.cta} <ChevronRight className="w-4 h-4" />
             </a>
-            <span className="text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>{c.format}</span>
+            <span className="text-[#AEAEAE] text-center sm:text-left" style={{ fontSize: 'var(--text-xs)' }}>{c.format}</span>
           </motion.div>
         </motion.div>
       </div>
@@ -318,7 +318,7 @@ function Capacitacion({ c }) {
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {c.items.map((item, i) => (
               <div key={i}
-                className="bg-[#F7F7F7] dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 hover:border-[#94D1CA]/40 transition-all group"
+                className="bg-[#F4F4F4] dark:bg-white/4 border border-[#E8E8E8] dark:border-white/8 hover:border-[#94D1CA]/40 transition-all group"
                 style={{ padding: '24px', borderRadius: 'var(--radius-xl)' }}>
                 <div className="w-10 h-10 bg-[#94D1CA]/15 text-[#94D1CA] flex items-center justify-center mb-4 group-hover:bg-[#94D1CA]/25 transition-colors"
                   style={{ borderRadius: 'var(--radius-md)' }}>
@@ -333,7 +333,7 @@ function Capacitacion({ c }) {
           </motion.div>
           <motion.div variants={fadeUp}>
             <Link to={c.ctaHref}
-              className="inline-flex items-center gap-2 bg-[#94D1CA] hover:bg-[#72bbb3] active:scale-95 text-[#2B2B2B] font-bold transition-all"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#94D1CA] hover:bg-[#72bbb3] active:scale-95 text-[#2B2B2B] font-bold transition-all"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}>
               {c.cta} <ChevronRight className="w-4 h-4" />
             </Link>
@@ -377,10 +377,9 @@ function Documentos({ c }) {
             </p>
           </motion.div>
 
-          {/* Search + filters */}
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-            {/* Search */}
-            <div className="relative flex-1 max-w-sm">
+          {/* Search */}
+          <motion.div variants={fadeUp}>
+            <div className="relative w-full max-w-sm">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#AEAEAE]" />
               <input
                 type="text"
@@ -391,7 +390,10 @@ function Documentos({ c }) {
                 style={{ fontSize: 'var(--text-sm)', padding: '9px 12px 9px 36px', borderRadius: 'var(--radius-md)' }}
               />
             </div>
-            {/* Category tabs */}
+          </motion.div>
+
+          {/* Category tabs */}
+          <motion.div variants={fadeUp}>
             <div className="flex flex-wrap gap-2">
               {c.categories.map((cat) => (
                 <button
@@ -450,7 +452,7 @@ function Documentos({ c }) {
           <motion.div variants={fadeUp}>
             <Link
               to="/documentacion"
-              className="inline-flex items-center gap-2 bg-[#2B2B2B] dark:bg-white text-white dark:text-[#2B2B2B] font-bold hover:opacity-90 active:scale-95 transition-all"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#2B2B2B] dark:bg-white text-white dark:text-[#2B2B2B] font-bold hover:opacity-90 active:scale-95 transition-all"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}>
               {c.cta} <ChevronRight className="w-4 h-4" />
             </Link>

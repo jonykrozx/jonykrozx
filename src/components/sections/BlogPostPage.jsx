@@ -114,9 +114,9 @@ export default function BlogPostPage() {
         {/* Back link */}
         <div className="absolute top-6 left-0 right-0 max-w-4xl mx-auto px-4 md:px-8">
           <Link to="/blog"
-            className="inline-flex items-center gap-1.5 text-white/60 hover:text-white transition-colors group"
-            style={{ fontSize: 'var(--text-xs)' }}>
-            <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform duration-200" />
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors group"
+            style={{ fontSize: 'var(--text-sm)' }}>
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-200" />
             Volver al blog
           </Link>
         </div>

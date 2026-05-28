@@ -115,13 +115,13 @@ function PostCard({ post, cta }) {
           style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--lh-relaxed)' }}>
           {post.excerpt}
         </p>
-        <div className="flex items-center justify-between pt-3 border-t border-[#F2F2F2] dark:border-white/6">
-          <div className="flex items-center gap-3 text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>
+        <div className="flex flex-wrap items-center justify-between gap-y-1 pt-3 border-t border-[#F2F2F2] dark:border-white/6">
+          <div className="flex items-center gap-2 text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>
             <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime} {cta.readTimeLabel}</span>
             <span>·</span>
             <span>{post.date}</span>
           </div>
-          <span className="inline-flex items-center gap-1 text-[#EB3D26] font-semibold group-hover:gap-2 transition-all"
+          <span className="inline-flex items-center gap-1 text-[#EB3D26] font-semibold shrink-0"
             style={{ fontSize: 'var(--text-xs)' }}>
             {cta.readMore} <ChevronRight className="w-3 h-3" />
           </span>
@@ -169,6 +169,14 @@ export default function BlogPage() {
       {/* ── HERO ─────────────────────────────────────── */}
       <section className="bg-[#2B2B2B] py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <motion.div variants={fadeUp} initial="hidden" animate="show" className="mb-6">
+            <Link to="/comunidad"
+              className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors group"
+              style={{ fontSize: 'var(--text-sm)' }}>
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-200" />
+              Volver a comunidad
+            </Link>
+          </motion.div>
           <motion.div variants={stagger(0.1, 0.05)} initial="hidden" animate="show" className="max-w-2xl">
             <motion.p variants={fadeUp}
               className="text-[#EB3D26] font-bold uppercase tracking-[0.18em] mb-3"
