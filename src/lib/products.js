@@ -16,6 +16,7 @@ export const productTranslations = {
     shared: {
       demo:    'Solicitar demo',
       advisor: 'Hablar con un asesor',
+      back:    'Volver a soluciones',
       demoHref: DEMO_HREF,
       waHref:   WA_HREF,
     },
@@ -667,6 +668,7 @@ export const productTranslations = {
     shared: {
       demo:    'Request demo',
       advisor: 'Talk to an advisor',
+      back:    'Back to solutions',
       demoHref: DEMO_HREF,
       waHref:   WA_HREF,
     },

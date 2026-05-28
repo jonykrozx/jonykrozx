@@ -1,8 +1,27 @@
 import { motion } from 'framer-motion'
-import { Check, ChevronRight, Package } from 'lucide-react'
+import { ArrowLeft, Check, ChevronRight, Package } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { fadeUp, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 import { productTranslations } from '../../lib/products'
+
+/* Mapeo producto → sección de /soluciones */
+const SOLUTIONS_HREF = {
+  transCarga:             '/soluciones#transporte',
+  transporteEspecial:     '/soluciones#transporte',
+  busUrbano:              '/soluciones#transporte',
+  mantvehicular:          '/soluciones#transporte',
+  Sysparking:             '/soluciones#transporte',
+  estaciones:             '/soluciones#estaciones',
+  plantas:                '/soluciones#plantas',
+  sysTotalComercial:      '/soluciones#empresas',
+  nominarh:               '/soluciones#empresas',
+  contabilidad:           '/soluciones#empresas',
+  facturacionelect:       '/soluciones#empresas',
+  activosFijos:           '/soluciones#empresas',
+  facturacioneinventario: '/soluciones#empresas',
+  hoteleria:              '/soluciones#hoteleria',
+}
 
 /* ─── Fallback image placeholder ─── */
 function ImgFallback() {
@@ -19,7 +38,7 @@ function ImgFallback() {
 /* ════════════════════════════════════════════════════
    SECTION 1 — HERO BANNER
 ════════════════════════════════════════════════════ */
-function HeroBanner({ p, shared }) {
+function HeroBanner({ p, shared, backHref }) {
   return (
     <section className="bg-white dark:bg-[#0A0A0A] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -32,6 +51,20 @@ function HeroBanner({ p, shared }) {
             initial="hidden"
             animate="show"
           >
+            {/* Back link */}
+            {backHref && (
+              <motion.div variants={fadeUp}>
+                <Link
+                  to={backHref}
+                  className="inline-flex items-center gap-1.5 text-[#6B6B6B] dark:text-[#AEAEAE] hover:text-[#EB3D26] dark:hover:text-[#EB3D26] transition-colors duration-150"
+                  style={{ fontSize: 'var(--text-xs)' }}
+                >
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                  {shared.back}
+                </Link>
+              </motion.div>
+            )}
+
             {p.label && (
               <motion.span
                 variants={fadeUp}
@@ -366,12 +399,13 @@ export default function ProductPage({ productKey }) {
   const langData  = productTranslations[lang] ?? productTranslations.es
   const p         = langData[productKey]
   const shared    = langData.shared
+  const backHref  = SOLUTIONS_HREF[productKey] ?? '/soluciones'
 
   if (!p) return null   // clave no encontrada — falla silenciosa
 
   return (
     <main className="overflow-x-hidden">
-      <HeroBanner    p={p} shared={shared} />
+      <HeroBanner    p={p} shared={shared} backHref={backHref} />
       <FeaturesGrid  p={p} />
       <WhySection    p={p} />
       <BenefitsSection p={p} />
