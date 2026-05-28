@@ -326,6 +326,31 @@ function HeroBanner({ p, shared, backHref }) {
     <>
       <HeroHeader p={p} shared={shared} backHref={backHref} />
 
+      {/* ── Banner normativo entre secciones ── */}
+      <div className="bg-white dark:bg-[#0A0A0A] border-y border-[#EFEFEF] dark:border-white/8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex justify-center">
+          <div
+            className="inline-flex items-center gap-3 border border-[#94D1CA]/40 bg-[#94D1CA]/10 dark:bg-[#94D1CA]/8"
+            style={{ borderRadius: 'var(--radius-lg)', padding: '10px 16px' }}
+          >
+            <div className="w-7 h-7 bg-[#94D1CA]/20 flex items-center justify-center shrink-0" style={{ borderRadius: 'var(--radius-md)' }}>
+              <svg className="w-4 h-4 text-[#3D8B87] dark:text-[#94D1CA]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div className="flex items-center gap-2">
+              <p className="text-[#3D8B87] dark:text-[#94D1CA] font-bold" style={{ fontSize: 'var(--text-sm)', letterSpacing: '0.05em' }}>
+                CUMPLIMIENTO NORMATIVO
+              </p>
+              <span className="text-[#AAAAAA]">—</span>
+              <p className="text-[#555555] dark:text-white/70" style={{ fontSize: 'var(--text-sm)' }}>
+                Decreto 1017 de 2025 · Ministerio de Transporte
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <HeroMedia  p={p} shared={shared} />
     </>
   )
