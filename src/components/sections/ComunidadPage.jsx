@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
 import { DarkVeil } from '../ui/DarkVeil'
-import { ChevronRight, Download, Search, Play, FileText, FileSpreadsheet, BookOpen, Users, Layers } from 'lucide-react'
+import { ChevronRight, Download, Search, Play, FileText, FileSpreadsheet, BookOpen, Users, Layers, Clock } from 'lucide-react'
 import { fadeUp, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
+import { toSlug } from './BlogPostPage'
 
 const CARD_IMGS = ['/images/transport.jpg', '/images/138148.jpg', '/images/painpoints.jpg', '/images/transport.jpg']
 
@@ -120,42 +121,69 @@ function Hero({ c }) {
 /* ═══════════════════════════════════════════════════
    2. BLOG
 ══════════════════════════════════════════════════ */
-function ContentCard({ title, tag, img, isVideo }) {
+const CAT_COLORS = {
+  facturacion: { bg: 'bg-[#EB3D26]',   text: 'text-white' },
+  transporte:  { bg: 'bg-[#2B2B2B]',   text: 'text-white' },
+  finanzas:    { bg: 'bg-[#2E9E6B]',   text: 'text-white' },
+  gestion:     { bg: 'bg-[#94D1CA]',   text: 'text-[#2B2B2B]' },
+}
+
+function CatBadge({ category, label }) {
+  const s = CAT_COLORS[category] ?? { bg: 'bg-[#AEAEAE]', text: 'text-white' }
   return (
-    <div className="group bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 overflow-hidden hover:border-[#EB3D26]/30 transition-all duration-200 cursor-pointer"
-      style={{ borderRadius: 'var(--radius-xl)' }}>
-      {/* Image */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
-        <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex' }} />
-        <div className="absolute inset-0 bg-[#F2F2F2] dark:bg-white/5 items-center justify-center" style={{ display: 'none' }}>
-          <BookOpen className="w-8 h-8 text-[#DEDEDE]" />
-        </div>
-        {isVideo && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-10 h-10 bg-black/50 backdrop-blur-sm flex items-center justify-center"
-              style={{ borderRadius: 'var(--radius-full)' }}>
-              <Play className="w-4 h-4 text-white fill-white ml-0.5" />
-            </div>
-          </div>
-        )}
-        <span className="absolute top-3 left-3 text-white font-bold bg-[#EB3D26]"
-          style={{ fontSize: 'var(--text-xs)', padding: '3px 10px', borderRadius: 'var(--radius-pill)' }}>
-          {tag}
-        </span>
-      </div>
-      {/* Body */}
-      <div style={{ padding: '14px 16px' }}>
-        <p className="text-[#2B2B2B] dark:text-white font-semibold group-hover:text-[#EB3D26] transition-colors"
-          style={{ fontSize: 'var(--text-sm)', lineHeight: '1.45' }}>
-          {title}
-        </p>
-      </div>
-    </div>
+    <span className={`inline-block font-bold uppercase tracking-[0.1em] ${s.bg} ${s.text}`}
+      style={{ fontSize: '10px', padding: '3px 8px', borderRadius: 'var(--radius-pill)' }}>
+      {label}
+    </span>
   )
 }
 
-function Blog({ c }) {
+function BlogPostCard({ post, readTimeLabel, readMore }) {
+  const img = CARD_IMGS[post.id % CARD_IMGS.length]
+  return (
+    <Link to={`/blog/${toSlug(post.title)}`}
+      className="group bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 overflow-hidden hover:border-[#EB3D26]/25 hover:shadow-md transition-all duration-200 flex flex-col"
+      style={{ borderRadius: 'var(--radius-xl)' }}
+    >
+      {/* Image */}
+      <div className="relative overflow-hidden shrink-0" style={{ aspectRatio: '16/9' }}>
+        <img src={img} alt={post.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex' }} />
+        <div className="absolute inset-0 bg-[#F2F2F2] dark:bg-white/5 items-center justify-center hidden"
+          style={{ display: 'none' }} />
+        <div className="absolute top-3 left-3">
+          <CatBadge category={post.category} label={post.categoryLabel} />
+        </div>
+      </div>
+      {/* Body */}
+      <div className="flex flex-col flex-1 p-5 gap-3">
+        <h3 className="text-[#2B2B2B] dark:text-white font-bold group-hover:text-[#EB3D26] transition-colors"
+          style={{ fontSize: 'var(--text-base)', lineHeight: '1.45' }}>
+          {post.title}
+        </h3>
+        <p className="text-[#6B6B6B] dark:text-[#AEAEAE] flex-1"
+          style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--lh-relaxed)' }}>
+          {post.excerpt}
+        </p>
+        <div className="flex items-center justify-between pt-3 border-t border-[#F2F2F2] dark:border-white/6">
+          <div className="flex items-center gap-3 text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>
+            <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime} {readTimeLabel}</span>
+            <span>·</span>
+            <span>{post.date}</span>
+          </div>
+          <span className="inline-flex items-center gap-1 text-[#EB3D26] font-semibold group-hover:gap-2 transition-all"
+            style={{ fontSize: 'var(--text-xs)' }}>
+            {readMore} <ChevronRight className="w-3 h-3" />
+          </span>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
+function Blog({ c, blogData }) {
+  const posts = blogData.posts.slice(0, 4)
   return (
     <section className="bg-white dark:bg-[#1A1A1A] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -175,13 +203,13 @@ function Blog({ c }) {
           </motion.div>
           <motion.div variants={fadeUp}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {c.items.map((item, i) => (
-              <ContentCard key={i} title={item.title} tag={item.tag} img={CARD_IMGS[i % CARD_IMGS.length]} isVideo={false} />
+            {posts.map((post) => (
+              <BlogPostCard key={post.id} post={post} readTimeLabel={blogData.readTimeLabel} readMore={blogData.readMore} />
             ))}
           </motion.div>
           <motion.div variants={fadeUp}>
             <Link to="/blog"
-              className="inline-flex items-center gap-2 bg-[#2B2B2B] dark:bg-white text-white dark:text-[#2B2B2B] font-bold hover:opacity-90 active:scale-95 transition-all"
+              className="inline-flex items-center gap-2 bg-[#EB3D26] hover:bg-[#d63520] active:scale-95 text-white font-bold transition-all duration-200"
               style={{ fontSize: 'var(--text-sm)', padding: '11px 24px', borderRadius: 'var(--radius-md)' }}>
               {c.cta} <ChevronRight className="w-4 h-4" />
             </Link>
@@ -525,7 +553,7 @@ export default function ComunidadPage() {
   return (
     <main className="overflow-x-hidden">
       <Hero         c={c.hero} />
-      <Blog         c={c.blog} />
+      <Blog         c={c.blog} blogData={t.blog} />
       <Tutoriales   c={c.tutoriales} />
       <Capacitacion c={c.capacitacion} />
       <Documentos   c={c.documentos} />
