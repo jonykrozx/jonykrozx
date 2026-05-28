@@ -442,47 +442,71 @@ function WhySection({ p }) {
    SECTION 4 — BENEFITS
 ════════════════════════════════════════════════════ */
 function BenefitsSection({ p }) {
+  const imgSrc = p.image2 || p.image
   return (
     <section className="bg-white dark:bg-[#0A0A0A] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-12">
 
-        {/* Título: blur + expand letter-spacing → tight */}
-        <motion.h2
-          variants={blurTitle}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="text-[#2B2B2B] dark:text-white font-black text-center"
-          style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)' }}
-        >
-          {p.benefitsTitle}
-        </motion.h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-        {/* Cards: blur-in escalonado */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          variants={blurStagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.05 }}
-        >
-          {p.benefits.map((b, i) => (
-            <motion.div
-              key={i}
-              variants={blurIn}
-              className="bg-[#F2F2F2] dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 p-5 space-y-2"
-              style={{ borderRadius: 'var(--radius-xl)' }}
+          {/* Columna izq: imagen */}
+          <motion.div
+            initial={{ opacity: 0, x: -32 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, ease }}
+            className="relative w-full overflow-hidden order-2 lg:order-1 lg:sticky lg:top-28"
+            style={{ borderRadius: 'var(--radius-xl)', aspectRatio: '4/3',
+              boxShadow: '0 16px 48px -10px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.04)' }}
+          >
+            <img
+              src={imgSrc}
+              alt={p.benefitsTitle}
+              className="w-full h-full object-cover"
+              onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex' }}
+            />
+            <ImgFallback />
+          </motion.div>
+
+          {/* Columna der: título + cards */}
+          <div className="space-y-8 order-1 lg:order-2">
+            <motion.h2
+              variants={blurTitle}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              className="text-[#2B2B2B] dark:text-white font-black"
+              style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
             >
-              <h3 className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-sm)' }}>
-                {b.title}
-              </h3>
-              <p className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)', lineHeight: '1.6' }}>
-                {b.desc}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+              {p.benefitsTitle}
+            </motion.h2>
 
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+              variants={blurStagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.05 }}
+            >
+              {p.benefits.map((b, i) => (
+                <motion.div
+                  key={i}
+                  variants={blurIn}
+                  className="bg-[#F2F2F2] dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 p-5 space-y-2"
+                  style={{ borderRadius: 'var(--radius-xl)' }}
+                >
+                  <h3 className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-sm)' }}>
+                    {b.title}
+                  </h3>
+                  <p className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)', lineHeight: '1.6' }}>
+                    {b.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+        </div>
       </div>
     </section>
   )
