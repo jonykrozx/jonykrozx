@@ -25,6 +25,7 @@ export const productTranslations = {
     transCarga: {
       image: '/images/product-transcarga.jpg',
       image2: '/images/product-transcarga-2.jpg',
+      image3: '/images/product-transcarga-3.jpg',
       label: 'Transporte de Carga',
       bannerTitle:    'Controla toda tu operación de transporte sin errores ni reprocesos',
       bannerSubtitle: 'Desde la orden de cargue hasta la facturación y el pago de servicios. Gestiona tu operación de transporte de carga con un sistema que integra control operativo, contable y cumplimiento normativo en tiempo real.',
@@ -677,6 +678,7 @@ export const productTranslations = {
     transCarga: {
       image: '/images/product-transcarga.jpg',
       image2: '/images/product-transcarga-2.jpg',
+      image3: '/images/product-transcarga-3.jpg',
       label: 'Freight Transport',
       bannerTitle:    'Control your entire freight transport operation without errors or rework',
       bannerSubtitle: 'From the loading order to billing and service payment. Manage your freight transport operation with a system that integrates operational control, accounting and regulatory compliance in real time.',

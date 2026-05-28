@@ -125,12 +125,12 @@ function HeroHeader({ p, shared, backHref }) {
             )}
 
             <motion.div variants={fadeUp} className="relative pl-5 border-l-[3px] border-[#EB3D26]">
-              <h1
+              <h2
                 className="text-[#1A1A1A] dark:text-white font-black"
-                style={{ fontSize: 'clamp(1.9rem, 4vw, 3.25rem)', lineHeight: 1.1, letterSpacing: '-0.025em' }}
+                style={{ fontSize: 'clamp(1.9rem, 4vw, 3.25rem)', lineHeight: 1.1, letterSpacing: '-0.025em', textTransform: 'uppercase' }}
               >
                 {p.bannerTitle}
-              </h1>
+              </h2>
             </motion.div>
 
             <motion.p
@@ -190,7 +190,7 @@ function HeroHeader({ p, shared, backHref }) {
 function HeroMedia({ p, shared }) {
   return (
     <section
-      className="relative bg-[#F7F6F4] dark:bg-[#111111] overflow-hidden"
+      className="relative bg-[#D1D1D1] dark:bg-[#111111] overflow-hidden"
       style={{ paddingTop: 'clamp(48px, 6vw, 80px)', paddingBottom: 'clamp(52px, 6vw, 92px)' }}
     >
       {/* subtle grain overlay */}
@@ -202,63 +202,89 @@ function HeroMedia({ p, shared }) {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8 space-y-10">
+
+        {/* ── Título centrado — fuera del grid ── */}
+        <motion.div
+          variants={fromLeft}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="space-y-3 lg:text-center"
+        >
+          <motion.h2
+            className="text-[#111111] dark:text-white font-extrabold"
+            style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)', textTransform: 'uppercase' }}
+          >
+            {p.whyTitle}
+          </motion.h2>
+
+          <motion.p
+            className="text-[#1A1A1A] dark:text-[#AEAEAE] lg:max-w-2xl lg:mx-auto"
+            style={{ fontSize: 'var(--text-base)', lineHeight: '1.8' }}
+          >
+            {p.whySubtitle}
+          </motion.p>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          {/* ── Left: desliza desde izquierda ── */}
+          {/* ── Left: imagen ── */}
           <motion.div
-            className="space-y-6"
+            className="space-y-6 order-2 lg:order-1"
             variants={fromLeftStagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
           >
-            <motion.h2
-              variants={fromLeftItem}
-              className="text-[#1A1A1A] dark:text-white font-black"
-              style={{ fontSize: 'clamp(1.35rem, 2.5vw, 1.9rem)', lineHeight: 1.2, letterSpacing: '-0.015em' }}
-            >
-              {p.whyTitle}
-            </motion.h2>
 
-            <motion.p
-              variants={fromLeftItem}
-              className="text-[#5C5C5C] dark:text-[#AEAEAE]"
-              style={{ fontSize: 'var(--text-base)', lineHeight: '1.8' }}
-            >
-              {p.whySubtitle}
-            </motion.p>
-
-            {p.whyClosing && (
-              <motion.p
+            {p.image2 && (
+              <motion.div
                 variants={fromLeftItem}
-                className="text-[#EB3D26] font-semibold border-l-2 border-[#EB3D26]/40 pl-4"
-                style={{ fontSize: 'var(--text-sm)', lineHeight: '1.7', fontStyle: 'italic' }}
+                className="relative w-full overflow-hidden"
+                style={{ borderRadius: 'var(--radius-xl)', aspectRatio: '23/17',
+                  boxShadow: '0 16px 48px -10px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04)' }}
               >
-                {p.whyClosing}
-              </motion.p>
+                <img
+                  src={p.image2}
+                  alt={p.whyTitle}
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex' }}
+                />
+                <ImgFallback />
+              </motion.div>
             )}
           </motion.div>
 
-          {/* ── Right: desliza desde derecha ── */}
+          {/* ── Right: puntos + botón + texto rojo ── */}
           <motion.div
-            className="space-y-7"
+            className="space-y-7 order-1 lg:order-2"
             variants={fromRightStagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.15 }}
           >
+            {p.whyClosing && (
+              <motion.p
+                variants={fromRightItem}
+                className="text-[#C42818] font-semibold border-l-2 border-[#C42818] pl-4"
+                style={{ fontSize: 'var(--text-sm)', lineHeight: '1.7', fontStyle: 'italic' }}
+              >
+                {p.whyClosing}
+              </motion.p>
+            )}
+
             {p.whyPoints?.length > 0 && (
               <motion.ul variants={fromRightItem} className="space-y-4">
                 {p.whyPoints.map((point, i) => (
                   <li key={i} className="flex items-start gap-3.5">
                     <div
-                      className="w-6 h-6 bg-[#EB3D26]/10 dark:bg-[#EB3D26]/15 flex items-center justify-center shrink-0 mt-0.5"
+                      className="w-6 h-6 bg-white/70 flex items-center justify-center shrink-0 mt-0.5"
                       style={{ borderRadius: '6px' }}
                     >
-                      <Check className="w-3.5 h-3.5 text-[#EB3D26]" strokeWidth={3} />
+                      <Check className="w-3.5 h-3.5 text-[#C42818]" strokeWidth={3} />
                     </div>
-                    <span className="text-[#3D3D3D] dark:text-[#C0C0C0]" style={{ fontSize: 'var(--text-sm)', lineHeight: '1.65' }}>
+                    <span className="text-[#111111] dark:text-[#C0C0C0]" style={{ fontSize: 'var(--text-sm)', lineHeight: '1.65' }}>
                       {point}
                     </span>
                   </li>
@@ -269,7 +295,7 @@ function HeroMedia({ p, shared }) {
             <motion.div
               variants={fromRightItem}
               className="h-px"
-              style={{ background: 'linear-gradient(to right, rgba(235,61,38,0.2), transparent)' }}
+              style={{ background: 'linear-gradient(to right, rgba(196,40,24,0.6), transparent)' }}
             />
 
             <motion.div variants={fromRightItem}>
@@ -277,7 +303,7 @@ function HeroMedia({ p, shared }) {
                 href={shared.demoHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#EB3D26] hover:bg-[#d63520] active:scale-[0.97] text-white font-bold shadow-[0_4px_20px_rgba(235,61,38,0.32)] hover:shadow-[0_6px_28px_rgba(235,61,38,0.44)] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 w-full bg-[#EB3D26] hover:bg-[#d63520] active:scale-[0.97] text-white font-bold shadow-[0_4px_20px_rgba(235,61,38,0.32)] hover:shadow-[0_6px_28px_rgba(235,61,38,0.44)] transition-all duration-200"
                 style={{ fontSize: 'var(--text-sm)', padding: '13px 26px', borderRadius: 'var(--radius-md)' }}
               >
                 {shared.demo}
@@ -310,7 +336,7 @@ function HeroBanner({ p, shared, backHref }) {
 ════════════════════════════════════════════════════ */
 function FeaturesGrid({ p }) {
   return (
-    <section className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
+    <section className="bg-[#2B2B2B] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-12">
 
         {/* Título: desliza desde izquierda con clip */}
@@ -319,8 +345,8 @@ function FeaturesGrid({ p }) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease }}
-          className="text-[#2B2B2B] dark:text-white font-black text-center"
-          style={{ fontSize: 'var(--text-2xl)', letterSpacing: 'var(--ls-tight)', lineHeight: 'var(--lh-snug)' }}
+          className="text-white font-extrabold text-center"
+          style={{ fontSize: 'var(--text-2xl)', letterSpacing: 'var(--ls-tight)', lineHeight: 'var(--lh-snug)', textTransform: 'uppercase' }}
         >
           {p.featuresTitle}
         </motion.h2>
@@ -442,47 +468,88 @@ function WhySection({ p }) {
    SECTION 4 — BENEFITS
 ════════════════════════════════════════════════════ */
 function BenefitsSection({ p }) {
+  const imgSrc = p.image3 || p.image2 || p.image
   return (
     <section className="bg-white dark:bg-[#0A0A0A] py-20">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16 items-start">
 
-        {/* Título: blur + expand letter-spacing → tight */}
-        <motion.h2
-          variants={blurTitle}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="text-[#2B2B2B] dark:text-white font-black text-center"
-          style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)' }}
-        >
-          {p.benefitsTitle}
-        </motion.h2>
-
-        {/* Cards: blur-in escalonado */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
-          variants={blurStagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.05 }}
-        >
-          {p.benefits.map((b, i) => (
-            <motion.div
-              key={i}
-              variants={blurIn}
-              className="bg-[#F2F2F2] dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 p-5 space-y-2"
+          {/* ── Columna izquierda: imagen (al final en móvil) ── */}
+          <motion.div
+            initial={{ opacity: 0, x: -36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.65, ease }}
+            className="relative lg:sticky lg:top-28 order-2 lg:order-1"
+          >
+            <div
+              className="absolute -top-3 -left-3 w-full h-full bg-[#EB3D26]/6 dark:bg-[#EB3D26]/5"
               style={{ borderRadius: 'var(--radius-xl)' }}
+            />
+            <div
+              className="relative w-full overflow-hidden"
+              style={{
+                borderRadius: 'var(--radius-xl)',
+                aspectRatio: '3/4',
+                boxShadow: '0 20px 60px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.04)',
+              }}
             >
-              <h3 className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-sm)' }}>
-                {b.title}
-              </h3>
-              <p className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)', lineHeight: '1.6' }}>
-                {b.desc}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+              <img
+                src={imgSrc}
+                alt={p.benefitsTitle}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                  e.currentTarget.nextElementSibling.style.display = 'flex'
+                }}
+              />
+              <ImgFallback />
+              <div
+                className="absolute top-0 left-0 right-0 h-[3px]"
+                style={{ background: 'linear-gradient(to right, #EB3D26, rgba(235,61,38,0.1), transparent)' }}
+              />
+            </div>
+          </motion.div>
 
+          {/* ── Columna derecha: título + cards (primero en móvil) ── */}
+          <div className="space-y-8 order-1 lg:order-2">
+            <motion.h2
+              variants={blurTitle}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              className="text-[#2B2B2B] dark:text-white font-extrabold"
+              style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)', textTransform: 'uppercase' }}
+            >
+              {p.benefitsTitle}
+            </motion.h2>
+
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              variants={blurStagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.05 }}
+            >
+              {p.benefits.map((b, i) => (
+                <motion.div
+                  key={i}
+                  variants={blurIn}
+                  className="bg-[#F2F2F2] dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 p-5 space-y-2"
+                  style={{ borderRadius: 'var(--radius-xl)' }}
+                >
+                  <h3 className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-sm)' }}>
+                    {b.title}
+                  </h3>
+                  <p className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)', lineHeight: '1.6' }}>
+                    {b.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+        </div>
       </div>
     </section>
   )
@@ -509,8 +576,8 @@ function ClosingCTA({ p, shared }) {
         >
           <motion.h2
             variants={zoomFade}
-            className="text-[#2B2B2B] dark:text-white font-black"
-            style={{ fontSize: 'var(--text-3xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
+            className="text-[#2B2B2B] dark:text-white font-extrabold"
+            style={{ fontSize: 'var(--text-2xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)', textTransform: 'uppercase' }}
           >
             {p.closingTitle}
           </motion.h2>
