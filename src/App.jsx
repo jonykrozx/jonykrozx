@@ -22,6 +22,7 @@ import PoliticaPrivacidadPage from './components/sections/PoliticaPrivacidadPage
 import TerminosPage from './components/sections/TerminosPage'
 import SolucionesPage from './components/sections/SolucionesPage'
 import ProductPage from './components/sections/ProductPage'
+import TransCargaPage from './components/sections/TransCargaPage'
 import ComunidadPage from './components/sections/ComunidadPage'
 import DocumentacionPage from './components/sections/DocumentacionPage'
 import BlogPage from './components/sections/BlogPage'
@@ -67,7 +68,7 @@ function App() {
           <Route path="/blog"           element={<BlogPage />} />
 
           {/* ── Páginas de producto individuales ── */}
-          <Route path="/transCarga"             element={<ProductPage productKey="transCarga" />} />
+          <Route path="/transCarga"             element={<TransCargaPage productKey="transCarga" />} />
           <Route path="/transporteEspecial"     element={<ProductPage productKey="transporteEspecial" />} />
           <Route path="/busUrbano"              element={<ProductPage productKey="busUrbano" />} />
           <Route path="/mantvehicular"          element={<ProductPage productKey="mantvehicular" />} />
