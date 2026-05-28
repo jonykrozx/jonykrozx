@@ -1,8 +1,10 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Search, Clock, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react'
 import { fadeUp, stagger } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
+import { toSlug } from './BlogPostPage'
 
 const IMGS = [
   '/images/transport.jpg',
@@ -34,6 +36,7 @@ function CatBadge({ category, label, small }) {
 function FeaturedCard({ post, cta }) {
   const img = IMGS[post.id % IMGS.length]
   return (
+    <Link to={`/blog/${toSlug(post.title)}`} className="block">
     <motion.article
       variants={fadeUp}
       className="group relative overflow-hidden bg-[#2B2B2B] cursor-pointer"
@@ -69,6 +72,7 @@ function FeaturedCard({ post, cta }) {
         </div>
       </div>
     </motion.article>
+    </Link>
   )
 }
 
@@ -82,8 +86,10 @@ function PostCard({ post, cta }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.3 }}
-      className="group bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 overflow-hidden hover:border-[#EB3D26]/25 hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col"
-      style={{ borderRadius: 'var(--radius-xl)' }}
+    >
+    <Link to={`/blog/${toSlug(post.title)}`}
+      className="group bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 overflow-hidden hover:border-[#EB3D26]/25 hover:shadow-md transition-all duration-200 flex flex-col h-full"
+      style={{ borderRadius: 'var(--radius-xl)', display: 'flex' }}
     >
       {/* Image */}
       <div className="relative overflow-hidden shrink-0" style={{ aspectRatio: '16/9' }}>
@@ -121,6 +127,7 @@ function PostCard({ post, cta }) {
           </span>
         </div>
       </div>
+    </Link>
     </motion.article>
   )
 }

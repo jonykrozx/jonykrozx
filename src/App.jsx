@@ -26,6 +26,7 @@ import TransCargaPage from './components/sections/TransCargaPage'
 import ComunidadPage from './components/sections/ComunidadPage'
 import DocumentacionPage from './components/sections/DocumentacionPage'
 import BlogPage from './components/sections/BlogPage'
+import BlogPostPage from './components/sections/BlogPostPage'
 
 function HomePage() {
   return (
@@ -66,6 +67,7 @@ function App() {
           <Route path="/comunidad"      element={<ComunidadPage />} />
           <Route path="/documentacion"  element={<DocumentacionPage />} />
           <Route path="/blog"           element={<BlogPage />} />
+          <Route path="/blog/:slug"     element={<BlogPostPage />} />
 
           {/* ── Páginas de producto individuales ── */}
           <Route path="/transCarga"             element={<TransCargaPage productKey="transCarga" />} />
