@@ -158,45 +158,57 @@ function SolutionCard({ item, index, cta }) {
 function Banner({ s }) {
   const b = s.banner
   return (
-    <section className="bg-[#2B2B2B] py-20 relative overflow-hidden">
+    <section className="bg-[#2B2B2B] relative overflow-hidden" style={{ paddingTop: 'clamp(56px, 7vw, 96px)', paddingBottom: 'clamp(56px, 7vw, 96px)' }}>
       <DarkVeil hueShift={0} noiseIntensity={0} scanlineIntensity={0} speed={0.5} scanlineFrequency={0} warpAmount={0} resolutionScale={1} />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 space-y-8">
+
+      {/* Acento rojo derecha */}
+      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(235,61,38,0.12) 0%, transparent 65%)' }} />
+      {/* Línea decorativa izquierda */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EB3D26]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
-          variants={stagger(0.12, 0.05)}
+          variants={stagger(0.1, 0.04)}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+          className="space-y-10"
         >
-          <div className="space-y-5">
-            <motion.div variants={fadeUp}>
-              <span className="inline-flex items-center gap-2 text-white/60 border border-white/15 bg-white/5 font-medium uppercase tracking-[0.15em]"
-                style={{ fontSize: 'var(--text-xs)', padding: '5px 12px', borderRadius: 'var(--radius-pill)' }}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#EB3D26]" />
-                {b.eyebrow}
-              </span>
-            </motion.div>
-            <motion.h1 variants={fadeUp} className="text-white font-black"
-              style={{ fontSize: 'var(--text-4xl)', lineHeight: '1.1', letterSpacing: 'var(--ls-tight)' }}>
-              {b.title}
-            </motion.h1>
+          {/* Eyebrow */}
+          <motion.div variants={fadeUp}>
+            <span className="inline-flex items-center gap-2 text-white/60 border border-white/15 bg-white/5 font-medium uppercase tracking-[0.15em]"
+              style={{ fontSize: 'var(--text-xs)', padding: '5px 12px', borderRadius: 'var(--radius-pill)' }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#EB3D26]" />
+              {b.eyebrow}
+            </span>
+          </motion.div>
+
+          {/* Título — ancho completo */}
+          <motion.h1 variants={fadeUp} className="text-white font-black"
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: '1.05', letterSpacing: 'var(--ls-tight)', maxWidth: '900px' }}>
+            {b.title}
+          </motion.h1>
+
+          {/* Divisor */}
+          <motion.div variants={fadeUp} className="h-px bg-white/10" />
+
+          {/* 2 columnas: subtitle | tagline */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <motion.p variants={fadeUp} className="text-white/70"
               style={{ fontSize: 'var(--text-lg)', lineHeight: 'var(--lh-relaxed)' }}>
               {b.subtitle}
             </motion.p>
+
+            <motion.div variants={fadeUp}
+              className="border-l-2 border-[#EB3D26]/50 pl-6"
+            >
+              <p className="text-white/55 italic"
+                style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
+                {b.tagline}
+              </p>
+            </motion.div>
           </div>
 
-        </motion.div>
-
-        {/* Tagline */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          className="border-t border-white/10 pt-6"
-        >
-          <p className="text-white text-center" style={{ fontSize: 'var(--text-sm)', lineHeight: 'var(--lh-relaxed)', maxWidth: '760px', margin: '0 auto' }}>
-            {b.tagline}
-          </p>
         </motion.div>
       </div>
     </section>
