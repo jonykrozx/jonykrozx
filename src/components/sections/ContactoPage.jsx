@@ -2,14 +2,16 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { DarkVeil } from '../ui/DarkVeil'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Headphones, LifeBuoy, Ticket, ShoppingBag, ChevronRight, ExternalLink } from 'lucide-react'
 import { fadeUp, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
 const IMG_BANNER = '/images/contacto-banner.jpg'
 
 const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=573165267012&text=Hola%2C%20quiero%20hacer%20una%20pregunta%20acerca%20de%3A%20Escribo%20desde%20Ventas'
-const PHONE_URL = 'tel:+573165267012'
+const PHONE_URL = 'tel:+573187073794'
+const SOPORTE_WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=573174296723&text=Hola%2C%20necesito%20soporte%20t%C3%A9cnico'
+const GLPI_URL = 'https://gestion.syscom.com.co/front/central.php'
 
 /* ─── Shared input styles ─────────────────────────── */
 const inputCls = `w-full bg-white dark:bg-white/5 border border-[#DEDEDE] dark:border-white/10 text-[#2B2B2B] dark:text-white placeholder-[#AEAEAE] dark:placeholder-white/30 focus:outline-none focus:border-[#EB3D26] focus:ring-1 focus:ring-[#EB3D26]/30 transition-all duration-200`
@@ -86,20 +88,81 @@ function Banner({ c }) {
   )
 }
 
+/* ─── Channel group (bento card) ────────────────── */
+function ChannelGroup({ icon: GroupIcon, label, accent, items, variants }) {
+  return (
+    <motion.div variants={variants}
+      className="relative bg-white dark:bg-white/4 border border-[#EFEFEF] dark:border-white/8 overflow-hidden"
+      style={{ borderRadius: 'var(--radius-xl)' }}
+    >
+      {/* Top accent bar */}
+      <div className="absolute top-0 left-0 right-0 h-1" style={{ background: accent }} />
+
+      {/* Group header */}
+      <div className="flex items-center gap-3 p-5 border-b border-[#F0F0F0] dark:border-white/8">
+        <div className="w-10 h-10 flex items-center justify-center shrink-0" style={{ background: `${accent}1A`, borderRadius: 'var(--radius-lg)' }}>
+          <GroupIcon className="w-5 h-5" style={{ color: accent }} />
+        </div>
+        <h3 className="text-[#2B2B2B] dark:text-white font-black uppercase tracking-[0.12em]" style={{ fontSize: 'var(--text-sm)' }}>
+          {label}
+        </h3>
+      </div>
+
+      {/* Channels */}
+      <div className="divide-y divide-[#F0F0F0] dark:divide-white/8">
+        {items.map((item, i) => (
+          <a
+            key={i}
+            href={item.href}
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noopener noreferrer' : undefined}
+            className="group flex items-center gap-4 p-5 hover:bg-[#F7F7F7] dark:hover:bg-white/5 transition-colors duration-200"
+          >
+            <div className="relative w-12 h-12 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+              style={{ background: `${item.color}15`, borderRadius: 'var(--radius-lg)' }}>
+              <item.icon className="w-5 h-5" style={{ color: item.color }} />
+              {item.live && (
+                <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-[#2E9E6B] border-2 border-white dark:border-[#1A1A1A] rounded-full">
+                  <span className="absolute inset-0 rounded-full bg-[#2E9E6B] animate-ping opacity-75" />
+                </span>
+              )}
+            </div>
+            <div className="flex-1 text-left min-w-0">
+              <p className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-base)' }}>{item.title}</p>
+              <p className="text-[#6B6B6B] dark:text-[#AEAEAE] truncate" style={{ fontSize: 'var(--text-xs)' }}>{item.desc}</p>
+            </div>
+            {item.external ? (
+              <ExternalLink className="w-4 h-4 text-[#AEAEAE] group-hover:text-[#EB3D26] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all shrink-0" />
+            ) : (
+              <ChevronRight className="w-4 h-4 text-[#AEAEAE] group-hover:text-[#EB3D26] group-hover:translate-x-1 transition-all shrink-0" />
+            )}
+          </a>
+        ))}
+      </div>
+    </motion.div>
+  )
+}
+
 /* ═══════════════════════════════════════════════════
    ATENCIÓN INMEDIATA
 ══════════════════════════════════════════════════ */
 function AtencionInmediata({ c }) {
   const a = c.inmediata
   return (
-    <section className="bg-white dark:bg-[#0A0A0A] py-16">
-      <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
+    <section className="bg-[#FAFAFA] dark:bg-[#0A0A0A] py-20 relative overflow-hidden">
+      {/* Decorative glows */}
+      <div className="absolute -top-24 -left-32 w-80 h-80 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(148,209,202,0.18) 0%, transparent 70%)' }} />
+      <div className="absolute -bottom-32 -right-24 w-96 h-96 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(235,61,38,0.10) 0%, transparent 70%)' }} />
+
+      <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
         <motion.div
           variants={stagger(0.1, 0.05)}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="space-y-6"
+          className="text-center space-y-4 mb-10"
         >
           <motion.p variants={fadeUp} className="text-[#EB3D26] font-bold uppercase tracking-[0.18em]" style={{ fontSize: 'var(--text-xs)' }}>
             {a.eyebrow}
@@ -107,38 +170,38 @@ function AtencionInmediata({ c }) {
           <motion.h2 variants={fadeUp} className="text-[#2B2B2B] dark:text-white font-black" style={{ fontSize: 'var(--text-3xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}>
             {a.title}
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
+          <motion.p variants={fadeUp} className="text-[#6B6B6B] dark:text-[#AEAEAE] max-w-2xl mx-auto" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
             {a.subtitle}
           </motion.p>
+        </motion.div>
 
-          <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            {/* WhatsApp */}
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center gap-3 bg-[#25D366]/8 hover:bg-[#25D366]/15 border border-[#25D366]/25 hover:border-[#25D366]/50 transition-all duration-300 p-6"
-              style={{ borderRadius: 'var(--radius-xl)' }}
-            >
-              <div className="w-12 h-12 bg-[#25D366]/15 group-hover:bg-[#25D366]/25 flex items-center justify-center transition-colors duration-300" style={{ borderRadius: 'var(--radius-lg)' }}>
-                <MessageCircle className="w-6 h-6 text-[#25D366]" />
-              </div>
-              <span className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-base)' }}>{a.whatsapp}</span>
-              <span className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>{a.whatsappDesc}</span>
-            </a>
-            {/* Call */}
-            <a
-              href={PHONE_URL}
-              className="group flex flex-col items-center gap-3 bg-[#94D1CA]/8 hover:bg-[#94D1CA]/15 border border-[#94D1CA]/25 hover:border-[#94D1CA]/50 transition-all duration-300 p-6"
-              style={{ borderRadius: 'var(--radius-xl)' }}
-            >
-              <div className="w-12 h-12 bg-[#94D1CA]/15 group-hover:bg-[#94D1CA]/25 flex items-center justify-center transition-colors duration-300" style={{ borderRadius: 'var(--radius-lg)' }}>
-                <Phone className="w-6 h-6 text-[#94D1CA]" />
-              </div>
-              <span className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-base)' }}>{a.call}</span>
-              <span className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-xs)' }}>{a.callDesc}</span>
-            </a>
-          </motion.div>
+        <motion.div
+          variants={stagger(0.1, 0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <ChannelGroup
+            variants={fadeUp}
+            icon={ShoppingBag}
+            label={a.ventasLabel}
+            accent="#94D1CA"
+            items={[
+              { icon: MessageCircle, color: '#25D366', title: a.whatsapp, desc: a.whatsappDesc, href: WHATSAPP_URL, external: true, live: true },
+              { icon: Phone, color: '#3D8B87', title: a.call, desc: a.callDesc, href: PHONE_URL },
+            ]}
+          />
+          <ChannelGroup
+            variants={fadeUp}
+            icon={LifeBuoy}
+            label={a.soporteLabel}
+            accent="#EB3D26"
+            items={[
+              { icon: Headphones, color: '#25D366', title: a.soporteWhatsapp, desc: a.soporteWhatsappDesc, href: SOPORTE_WHATSAPP_URL, external: true, live: true },
+              { icon: Ticket, color: '#EB3D26', title: a.glpi, desc: a.glpiDesc, href: GLPI_URL, external: true },
+            ]}
+          />
         </motion.div>
       </div>
     </section>
