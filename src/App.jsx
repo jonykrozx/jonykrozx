@@ -16,6 +16,7 @@ import GetStarted from './components/sections/GetStarted'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import NosotrosPage from './components/sections/NosotrosPage'
+import TrabajaConNosotrosPage from './components/sections/TrabajaConNosotrosPage'
 import ContactoPage from './components/sections/ContactoPage'
 import TratamientoDatosPage from './components/sections/TratamientoDatosPage'
 import PoliticaPrivacidadPage from './components/sections/PoliticaPrivacidadPage'
@@ -59,6 +60,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/nosotros" element={<NosotrosPage />} />
+          <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotrosPage />} />
           <Route path="/contacto" element={<ContactoPage />} />
           <Route path="/tratamiento-datos"    element={<TratamientoDatosPage />} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidadPage />} />

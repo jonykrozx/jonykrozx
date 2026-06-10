@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
-import { Check, Target, Eye, Clock, Zap, Globe, Shield, Users, Cpu, Layers } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Check, Target, Eye, Clock, Zap, Globe, Shield, Users, Cpu, Layers, ArrowRight, FileText, ShieldCheck, Lock } from 'lucide-react'
 import { DarkVeil } from '../ui/DarkVeil'
 import { fadeUp, fadeIn, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
+
+const MotionLink = motion(Link)
 
 const IMG_QUIENES   = '/images/sc-icon.png'
 const IMG_MISION    = '/images/nosotros-mision.jpg'
@@ -10,8 +13,11 @@ const IMG_VISION    = '/images/nosotros-vision.jpg'
 const IMG_TRAYECT   = '/images/nosotros-trayectoria.jpg'
 const IMG_EXPERIENCIA = '/images/nosotros-experiencia.jpg'
 const IMG_SECTORES  = '/images/nosotros-sectores.jpg'
+const IMG_TRABAJO   = '/images/nosotros-equipo.jpg'
+const IMG_POLITICAS = '/images/nosotros-politicas.jpg'
 
 const DIFERENCIAL_ICONS = [Users, Cpu, Layers, Zap, Globe, Shield]
+const POLITICA_ICONS = [FileText, ShieldCheck, Lock]
 
 /* ─── Image placeholder ─────────────────────────── */
 function ImgBlock({ src, alt, ratio = '4/3', fit = 'cover' }) {
@@ -494,6 +500,116 @@ function Diferenciales({ n }) {
 }
 
 /* ═══════════════════════════════════════════════════
+   TRABAJA CON NOSOTROS
+══════════════════════════════════════════════════ */
+function TrabajaConNosotros({ n }) {
+  const w = n.trabajo
+  return (
+    <section className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -48 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease }}
+          >
+            <ImgBlock src={IMG_TRABAJO} alt="Trabaja con nosotros" />
+          </motion.div>
+
+          <motion.div
+            className="space-y-5"
+            variants={stagger(0.1, 0.05)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            <Eyebrow text={w.eyebrow} />
+            <motion.h2
+              variants={fadeUp}
+              className="text-[#2B2B2B] dark:text-white font-black"
+              style={{ fontSize: 'var(--text-3xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
+            >
+              {w.title}
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
+              {w.text}
+            </motion.p>
+            <MotionLink
+              variants={fadeUp}
+              to="/trabaja-con-nosotros"
+              className="inline-flex items-center gap-2 bg-[#EB3D26] hover:bg-[#d63520] active:scale-95 text-white font-bold transition-all duration-200"
+              style={{ fontSize: 'var(--text-sm)', padding: '12px 24px', borderRadius: 'var(--radius-md)' }}
+            >
+              {w.cta} <ArrowRight className="w-4 h-4" />
+            </MotionLink>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════════
+   NUESTRAS POLÍTICAS
+══════════════════════════════════════════════════ */
+function Politicas({ n }) {
+  const p = n.politicas
+  return (
+    <section className="bg-white dark:bg-[#0A0A0A] py-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr] gap-12 lg:gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -48 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease }}
+          >
+            <ImgBlock src={IMG_POLITICAS} alt="Nuestras políticas" />
+          </motion.div>
+
+          <motion.div
+            className="space-y-5"
+            variants={stagger(0.1, 0.05)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            <Eyebrow text={p.eyebrow} />
+            <motion.h2
+              variants={fadeUp}
+              className="text-[#2B2B2B] dark:text-white font-black"
+              style={{ fontSize: 'var(--text-3xl)', lineHeight: 'var(--lh-snug)', letterSpacing: 'var(--ls-tight)' }}
+            >
+              {p.title}
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-[#6B6B6B] dark:text-[#AEAEAE]" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>
+              {p.text}
+            </motion.p>
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row flex-wrap gap-3 pt-2">
+              {p.items.map((item, i) => {
+                const Icon = POLITICA_ICONS[i]
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="group inline-flex items-center gap-2.5 bg-[#F7F7F7] dark:bg-white/5 hover:bg-[#EB3D26]/8 border border-[#EFEFEF] dark:border-white/8 hover:border-[#EB3D26]/30 font-semibold text-[#2B2B2B] dark:text-white transition-all duration-200"
+                    style={{ fontSize: 'var(--text-sm)', padding: '10px 18px', borderRadius: 'var(--radius-md)' }}
+                  >
+                    <Icon className="w-4 h-4 text-[#EB3D26]" />
+                    {item.label}
+                  </Link>
+                )
+              })}
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════════
    PAGE
 ══════════════════════════════════════════════════ */
 export default function NosotrosPage() {
@@ -508,6 +624,8 @@ export default function NosotrosPage() {
       <Experiencia n={n} />
       <Sectores n={n} />
       <Diferenciales n={n} />
+      <TrabajaConNosotros n={n} />
+      <Politicas n={n} />
     </main>
   )
 }
