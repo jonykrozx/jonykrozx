@@ -90,6 +90,9 @@ export default function TransportSpotlight() {
                 <p className="text-white/70" style={{ fontSize: 'var(--text-sm)', lineHeight: '1.4' }}>
                   Decreto 1017 de 2025 — Ministerio de Transporte
                 </p>
+                <p className="text-white/50" style={{ fontSize: 'var(--text-xs)', lineHeight: '1.4' }}>
+                  Resolución Nro: 20263040016075
+                </p>
               </div>
             </motion.div>
 

@@ -338,13 +338,15 @@ function HeroBanner({ p, shared, backHref }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col">
               <p className="text-[#3D8B87] dark:text-[#94D1CA] font-bold" style={{ fontSize: 'var(--text-sm)', letterSpacing: '0.05em' }}>
                 CUMPLIMIENTO NORMATIVO
               </p>
-              <span className="text-[#AAAAAA]">—</span>
               <p className="text-[#555555] dark:text-white/70" style={{ fontSize: 'var(--text-sm)' }}>
                 Decreto 1017 de 2025 · Ministerio de Transporte
+              </p>
+              <p className="text-[#888888] dark:text-white/50" style={{ fontSize: 'var(--text-xs)' }}>
+                Resolución Nro: 20263040016075
               </p>
             </div>
           </div>
