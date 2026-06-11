@@ -259,7 +259,7 @@ export const productTranslations = {
       bannerPoints: [
         'Control de inventario por tanques y productos',
         'Despacho de combustible integrado con caja',
-        'Facturación electrónica DIAN en tiempo real',
+        'Interfaz con proveedores de surtidores para facturación y envío a la DIAN',
         'Reportes operativos y financieros completos',
       ],
       featuresTitle: 'TODO EL CONTROL DE TU ESTACIÓN, EN UN SOLO SISTEMA',
@@ -267,7 +267,7 @@ export const productTranslations = {
         { name: 'Control de tanques e inventario',  desc: 'Monitorea niveles de combustible por tanque, registra entradas y controla el inventario de productos.' },
         { name: 'Despacho de combustible',          desc: 'Registra despachos por surtidor, producto y valor con trazabilidad completa de cada transacción.' },
         { name: 'Ventas en tienda y lubricantes',   desc: 'Controla las ventas de tienda, aceites y servicios complementarios integradas con la facturación.' },
-        { name: 'Facturación electrónica DIAN',     desc: 'Emite facturas electrónicas desde el punto de venta cumpliendo con los requerimientos vigentes.' },
+        { name: 'Interfaz con proveedores de surtidores', desc: 'SYSCOM se conecta mediante interfaces con los proveedores de surtidores, quienes generan la facturación de las ventas de contado y envían la información a la DIAN.' },
         { name: 'Control de caja y formas de pago', desc: 'Registra pagos en efectivo, tarjeta, bonos o crédito con cuadre automático por turno.' },
         { name: 'Compras y abastecimiento',         desc: 'Gestiona las órdenes de compra de combustible y productos para mantener el abastecimiento controlado.' },
         { name: 'Reportes operativos completos',    desc: 'Informes de ventas por turno, producto, surtidor y período para análisis total del negocio.' },
@@ -277,7 +277,7 @@ export const productTranslations = {
       whySubtitle: 'SYSCOM Estaciones de Servicio fue desarrollado para operadores que necesitan manejar múltiples productos, turnos y reportes con precisión y cumplimiento normativo.',
       whyPoints: [
         'Inventario por tanque actualizado en cada despacho',
-        'Facturación electrónica integrada con la operación',
+        'Interfaz con proveedores de surtidores para facturación y envío automático a la DIAN',
         'Control de turnos y caja sin diferencias',
         'Reportes para decisiones operativas y financieras',
         'Adaptado a la operación real de estaciones en Colombia',
@@ -286,7 +286,7 @@ export const productTranslations = {
       benefitsTitle: 'LO QUE CAMBIA CUANDO TIENES CONTROL REAL',
       benefits: [
         { title: 'Control de inventario sin pérdidas', desc: 'Conoce exactamente cuánto combustible y producto tienes en tiempo real sin diferencias.' },
-        { title: 'Cumplimiento normativo garantizado', desc: 'Factura electrónicamente y opera bajo la normativa vigente sin procesos manuales.' },
+        { title: 'Cumplimiento normativo garantizado', desc: 'A través de la interfaz con los proveedores de surtidores, las ventas de contado quedan facturadas y reportadas a la DIAN sin procesos manuales.' },
         { title: 'Caja cuadrada por turno',            desc: 'Cada turno cierra con cuadre exacto, evitando diferencias y pérdidas no identificadas.' },
         { title: 'Información para decidir mejor',    desc: 'Reportes de ventas, márgenes y rotación disponibles en cualquier momento del día.' },
         { title: 'Operación conectada',               desc: 'Despachos, ventas, compras y contabilidad integrados en un solo sistema sin doble digitación.' },
@@ -1004,7 +1004,7 @@ export const productTranslations = {
       bannerPoints: [
         'Inventory control by tank and product',
         'Fuel dispatch integrated with cash register',
-        'Real-time DIAN electronic billing',
+        'Interface with pump providers for billing and DIAN reporting',
         'Complete operational and financial reports',
       ],
       featuresTitle: 'FULL CONTROL OF YOUR STATION, IN ONE SYSTEM',
@@ -1012,7 +1012,7 @@ export const productTranslations = {
         { name: 'Tank and inventory control',     desc: 'Monitor fuel levels per tank, record entries and control product inventory.' },
         { name: 'Fuel dispatch',                  desc: 'Record dispatches by pump, product and value with complete traceability.' },
         { name: 'Store and lubricant sales',      desc: 'Control store, oil and complementary service sales integrated with billing.' },
-        { name: 'DIAN electronic billing',        desc: 'Issue electronic invoices at the point of sale complying with current requirements.' },
+        { name: 'Interface with pump providers',  desc: 'SYSCOM connects via interfaces with pump providers, who generate the billing for cash sales and send the information to the DIAN.' },
         { name: 'Cash register and payment methods', desc: 'Record cash, card, voucher or credit payments with automatic per-shift reconciliation.' },
         { name: 'Purchasing and supply',          desc: 'Manage fuel and product purchase orders to keep supply under control.' },
         { name: 'Complete operational reports',   desc: 'Sales reports by shift, product, pump and period for full business analysis.' },
@@ -1022,7 +1022,7 @@ export const productTranslations = {
       whySubtitle: 'SYSCOM Service Stations was developed for operators who need to handle multiple products, shifts and reports with precision and regulatory compliance.',
       whyPoints: [
         'Per-tank inventory updated on every dispatch',
-        'Electronic billing integrated with operations',
+        'Interface with pump providers for billing and automatic DIAN reporting',
         'Shift and cash register control without discrepancies',
         'Reports for operational and financial decisions',
         'Adapted to the real operation of stations in Colombia',
@@ -1031,7 +1031,7 @@ export const productTranslations = {
       benefitsTitle: 'WHAT CHANGES WHEN YOU HAVE REAL CONTROL',
       benefits: [
         { title: 'Inventory control without losses', desc: 'Know exactly how much fuel and product you have in real time without discrepancies.' },
-        { title: 'Guaranteed regulatory compliance', desc: 'Invoice electronically and operate under current regulations without manual processes.' },
+        { title: 'Guaranteed regulatory compliance', desc: 'Through the interface with pump providers, cash sales are billed and reported to the DIAN without manual processes.' },
         { title: 'Balanced register per shift',      desc: 'Each shift closes with an exact balance, avoiding unidentified discrepancies and losses.' },
         { title: 'Information to make better decisions', desc: 'Sales, margin and turnover reports available at any time during the day.' },
         { title: 'Connected operation',             desc: 'Dispatches, sales, purchases and accounting integrated in one system without double entry.' },
