@@ -87,6 +87,7 @@ function App() {
           <Route path="/activosFijos"           element={<ProductPage productKey="activosFijos" />} />
           <Route path="/facturacioneinventario" element={<ProductPage productKey="facturacioneinventario" />} />
           <Route path="/hoteleria"              element={<ProductPage productKey="hoteleria" />} />
+          <Route path="/financiero"             element={<ProductPage productKey="financiero" />} />
         </Routes>
         <Footer />
       </div>

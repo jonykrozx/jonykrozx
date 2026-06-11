@@ -45,6 +45,7 @@ const SOLUTIONS_HREF = {
   activosFijos:           '/soluciones#empresas',
   facturacioneinventario: '/soluciones#empresas',
   hoteleria:              '/soluciones#hoteleria',
+  financiero:             '/soluciones#empresas',
 }
 
 /* ─── Fallback image placeholder ─── */
