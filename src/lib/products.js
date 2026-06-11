@@ -23,9 +23,9 @@ export const productTranslations = {
 
     /* ── 1. TRANSPORTE DE CARGA ──────────────────── */
     transCarga: {
-      image: '/images/product-transcarga.jpg',
-      image2: '/images/product-transcarga-2.jpg',
-      image3: '/images/product-transcarga-3.jpg',
+      image: '/images/product-transcarga.webp',
+      image2: '/images/product-transcarga-2.webp',
+      image3: '/images/product-transcarga-3.webp',
       label: 'Transporte de Carga',
       bannerTitle:    'Controla toda tu operación de transporte sin errores ni reprocesos',
       bannerSubtitle: 'Desde la orden de cargue hasta la facturación y el pago de servicios. Gestiona tu operación de transporte de carga con un sistema que integra control operativo, contable y cumplimiento normativo en tiempo real.',
@@ -70,8 +70,8 @@ export const productTranslations = {
 
     /* ── 2. TRANSPORTE ESPECIAL ──────────────────── */
     transporteEspecial: {
-      image: '/images/product-transporte-especial.jpg',
-      image2: '/images/product-transporte-especial-2.jpg',
+      image: '/images/product-transporte-especial.webp',
+      image2: '/images/product-transporte-especial-2.webp',
       label: 'Transporte Especial',
       bannerTitle:    'Gestiona tu operación de transporte especial con precisión y control total',
       bannerSubtitle: 'Administra rutas, contratos, pasajeros y flota desde un solo sistema. SYSCOM Transporte Especial integra la operación con la facturación y la contabilidad, eliminando reprocesos y mejorando el control de cada servicio.',
@@ -116,8 +116,8 @@ export const productTranslations = {
 
     /* ── 3. BUS URBANO ───────────────────────────── */
     busUrbano: {
-      image: '/images/product-bus-urbano.jpg',
-      image2: '/images/product-bus-urbano-2.jpg',
+      image: '/images/product-bus-urbano.webp',
+      image2: '/images/product-bus-urbano-2.webp',
       label: 'Bus Urbano',
       bannerTitle:    'Controla tus rutas urbanas, flota y operación desde un solo sistema',
       bannerSubtitle: 'Gestiona la programación de rutas, el control de despachos, los ingresos por rodada y la flota de buses con un sistema integrado que conecta la operación con la contabilidad.',
@@ -162,8 +162,8 @@ export const productTranslations = {
 
     /* ── 4. MANTENIMIENTO VEHICULAR ──────────────── */
     mantvehicular: {
-      image: '/images/product-mantenimiento.jpg',
-      image2: '/images/product-mantenimiento-2.jpg',
+      image: '/images/product-mantenimiento.webp',
+      image2: '/images/product-mantenimiento-2.webp',
       label: 'Mantenimiento Vehicular',
       bannerTitle:    'Controla el mantenimiento de tu flota sin pérdidas ni imprevistos',
       bannerSubtitle: 'Programa mantenimientos preventivos, gestiona órdenes de trabajo, controla el inventario de repuestos y analiza los costos de taller desde un solo sistema integrado.',
@@ -208,8 +208,8 @@ export const productTranslations = {
 
     /* ── 5. SYSPARKING ───────────────────────────── */
     Sysparking: {
-      image: '/images/product-sysparking.jpg',
-      image2: '/images/product-sysparking-2.jpg',
+      image: '/images/product-sysparking.webp',
+      image2: '/images/product-sysparking-2.webp',
       label: 'SysParking',
       bannerTitle:    'Controla tu parqueadero sin pérdidas ni desorden',
       bannerSubtitle: 'Administra espacios, tarifas y facturación desde un solo sistema integrado a contabilidad, optimizando el control y la rentabilidad de tu parqueadero.',
@@ -251,8 +251,8 @@ export const productTranslations = {
 
     /* ── 6. ESTACIONES DE SERVICIO ───────────────── */
     estaciones: {
-      image: '/images/product-estaciones.jpg',
-      image2: '/images/product-estaciones-2.jpg',
+      image: '/images/product-estaciones.webp',
+      image2: '/images/product-estaciones-2.webp',
       label: 'Estaciones de Servicio y Mayorista de Combustible',
       bannerTitle:    'Control total de tu estación de servicio, desde el tanque hasta la factura',
       bannerSubtitle: 'Administra inventarios, despachos de combustible, ventas y reportes operativos con un sistema que integra todos los procesos en tiempo real y bajo normativa vigente.',
@@ -297,8 +297,8 @@ export const productTranslations = {
 
     /* ── 7. PLANTAS INDUSTRIALES ─────────────────── */
     plantas: {
-      image: '/images/product-plantas.jpg',
-      image2: '/images/product-plantas-2.jpg',
+      image: '/images/product-plantas.webp',
+      image2: '/images/product-plantas-2.webp',
       label: 'Administración de Plantas',
       bannerTitle:    'Gestiona tu planta industrial con control total de procesos, costos y personal',
       bannerSubtitle: 'Integra la gestión de inventarios, activos, nómina y contabilidad en un solo sistema que optimiza los procesos productivos y mejora la eficiencia operativa de tu planta.',
@@ -343,8 +343,8 @@ export const productTranslations = {
 
     /* ── 8. SYSTOTAL COMERCIAL ───────────────────── */
     sysTotalComercial: {
-      image: '/images/product-comercial.jpg',
-      image2: '/images/product-comercial-2.jpg',
+      image: '/images/product-comercial.webp',
+      image2: '/images/product-comercial-2.webp',
       label: 'Syscom Total Comercial',
       bannerTitle:    'Controla toda la gestión comercial de tu empresa sin errores ni reprocesos',
       bannerSubtitle: 'Desde la cotización hasta el cobro, SYSCOM Total Comercial integra ventas, compras, inventario y facturación en un solo sistema que le da control real a tu operación comercial.',
@@ -389,8 +389,8 @@ export const productTranslations = {
 
     /* ── 9. NÓMINA RH ────────────────────────────── */
     nominarh: {
-      image: '/images/product-nomina.jpg',
-      image2: '/images/product-nomina-2.jpg',
+      image: '/images/product-nomina.webp',
+      image2: '/images/product-nomina-2.webp',
       label: 'Nómina y Recurso Humano',
       bannerTitle:    'Liquida la nómina de tu empresa sin errores y cumple con la DIAN',
       bannerSubtitle: 'Gestiona contratos, calcula liquidaciones, genera nómina electrónica y administra novedades de personal desde un sistema integrado que elimina errores y reprocesos.',
@@ -435,8 +435,8 @@ export const productTranslations = {
 
     /* ── 10. CONTABILIDAD ────────────────────────── */
     contabilidad: {
-      image: '/images/product-contabilidad.jpg',
-      image2: '/images/product-contabilidad-2.jpg',
+      image: '/images/product-contabilidad.webp',
+      image2: '/images/product-contabilidad-2.webp',
       label: 'Contabilidad',
       bannerTitle:    'Lleva la contabilidad de tu empresa con precisión, orden y cumplimiento normativo',
       bannerSubtitle: 'Registra movimientos contables, genera estados financieros, cumple con la DIAN y toma decisiones con información confiable y actualizada desde un sistema integrado.',
@@ -481,8 +481,8 @@ export const productTranslations = {
 
     /* ── 11. FACTURACIÓN ELECTRÓNICA ─────────────── */
     facturacionelect: {
-      image: '/images/product-facturacion.jpg',
-      image2: '/images/product-facturacion-2.jpg',
+      image: '/images/product-facturacion.webp',
+      image2: '/images/product-facturacion-2.webp',
       label: 'Facturación Electrónica',
       bannerTitle:    'Factura electrónicamente sin errores, sin reprocesos y cumpliendo con la DIAN',
       bannerSubtitle: 'Emite facturas de venta, notas crédito, notas débito y documentos equivalentes de forma rápida y segura, integrada con tu operación y contabilidad.',
@@ -527,8 +527,8 @@ export const productTranslations = {
 
     /* ── 12. ACTIVOS FIJOS ───────────────────────── */
     activosFijos: {
-      image: '/images/product-activos.jpg',
-      image2: '/images/product-activos-2.jpg',
+      image: '/images/product-activos.webp',
+      image2: '/images/product-activos-2.webp',
       label: 'Activos Fijos',
       bannerTitle:    'Controla todos los activos de tu empresa con precisión y cumplimiento contable',
       bannerSubtitle: 'Registra, clasifica y deprecia los bienes de tu empresa de forma automática y conforme a las normas contables colombianas, integrando la información con tu contabilidad.',
@@ -573,8 +573,8 @@ export const productTranslations = {
 
     /* ── 13. FACTURACIÓN E INVENTARIO ────────────── */
     facturacioneinventario: {
-      image: '/images/product-inventario.jpg',
-      image2: '/images/product-inventario-2.jpg',
+      image: '/images/product-inventario.webp',
+      image2: '/images/product-inventario-2.webp',
       label: 'Facturación e Inventario',
       bannerTitle:    'Controla tus ventas, inventario y facturación sin errores ni reprocesos',
       bannerSubtitle: 'Emite facturas electrónicas, gestiona el inventario en tiempo real y controla tus compras y cartera desde un sistema integrado que mantiene tu operación comercial organizada.',
@@ -619,8 +619,8 @@ export const productTranslations = {
 
     /* ── 14. HOTELERÍA ───────────────────────────── */
     hoteleria: {
-      image: '/images/product-hoteleria.jpg',
-      image2: '/images/product-hoteleria-2.jpg',
+      image: '/images/product-hoteleria.webp',
+      image2: '/images/product-hoteleria-2.webp',
       label: 'Hotelería',
       bannerTitle:    'Controla la gestión de tu hotel sin errores ni desorden',
       bannerSubtitle: 'Desde las reservas hasta la facturación, administra la operación de tu hotel con un sistema que integra control, organización e información en tiempo real.',
@@ -662,8 +662,8 @@ export const productTranslations = {
 
     /* ── 15. JURÍDICO ────────────────────────────── */
     juridico: {
-      image: '/images/product-transcarga.jpg',
-      image2: '/images/product-mantenimiento-2.jpg',
+      image: '/images/product-transcarga.webp',
+      image2: '/images/product-mantenimiento-2.webp',
       label: 'Módulo Jurídico',
       bannerTitle:    'Lleva el control jurídico de tu flota: siniestros, procesos e investigaciones en un solo lugar',
       bannerSubtitle: 'El módulo Jurídico de SYSCOM, integrado a la solución de Transportes, te permite registrar y hacer seguimiento al historial jurídico de vehículos, conductores y propietarios: siniestros, investigaciones administrativas, procesos jurídicos, reclamaciones e informes disciplinarios, todo conectado con la operación de tu empresa.',
@@ -722,9 +722,9 @@ export const productTranslations = {
 
     /* ── 1. FREIGHT TRANSPORT ────────────────────── */
     transCarga: {
-      image: '/images/product-transcarga.jpg',
-      image2: '/images/product-transcarga-2.jpg',
-      image3: '/images/product-transcarga-3.jpg',
+      image: '/images/product-transcarga.webp',
+      image2: '/images/product-transcarga-2.webp',
+      image3: '/images/product-transcarga-3.webp',
       label: 'Freight Transport',
       bannerTitle:    'Control your entire freight transport operation without errors or rework',
       bannerSubtitle: 'From the loading order to billing and service payment. Manage your freight transport operation with a system that integrates operational control, accounting and regulatory compliance in real time.',
@@ -769,8 +769,8 @@ export const productTranslations = {
 
     /* ── 2. SPECIAL TRANSPORT ────────────────────── */
     transporteEspecial: {
-      image: '/images/product-transporte-especial.jpg',
-      image2: '/images/product-transporte-especial-2.jpg',
+      image: '/images/product-transporte-especial.webp',
+      image2: '/images/product-transporte-especial-2.webp',
       label: 'Special Transport',
       bannerTitle:    'Manage your special transport operation with precision and full control',
       bannerSubtitle: 'Manage routes, contracts, passengers and fleet from a single system. SYSCOM Special Transport integrates operations with billing and accounting, eliminating rework.',
@@ -815,8 +815,8 @@ export const productTranslations = {
 
     /* ── 3. URBAN BUS ────────────────────────────── */
     busUrbano: {
-      image: '/images/product-bus-urbano.jpg',
-      image2: '/images/product-bus-urbano-2.jpg',
+      image: '/images/product-bus-urbano.webp',
+      image2: '/images/product-bus-urbano-2.webp',
       label: 'Urban Bus',
       bannerTitle:    'Control your urban routes, fleet and operation from one system',
       bannerSubtitle: 'Manage route scheduling, dispatch control, per-trip revenues and bus fleet with an integrated system that connects operations and accounting.',
@@ -861,8 +861,8 @@ export const productTranslations = {
 
     /* ── 4. VEHICLE MAINTENANCE ──────────────────── */
     mantvehicular: {
-      image: '/images/product-mantenimiento.jpg',
-      image2: '/images/product-mantenimiento-2.jpg',
+      image: '/images/product-mantenimiento.webp',
+      image2: '/images/product-mantenimiento-2.webp',
       label: 'Vehicle Maintenance',
       bannerTitle:    'Control your fleet maintenance without losses or unexpected breakdowns',
       bannerSubtitle: 'Schedule preventive maintenance, manage work orders, control spare parts inventory and analyze workshop costs from a single integrated system.',
@@ -907,8 +907,8 @@ export const productTranslations = {
 
     /* ── 5. SYSPARKING ───────────────────────────── */
     Sysparking: {
-      image: '/images/product-sysparking.jpg',
-      image2: '/images/product-sysparking-2.jpg',
+      image: '/images/product-sysparking.webp',
+      image2: '/images/product-sysparking-2.webp',
       label: 'SysParking',
       bannerTitle:    'Control your parking lot without losses or disorganization',
       bannerSubtitle: 'Manage spaces, rates and billing from a single system integrated with accounting, optimizing control and profitability of your parking lot.',
@@ -950,8 +950,8 @@ export const productTranslations = {
 
     /* ── 6. SERVICE STATIONS ─────────────────────── */
     estaciones: {
-      image: '/images/product-estaciones.jpg',
-      image2: '/images/product-estaciones-2.jpg',
+      image: '/images/product-estaciones.webp',
+      image2: '/images/product-estaciones-2.webp',
       label: 'Service Stations & Fuel Wholesale',
       bannerTitle:    'Full control of your service station, from the tank to the invoice',
       bannerSubtitle: 'Manage inventories, fuel dispatch, sales and operational reports with a system that integrates all processes in real time and under current regulations.',
@@ -996,8 +996,8 @@ export const productTranslations = {
 
     /* ── 7. INDUSTRIAL PLANTS ────────────────────── */
     plantas: {
-      image: '/images/product-plantas.jpg',
-      image2: '/images/product-plantas-2.jpg',
+      image: '/images/product-plantas.webp',
+      image2: '/images/product-plantas-2.webp',
       label: 'Industrial Plants',
       bannerTitle:    'Manage your industrial plant with full control of processes, costs and staff',
       bannerSubtitle: 'Integrate inventory, asset, payroll and accounting management in one system that optimizes production processes and improves your plant\'s operational efficiency.',
@@ -1042,8 +1042,8 @@ export const productTranslations = {
 
     /* ── 8. SYSTOTAL COMMERCIAL ──────────────────── */
     sysTotalComercial: {
-      image: '/images/product-comercial.jpg',
-      image2: '/images/product-comercial-2.jpg',
+      image: '/images/product-comercial.webp',
+      image2: '/images/product-comercial-2.webp',
       label: 'Syscom Total Commercial',
       bannerTitle:    'Control your entire commercial operation without errors or rework',
       bannerSubtitle: 'From quote to collection, SYSCOM Total Commercial integrates sales, purchasing, inventory and billing in one system that gives real control to your commercial operation.',
@@ -1088,8 +1088,8 @@ export const productTranslations = {
 
     /* ── 9. PAYROLL RH ───────────────────────────── */
     nominarh: {
-      image: '/images/product-nomina.jpg',
-      image2: '/images/product-nomina-2.jpg',
+      image: '/images/product-nomina.webp',
+      image2: '/images/product-nomina-2.webp',
       label: 'Payroll & HR',
       bannerTitle:    'Process your company\'s payroll without errors and comply with DIAN',
       bannerSubtitle: 'Manage contracts, calculate settlements, generate electronic payroll and administer personnel events from an integrated system that eliminates errors and rework.',
@@ -1134,8 +1134,8 @@ export const productTranslations = {
 
     /* ── 10. ACCOUNTING ──────────────────────────── */
     contabilidad: {
-      image: '/images/product-contabilidad.jpg',
-      image2: '/images/product-contabilidad-2.jpg',
+      image: '/images/product-contabilidad.webp',
+      image2: '/images/product-contabilidad-2.webp',
       label: 'Accounting',
       bannerTitle:    'Manage your company\'s accounting with precision, order and regulatory compliance',
       bannerSubtitle: 'Record accounting entries, generate financial statements, comply with DIAN and make decisions with reliable, up-to-date information from an integrated system.',
@@ -1180,8 +1180,8 @@ export const productTranslations = {
 
     /* ── 11. ELECTRONIC BILLING ──────────────────── */
     facturacionelect: {
-      image: '/images/product-facturacion.jpg',
-      image2: '/images/product-facturacion-2.jpg',
+      image: '/images/product-facturacion.webp',
+      image2: '/images/product-facturacion-2.webp',
       label: 'Electronic Billing',
       bannerTitle:    'Invoice electronically without errors, without rework and in compliance with DIAN',
       bannerSubtitle: 'Issue sales invoices, credit notes, debit notes and equivalent documents quickly and securely, integrated with your operation and accounting.',
@@ -1226,8 +1226,8 @@ export const productTranslations = {
 
     /* ── 12. FIXED ASSETS ────────────────────────── */
     activosFijos: {
-      image: '/images/product-activos.jpg',
-      image2: '/images/product-activos-2.jpg',
+      image: '/images/product-activos.webp',
+      image2: '/images/product-activos-2.webp',
       label: 'Fixed Assets',
       bannerTitle:    'Control all your company\'s assets with precision and accounting compliance',
       bannerSubtitle: 'Record, classify and depreciate your company\'s assets automatically and in accordance with Colombian accounting standards, integrating the information with your accounting.',
@@ -1272,8 +1272,8 @@ export const productTranslations = {
 
     /* ── 13. BILLING & INVENTORY ─────────────────── */
     facturacioneinventario: {
-      image: '/images/product-inventario.jpg',
-      image2: '/images/product-inventario-2.jpg',
+      image: '/images/product-inventario.webp',
+      image2: '/images/product-inventario-2.webp',
       label: 'Billing & Inventory',
       bannerTitle:    'Control your sales, inventory and billing without errors or rework',
       bannerSubtitle: 'Issue electronic invoices, manage inventory in real time and control your purchases and receivables from an integrated system that keeps your commercial operation organized.',
@@ -1318,8 +1318,8 @@ export const productTranslations = {
 
     /* ── 14. HOSPITALITY ─────────────────────────── */
     hoteleria: {
-      image: '/images/product-hoteleria.jpg',
-      image2: '/images/product-hoteleria-2.jpg',
+      image: '/images/product-hoteleria.webp',
+      image2: '/images/product-hoteleria-2.webp',
       label: 'Hospitality',
       bannerTitle:    'Control your hotel\'s operation without errors or disorganization',
       bannerSubtitle: 'From reservations to billing, SYSCOM Hospitality integrates the key processes of your hotel in one organized and easy-to-use system.',
@@ -1361,8 +1361,8 @@ export const productTranslations = {
 
     /* ── 15. LEGAL ───────────────────────────────── */
     juridico: {
-      image: '/images/product-transcarga.jpg',
-      image2: '/images/product-mantenimiento-2.jpg',
+      image: '/images/product-transcarga.webp',
+      image2: '/images/product-mantenimiento-2.webp',
       label: 'Legal Module',
       bannerTitle:    'Manage your fleet\'s legal control: claims, lawsuits and investigations in one place',
       bannerSubtitle: 'SYSCOM\'s Legal module, integrated into the Transport solution, lets you record and track the legal history of vehicles, drivers and owners: accident claims, administrative investigations, legal proceedings, claims for damages and disciplinary reports — all connected to your company\'s operation.',

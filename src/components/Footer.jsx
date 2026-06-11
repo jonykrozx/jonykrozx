@@ -56,7 +56,7 @@ export default function Footer() {
           <div style={{ flexShrink: 0, width: '220px' }} className="w-full lg:w-[220px]">
             {/* Logo */}
             <div className="mb-4">
-              <img src="/images/logo.png" alt="SYSCOM Sistemas Comerciales" style={{ height: '40px', width: 'auto' }} />
+              <img src="/images/logo.webp" alt="SYSCOM Sistemas Comerciales" style={{ height: '40px', width: 'auto' }} />
             </div>
 
             {/* Description */}

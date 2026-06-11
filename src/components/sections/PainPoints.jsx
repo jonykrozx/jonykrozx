@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { slideLeft, slideRight, fadeUp, stagger } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
-const PAINPOINTS_IMAGE = '/images/painpoints.jpg'
+const PAINPOINTS_IMAGE = '/images/painpoints.webp'
 
 export default function PainPoints({ bgClass = 'bg-white dark:bg-[#0A0A0A]' }) {
   const { t } = useLang()

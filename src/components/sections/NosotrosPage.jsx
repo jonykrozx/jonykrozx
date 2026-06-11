@@ -7,14 +7,14 @@ import { useLang } from '../../lib/LanguageContext'
 
 const MotionLink = motion(Link)
 
-const IMG_QUIENES   = '/images/sc-icon.png'
-const IMG_MISION    = '/images/nosotros-mision.jpg'
-const IMG_VISION    = '/images/nosotros-vision.jpg'
-const IMG_TRAYECT   = '/images/nosotros-trayectoria.jpg'
-const IMG_EXPERIENCIA = '/images/nosotros-experiencia.jpg'
-const IMG_SECTORES  = '/images/nosotros-sectores.jpg'
-const IMG_TRABAJO   = '/images/nosotros-equipo.jpg'
-const IMG_POLITICAS = '/images/nosotros-politicas.jpg'
+const IMG_QUIENES   = '/images/sc-icon.webp'
+const IMG_MISION    = '/images/nosotros-mision.webp'
+const IMG_VISION    = '/images/nosotros-vision.webp'
+const IMG_TRAYECT   = '/images/nosotros-trayectoria.webp'
+const IMG_EXPERIENCIA = '/images/nosotros-experiencia.webp'
+const IMG_SECTORES  = '/images/nosotros-sectores.webp'
+const IMG_TRABAJO   = '/images/nosotros-equipo.webp'
+const IMG_POLITICAS = '/images/nosotros-politicas.webp'
 
 const DIFERENCIAL_ICONS = [Users, Cpu, Layers, Zap, Globe, Shield]
 const POLITICA_ICONS = [FileText, ShieldCheck, Lock]

@@ -9,11 +9,11 @@ import { ShineBorder } from '../ui/ShineBorder'
 import Certifications from './Certifications'
 
 const IMGS = [
-  '/images/soluciones-transporte.jpg',
-  '/images/soluciones-empresas.jpg',
-  '/images/soluciones-estaciones.jpg',
-  '/images/soluciones-plantas.jpg',
-  '/images/soluciones-hoteleria.jpg',
+  '/images/soluciones-transporte.webp',
+  '/images/soluciones-empresas.webp',
+  '/images/soluciones-estaciones.webp',
+  '/images/soluciones-plantas.webp',
+  '/images/soluciones-hoteleria.webp',
 ]
 
 /* ─── Image block ───────────────────────────────── */

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { slideLeft, slideRight } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
-const ABOUT_IMAGE = '/images/about.jpg'
+const ABOUT_IMAGE = '/images/about.webp'
 
 export default function AboutBanner() {
   const { t } = useLang()

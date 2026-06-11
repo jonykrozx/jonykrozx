@@ -7,7 +7,7 @@ import { fadeUp, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 import { toSlug } from './BlogPostPage'
 
-const CARD_IMGS = ['/images/transport.jpg', '/images/138148.jpg', '/images/painpoints.jpg', '/images/transport.jpg']
+const CARD_IMGS = ['/images/transport.webp', '/images/138148.webp', '/images/painpoints.webp', '/images/transport.webp']
 
 const YOUTUBE_VIDEOS = [
   {
@@ -100,7 +100,7 @@ function Hero({ c }) {
           >
             <div className="relative overflow-hidden" style={{ borderRadius: 'var(--radius-xl)', width: '484px', height: '350px', maxWidth: '100%' }}>
               <img
-                src="/images/comunidad-hero.jpg"
+                src="/images/comunidad-hero.webp"
                 alt="Comunidad SYSCOM"
                 className="w-full h-full object-cover"
                 onError={(e) => { e.currentTarget.style.display = 'none' }}

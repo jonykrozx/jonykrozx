@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Headphones, Lif
 import { fadeUp, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
-const IMG_BANNER = '/images/contacto-banner.jpg'
+const IMG_BANNER = '/images/contacto-banner.webp'
 
 const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=573165267012&text=Hola%2C%20quiero%20hacer%20una%20pregunta%20acerca%20de%3A%20Escribo%20desde%20Ventas'
 const PHONE_URL = 'tel:+573187073794'

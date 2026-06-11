@@ -36,7 +36,7 @@ export default function Hero() {
   }
 
   const slide = slides[current]
-  const bgImage = slide.bg || '/images/hero-bg.jpg'
+  const bgImage = slide.bg || '/images/hero-bg.webp'
   const gradientColor = slide.gradient || '#EB3D26'
 
   return (

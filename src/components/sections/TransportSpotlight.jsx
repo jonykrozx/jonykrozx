@@ -7,7 +7,7 @@ import { DarkVeil } from '../ui/DarkVeil'
 
 const MotionLink = motion(Link)
 
-const TRANSPORT_IMAGE = '/images/transport.jpg'
+const TRANSPORT_IMAGE = '/images/transport.webp'
 
 export default function TransportSpotlight() {
   const { t } = useLang()

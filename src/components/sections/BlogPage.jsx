@@ -7,9 +7,9 @@ import { useLang } from '../../lib/LanguageContext'
 import { toSlug } from './BlogPostPage'
 
 const IMGS = [
-  '/images/transport.jpg',
-  '/images/138148.jpg',
-  '/images/painpoints.jpg',
+  '/images/transport.webp',
+  '/images/138148.webp',
+  '/images/painpoints.webp',
 ]
 
 const CAT_COLORS = {

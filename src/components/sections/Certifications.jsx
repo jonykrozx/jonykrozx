@@ -34,7 +34,7 @@ export default function Certifications() {
           >
             <ShineBorder shineColor={['#EB3D26', '#94D1CA', '#ffffff']} duration={5} />
             <div className="flex flex-col items-center text-center">
-              <img src="/images/autofactura-logo.png" alt="Sistema de Auto Factura" style={{ width: '212px', height: 'auto' }} />
+              <img src="/images/autofactura-logo.webp" alt="Sistema de Auto Factura" style={{ width: '212px', height: 'auto' }} />
               <p className="text-[#4D4D4D] mt-0.5" style={{ fontSize: 'var(--text-xs)' }}>{c.card1}</p>
             </div>
           </a>
@@ -46,7 +46,7 @@ export default function Certifications() {
           >
             <ShineBorder shineColor={['#EB3D26', '#94D1CA', '#ffffff']} duration={5} />
             <div className="flex flex-col items-center text-center">
-              <img src="/images/nomina-logo.png" alt="Nómina Electrónica" style={{ width: '186px', height: 'auto' }} />
+              <img src="/images/nomina-logo.webp" alt="Nómina Electrónica" style={{ width: '186px', height: 'auto' }} />
               <p className="text-[#4D4D4D] mt-0.5" style={{ fontSize: 'var(--text-xs)' }}>{c.card2}</p>
             </div>
           </div>

@@ -217,7 +217,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
             <img
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="SYSCOM Sistemas Comerciales"
               className="h-10 w-auto"
             />

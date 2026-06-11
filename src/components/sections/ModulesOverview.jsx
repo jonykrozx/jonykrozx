@@ -22,7 +22,7 @@ export default function ModulesOverview() {
           >
             <motion.img
               variants={slideLeft}
-              src="/images/138148.jpg"
+              src="/images/138148.webp"
               alt="Gestión contable con SYSCOM"
               className="absolute top-0 left-0 w-56 h-56 object-cover"
               style={{ borderRadius: 'var(--radius-xl)' }}
