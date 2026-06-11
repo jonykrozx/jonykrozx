@@ -35,6 +35,7 @@ const SOLUTIONS_HREF = {
   busUrbano:              '/soluciones#transporte',
   mantvehicular:          '/soluciones#transporte',
   Sysparking:             '/soluciones#transporte',
+  juridico:               '/soluciones#transporte',
   estaciones:             '/soluciones#estaciones',
   plantas:                '/soluciones#plantas',
   sysTotalComercial:      '/soluciones#empresas',

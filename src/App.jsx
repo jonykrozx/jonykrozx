@@ -77,6 +77,7 @@ function App() {
           <Route path="/busUrbano"              element={<ProductPage productKey="busUrbano" />} />
           <Route path="/mantvehicular"          element={<ProductPage productKey="mantvehicular" />} />
           <Route path="/Sysparking"             element={<ProductPage productKey="Sysparking" />} />
+          <Route path="/juridico"               element={<ProductPage productKey="juridico" />} />
           <Route path="/estaciones"             element={<ProductPage productKey="estaciones" />} />
           <Route path="/plantas"                element={<ProductPage productKey="plantas" />} />
           <Route path="/sysTotalComercial"      element={<ProductPage productKey="sysTotalComercial" />} />
