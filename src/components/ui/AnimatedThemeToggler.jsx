@@ -74,7 +74,18 @@ export function AnimatedThemeToggler({ className = '', duration = 400, variant =
 
     const transition = document.startViewTransition(() => { flushSync(applyTheme) })
     if (typeof transition?.finished?.finally === 'function') {
-      transition.finished.finally(cleanup)
+      let done = false
+      const finish = () => {
+        if (done) return
+        done = true
+        cleanup()
+      }
+      transition.finished.finally(finish)
+      // Safety net: some embedded/automated browsers never resolve
+      // `transition.finished`, leaving the old/new page snapshots
+      // stuck on top of each other. Force cleanup after the animation
+      // should have completed.
+      setTimeout(finish, duration + 150)
     } else {
       cleanup()
     }
