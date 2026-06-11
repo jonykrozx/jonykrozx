@@ -499,9 +499,8 @@ function Oficinas({ c }) {
                 <iframe
                   title={`Mapa - ${o.items[selected].ciudad}`}
                   src={`https://www.google.com/maps?q=${encodeURIComponent(`${o.items[selected].direccion}, ${o.items[selected].ciudad}, Colombia`)}&output=embed`}
-                  width="1000"
-                  height="360"
-                  style={{ border: 0, borderRadius: 'var(--radius-xl)', maxWidth: '100%' }}
+                  className="block w-full"
+                  style={{ border: 0, borderRadius: 'var(--radius-xl)', aspectRatio: '1000 / 360', maxHeight: '360px' }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
