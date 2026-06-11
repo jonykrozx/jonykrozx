@@ -319,7 +319,51 @@ function FormPQRS({ tab }) {
   )
 }
 
-const FORM_COMPONENTS = [FormComercial, FormPQRS]
+/* ─── Form: Institucional ─────────────────────── */
+function FormInstitucional({ tab }) {
+  const f = tab.fields
+  const [form, setForm] = useState({ nombre: '', contacto: '', tipoSolicitud: '', descripcion: '' })
+  const [sent, setSent] = useState(false)
+
+  const set = (k, v) => setForm(p => ({ ...p, [k]: v }))
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSent(true)
+  }
+
+  if (sent) return (
+    <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}
+      className="flex flex-col items-center gap-4 py-16 text-center">
+      <div className="w-16 h-16 bg-[#2E9E6B]/12 flex items-center justify-center" style={{ borderRadius: '50%' }}>
+        <CheckCircle className="w-8 h-8 text-[#2E9E6B]" />
+      </div>
+      <p className="text-[#2B2B2B] dark:text-white font-semibold" style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--lh-relaxed)' }}>{tab.confirm}</p>
+      <button onClick={() => setSent(false)} className="text-[#EB3D26] font-medium hover:underline" style={{ fontSize: 'var(--text-sm)' }}>Enviar otra solicitud</button>
+    </motion.div>
+  )
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <Field label={f.nombre}><input value={form.nombre} onChange={e => set('nombre', e.target.value)} className={inputCls} style={inputStyle} placeholder={f.nombre} /></Field>
+        <Field label={f.contacto}><input value={form.contacto} onChange={e => set('contacto', e.target.value)} className={inputCls} style={inputStyle} placeholder={f.contacto} /></Field>
+      </div>
+      <Field label={f.tipoSolicitud} required>
+        <select required value={form.tipoSolicitud} onChange={e => set('tipoSolicitud', e.target.value)} className={inputCls} style={inputStyle}>
+          <option value="">{f.tipoSolicitud}</option>
+          {f.tipoSolicitudOpts.map(o => <option key={o} value={o}>{o}</option>)}
+        </select>
+      </Field>
+      <Field label={f.descripcion} required><textarea required rows={4} value={form.descripcion} onChange={e => set('descripcion', e.target.value)} className={`${inputCls} resize-none`} style={inputStyle} placeholder={f.descripcion} /></Field>
+      <button type="submit" className="w-full bg-[#EB3D26] hover:bg-[#d63520] active:scale-95 text-white font-bold transition-all duration-200" style={{ fontSize: 'var(--text-sm)', padding: '12px 24px', borderRadius: 'var(--radius-md)' }}>
+        {tab.cta}
+      </button>
+    </form>
+  )
+}
+
+const FORM_COMPONENTS = [FormComercial, FormPQRS, FormInstitucional]
 
 /* ═══════════════════════════════════════════════════
    FORMULARIOS
@@ -401,7 +445,10 @@ function Formularios({ c }) {
                 </p>
               </div>
 
-              {activeTab === 0 ? <FormComercial tab={fm.tabs[0]} /> : <FormPQRS tab={fm.tabs[1]} />}
+              {(() => {
+                const ActiveForm = FORM_COMPONENTS[activeTab]
+                return <ActiveForm tab={fm.tabs[activeTab]} />
+              })()}
 
               {/* Privacy */}
               <div className="pt-2 space-y-1.5 border-t border-[#EFEFEF] dark:border-white/8">
