@@ -426,6 +426,7 @@ function Formularios({ c }) {
 ══════════════════════════════════════════════════ */
 function Oficinas({ c }) {
   const o = c.oficinas
+  const [selected, setSelected] = useState(null)
   return (
     <section className="bg-white dark:bg-[#0A0A0A] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-12">
@@ -456,14 +457,16 @@ function Oficinas({ c }) {
           viewport={{ once: true, amount: 0.1 }}
         >
           {o.items.map((item, i) => (
-            <motion.div
+            <motion.button
               key={i}
+              type="button"
+              onClick={() => setSelected(selected === i ? null : i)}
               variants={fadeUp}
-              className="bg-[#F7F7F7] dark:bg-white/5 border border-[#EFEFEF] dark:border-white/8 p-5 space-y-3"
+              className={`text-left bg-[#F7F7F7] dark:bg-white/5 border p-5 space-y-3 transition-colors duration-200 cursor-pointer ${selected === i ? 'border-[#EB3D26]' : 'border-[#EFEFEF] dark:border-white/8'}`}
               style={{ borderRadius: 'var(--radius-xl)' }}
             >
-              <div className="w-9 h-9 bg-[#EB3D26]/10 flex items-center justify-center" style={{ borderRadius: 'var(--radius-md)' }}>
-                <MapPin className="w-4 h-4 text-[#EB3D26]" />
+              <div className={`w-9 h-9 flex items-center justify-center transition-colors duration-200 ${selected === i ? 'bg-[#EB3D26]' : 'bg-[#EB3D26]/10'}`} style={{ borderRadius: 'var(--radius-md)' }}>
+                <MapPin className={`w-4 h-4 ${selected === i ? 'text-white' : 'text-[#EB3D26]'}`} />
               </div>
               <div>
                 <p className="text-[#2B2B2B] dark:text-white font-bold" style={{ fontSize: 'var(--text-sm)' }}>
@@ -477,9 +480,35 @@ function Oficinas({ c }) {
                 <Clock className="w-3 h-3 shrink-0" />
                 <span style={{ fontSize: 'var(--text-xs)' }}>{o.schedule}</span>
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </motion.div>
+
+        {/* Map */}
+        <AnimatePresence mode="wait">
+          {selected !== null && (
+            <motion.div
+              key={selected}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: ease.out }}
+              className="overflow-hidden flex justify-center"
+            >
+              <div className="w-full max-w-[1000px] pt-2">
+                <iframe
+                  title={`Mapa - ${o.items[selected].ciudad}`}
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(`${o.items[selected].direccion}, ${o.items[selected].ciudad}, Colombia`)}&output=embed`}
+                  width="1000"
+                  height="360"
+                  style={{ border: 0, borderRadius: 'var(--radius-xl)', maxWidth: '100%' }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Emails */}
         <motion.div
