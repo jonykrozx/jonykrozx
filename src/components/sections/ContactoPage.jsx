@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { DarkVeil } from '../ui/DarkVeil'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Headphones, LifeBuoy, Ticket, ShoppingBag, ChevronRight, ExternalLink } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, Headphones, LifeBuoy, Ticket, ShoppingBag, ChevronRight, ExternalLink, X } from 'lucide-react'
 import { fadeUp, slideLeft, slideRight, stagger, ease } from '../../lib/motion'
 import { useLang } from '../../lib/LanguageContext'
 
@@ -485,17 +485,27 @@ function Oficinas({ c }) {
         </motion.div>
 
         {/* Map */}
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {selected !== null && (
             <motion.div
-              key={selected}
+              key="map"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: ease.out }}
               className="overflow-hidden flex justify-center"
             >
-              <div className="w-full max-w-[1000px] pt-2">
+              <div className="w-full max-w-[1000px] pt-2 space-y-2">
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setSelected(null)}
+                    className="inline-flex items-center gap-1.5 text-[#6B6B6B] dark:text-[#AEAEAE] hover:text-[#EB3D26] transition-colors duration-150"
+                    style={{ fontSize: 'var(--text-xs)' }}
+                  >
+                    <X className="w-3.5 h-3.5" />
+                    Cerrar
+                  </button>
+                </div>
                 <iframe
                   title={`Mapa - ${o.items[selected].ciudad}`}
                   src={`https://www.google.com/maps?q=${encodeURIComponent(`${o.items[selected].direccion}, ${o.items[selected].ciudad}, Colombia`)}&output=embed`}
