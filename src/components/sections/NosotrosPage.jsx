@@ -184,7 +184,7 @@ function MisionVision({ n }) {
       {items.map(({ data, icon: Icon, img, flip, bg }) => (
         <section key={data.title} className={`${bg} py-20`}>
           <div className="max-w-7xl mx-auto px-4 md:px-8">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center`}>
+            <div className={`grid grid-cols-1 ${flip ? 'lg:grid-cols-[45fr_55fr]' : 'lg:grid-cols-[55fr_45fr]'} gap-12 lg:gap-16 items-center`}>
               <motion.div
                 className={`space-y-5 ${flip ? 'order-1 lg:order-2' : ''}`}
                 variants={stagger(0.1, 0.05)}
@@ -507,7 +507,7 @@ function TrabajaConNosotros({ n }) {
   return (
     <section className="bg-[#F2F2F2] dark:bg-[#141414] py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr] gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -48 }}
             whileInView={{ opacity: 1, x: 0 }}
