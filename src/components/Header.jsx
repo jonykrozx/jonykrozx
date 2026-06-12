@@ -219,7 +219,12 @@ export default function Header() {
             <img
               src="/images/logo.webp"
               alt="SYSCOM Sistemas Comerciales"
-              className="h-10 w-auto"
+              className="h-10 w-auto dark:hidden"
+            />
+            <img
+              src="/images/logo-darkmode.webp"
+              alt="SYSCOM Sistemas Comerciales"
+              className="h-10 w-auto hidden dark:block"
             />
           </Link>
 
