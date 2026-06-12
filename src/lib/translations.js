@@ -27,6 +27,7 @@ export const translations = {
           title: 'CONTROL TOTAL DE TU EMPRESA CON UN SISTEMA DISEÑADO PARA TU OPERACIÓN',
           subtitle: 'Maneja tu flota, administra tu contabilidad, cumple con la normativa vigente en Colombia y optimiza todos tus procesos administrativos y financieros.',
           cta: 'Hablar con un asesor',
+          ctaHref: 'https://api.whatsapp.com/send?phone=573165267012&text=Hola%2C%20quiero%20hacer%20una%20pregunta%20acerca%20de%3A%20Escribo%20desde%20Ventas',
         },
         {
           title: 'FACTURA ELECTRÓNICAMENTE SIN ERRORES NI REPROCESOS',
@@ -966,6 +967,7 @@ export const translations = {
           title: 'TOTAL CONTROL OF YOUR COMPANY WITH A SYSTEM DESIGNED FOR YOUR OPERATION',
           subtitle: 'Manage your fleet, handle your accounting, comply with current regulations in Colombia and optimize all your administrative and financial processes.',
           cta: 'Talk to an advisor',
+          ctaHref: 'https://api.whatsapp.com/send?phone=573165267012&text=Hola%2C%20quiero%20hacer%20una%20pregunta%20acerca%20de%3A%20Escribo%20desde%20Ventas',
         },
         {
           title: 'INVOICE ELECTRONICALLY WITHOUT ERRORS OR REWORK',
