@@ -40,7 +40,7 @@ export default function Hero() {
   const gradientColor = slide.gradient || '#EB3D26'
 
   return (
-    <section className="relative overflow-hidden h-[calc(90vh-100px)] min-h-[460px] min-[640px]:h-[calc(90vh-320px)] min-[640px]:min-h-[340px] md:h-[calc(90vh-440px)] md:min-h-[340px] lg:h-[calc(90vh-60px)]">
+    <section className="relative overflow-hidden h-[calc(90vh-100px)] min-h-[460px] min-[640px]:h-[calc(90vh-320px)] min-[640px]:min-h-[340px] md:h-[420px] md:min-h-[420px] lg:h-[calc(90vh-60px)] lg:min-h-0">
       {/* Background crossfade */}
       <AnimatePresence mode="sync">
         <motion.div
